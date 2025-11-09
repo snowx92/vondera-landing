@@ -41,7 +41,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300" dir={isRTL ? 'rtl' : 'ltr'}>
+    <footer className="bg-black text-gray-300 border-t border-gray-800" dir={isRTL ? 'rtl' : 'ltr'}>
       <Container>
         {/* Main Footer Content */}
         <div className="py-12 md:py-16">

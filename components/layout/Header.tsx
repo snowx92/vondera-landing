@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -41,18 +42,23 @@ export default function Header() {
       <Container>
         <div className="flex items-center justify-between h-16 md:h-20 relative z-10">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">V</span>
-            </div>
+          <Link href={`/${locale}`} className="flex items-center gap-1 rtl:gap-1">
+            <Image 
+              src="/logo.webp" 
+              alt="Vondera Logo" 
+              width={120} 
+              height={40}
+              className="h-8 md:h-10 w-auto"
+              priority
+            />
             <span className={cn(
-              "text-2xl font-bold transition-colors duration-300",
+              "text-xl md:text-2xl font-bold font-outfit transition-colors duration-300",
               isScrolled ? "gradient-text" : "text-white"
             )}>Vondera</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8" dir="ltr">
+          <nav className="hidden lg:flex items-center space-x-8 font-outfit" dir="ltr">
             <Link 
               href={`/${locale}#features`} 
               className={cn(
@@ -121,7 +127,13 @@ export default function Header() {
               <Globe size={18} />
               <span className="text-sm font-medium">{locale === 'en' ? 'AR' : 'EN'}</span>
             </button>
-            <Button variant="ghost" size="sm">
+            <Button 
+              variant={isScrolled ? "ghost" : "outline"} 
+              size="sm"
+              className={cn(
+                !isScrolled && "text-white border-white hover:bg-white/10"
+              )}
+            >
               {t('login')}
             </Button>
             <Button variant="primary" size="sm">

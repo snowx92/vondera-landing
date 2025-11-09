@@ -24,7 +24,7 @@ export default function TeamCulture() {
     {
       icon: Coffee,
       title: 'Stay Humble',
-      description: 'We're always learning and improving',
+      description: "We're always learning and improving",
     },
   ];
 

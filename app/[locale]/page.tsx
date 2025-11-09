@@ -5,8 +5,6 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSectionModern from '@/components/sections/HeroSectionModern';
 import TrustedBySection from '@/components/sections/TrustedBySection';
-import StatsSection from '@/components/sections/StatsSection';
-import FeaturesSection from '@/components/sections/FeaturesSection';
 import ProductDemoSection from '@/components/sections/ProductDemoSection';
 import SubProductsSection from '@/components/sections/SubProductsSection';
 import ComparisonSection from '@/components/sections/ComparisonSection';
@@ -17,9 +15,6 @@ import SocialProofSection from '@/components/sections/SocialProofSection';
 import ThemesSection from '@/components/sections/ThemesSection';
 import MobileAppsSection from '@/components/sections/MobileAppsSection';
 import PricingSection from '@/components/sections/PricingSection';
-
-import BlogSection from '@/components/sections/BlogSection';
-import NewsletterSection from '@/components/sections/NewsletterSection';
 import FinalCTASection from '@/components/sections/FinalCTASection';
 import FAQSection from '@/components/sections/FAQSection';
 

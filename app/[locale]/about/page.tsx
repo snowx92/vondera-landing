@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import ChromaGrid from '@/components/ChromaGrid';
 import BlurText from '@/components/BlurText';
+import LightRays from '@/components/LightRays';
 
 export const metadata: Metadata = {
   title: 'About Us | Vondera',
@@ -96,8 +97,22 @@ export default function AboutPage() {
       <Header />
       <main className="min-h-screen pt-20 bg-black">
         {/* Vision Section with BlurText */}
-        <section className="py-10 md:py-16 bg-black">
-          <Container>
+        <section className="py-10 md:py-16 bg-black relative">
+          <div style={{ width: '100%', height: '600px', position: 'absolute', top: 0, left: 0, right: 0, zIndex: 0 }}>
+            <LightRays
+              raysOrigin="top-center"
+              raysColor="#662ad6ff"
+              raysSpeed={1.5}
+              lightSpread={0.8}
+              rayLength={1.2}
+              followMouse={true}
+              mouseInfluence={0.1}
+              noiseAmount={0.1}
+              distortion={0.05}
+              className="custom-rays"
+            />
+          </div>
+          <Container className="relative z-10">
             <div className="max-w-7xl mx-auto text-center">
               <BlurText
                 text="We are a group of entrepreneurs building an E-commerce OS. We will help all brands make a lot of sales through our solution. We once had our own brand, and we know the gaps. We are the next unicorn startup in Egypt. We started in 2025 and we have a lot to build."

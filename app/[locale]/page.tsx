@@ -8,15 +8,14 @@ import TrustedBySection from '@/components/sections/TrustedBySection';
 import ProductDemoSection from '@/components/sections/ProductDemoSection';
 import SubProductsSection from '@/components/sections/SubProductsSection';
 import ComparisonSection from '@/components/sections/ComparisonSection';
-import IntegrationSection from '@/components/sections/IntegrationSection';
 import MediaBuyerSpotlight from '@/components/sections/MediaBuyerSpotlight';
 import SuccessStoriesSection from '@/components/sections/SuccessStoriesSection';
 import SocialProofSection from '@/components/sections/SocialProofSection';
-import ThemesSection from '@/components/sections/ThemesSection';
 import MobileAppsSection from '@/components/sections/MobileAppsSection';
 import PricingSection from '@/components/sections/PricingSection';
 import FinalCTASection from '@/components/sections/FinalCTASection';
 import FAQSection from '@/components/sections/FAQSection';
+import MapSection from '@/components/sections/MapSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -45,15 +44,15 @@ export default function HomePage() {
         <ProductDemoSection />
         <SubProductsSection />
         <ComparisonSection />
-        <IntegrationSection />
         <MediaBuyerSpotlight />
         <SuccessStoriesSection />
         <SocialProofSection />
-        <ThemesSection />
+
         <MobileAppsSection />
         <PricingSection />
         <FinalCTASection />
         <FAQSection />
+        <MapSection />
       </main>
       <Footer />
     </>

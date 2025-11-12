@@ -10,33 +10,30 @@ export default function ComparisonSection() {
 
   const competitors = [
     { id: 'shopify', name: 'Shopify', color: 'green' },
-    { id: 'zid', name: 'Zid', color: 'blue' },
-    { id: 'salla', name: 'Salla', color: 'purple' },
+    { id: 'woocommerce', name: 'WooCommerce', color: 'purple' },
   ];
 
   const features = [
-    { name: 'Starting Price', vondera: '300 EGP/mo', shopify: '$29/mo (~900 EGP)', zid: '99 SAR/mo', salla: '99 SAR/mo' },
-    { name: 'Arabic Interface', vondera: true, shopify: 'Limited', zid: true, salla: true },
-    { name: 'RTL Support', vondera: true, shopify: 'Plugins Required', zid: true, salla: true },
-    { name: 'Local Payment Gateways', vondera: true, shopify: 'Limited', zid: true, salla: true },
-    { name: 'Media Buyer Marketplace', vondera: true, shopify: false, zid: false, salla: false },
-    { name: 'Free Themes', vondera: '20+', shopify: '8', zid: '15', salla: '12' },
-    { name: 'Mobile Apps', vondera: true, shopify: true, zid: true, salla: true },
-    { name: 'Transaction Fees', vondera: '0%', shopify: '2%', zid: '0%', salla: '0%' },
-    { name: '24/7 Support', vondera: true, shopify: 'Paid Plans', zid: true, salla: true },
-    { name: 'Multi-Channel Selling', vondera: true, shopify: true, zid: true, salla: true },
-    { name: 'Social Media Integration', vondera: true, shopify: 'Limited', zid: true, salla: true },
-    { name: 'Built for MENA', vondera: true, shopify: false, zid: true, salla: true },
+    { name: 'Starting Price', vondera: '300 EGP/mo', shopify: '$29/mo (~1,450 EGP)', woocommerce: 'Free + $50/mo (~2,500 EGP)' },
+    { name: 'Arabic Interface', vondera: true, shopify: 'Limited', woocommerce: 'Plugins Required' },
+    { name: 'RTL Support', vondera: true, shopify: 'Plugins Required', woocommerce: 'Plugins Required' },
+    { name: 'Local Payment Gateways', vondera: true, shopify: 'Limited', woocommerce: 'Plugins Required' },
+    { name: 'Media Buyer Marketplace', vondera: true, shopify: false, woocommerce: false },
+    { name: 'Free Themes', vondera: '20+', shopify: '8', woocommerce: '10+' },
+    { name: 'Mobile Apps', vondera: true, shopify: true, woocommerce: false },
+    { name: 'Transaction Fees', vondera: '0%', shopify: '2%', woocommerce: '0%' },
+    { name: '24/7 Support', vondera: true, shopify: 'Paid Plans', woocommerce: 'Community' },
+    { name: 'Multi-Channel Selling', vondera: true, shopify: true, woocommerce: 'Plugins Required' },
+    { name: 'Social Media Integration', vondera: true, shopify: 'Limited', woocommerce: 'Plugins Required' },
+    { name: 'Built for MENA', vondera: true, shopify: false, woocommerce: false },
   ];
 
   const getCompetitorValue = (feature: typeof features[0]) => {
     switch (activeCompetitor) {
       case 'shopify':
         return feature.shopify;
-      case 'zid':
-        return feature.zid;
-      case 'salla':
-        return feature.salla;
+      case 'woocommerce':
+        return feature.woocommerce;
       default:
         return feature.shopify;
     }

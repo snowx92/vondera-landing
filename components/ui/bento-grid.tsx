@@ -46,7 +46,7 @@ const BentoCard = ({
   <div
     key={name}
     className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl",
+      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl shadow-lg",
       // light styles
       "bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
       // dark styles
@@ -56,13 +56,13 @@ const BentoCard = ({
     {...props}
   >
     <div>{background}</div>
-    <div className="relative z-10 p-4">
-      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 lg:group-hover:-translate-y-10">
-        <Icon className="h-12 w-12 origin-left transform-gpu text-white transition-all duration-300 ease-in-out group-hover:scale-75" />
-        <h3 className="text-xl font-semibold text-white">
+    <div className="relative z-10 p-6">
+      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-2 transition-all duration-300 lg:group-hover:-translate-y-10">
+        <Icon className="h-12 w-12 origin-left transform-gpu text-primary-600 dark:text-primary-600 transition-all duration-300 ease-in-out group-hover:scale-75" />
+        <h3 className="text-xl font-semibold text-primary-700 dark:text-primary-700">
           {name}
         </h3>
-        <p className="max-w-lg text-white/90">{description}</p>
+        <p className="max-w-lg text-primary-600 dark:text-primary-600">{description}</p>
       </div>
 
       <div
@@ -74,7 +74,7 @@ const BentoCard = ({
           variant="link"
           asChild
           size="sm"
-          className="pointer-events-auto p-0 text-white hover:text-white/80"
+          className="pointer-events-auto p-0 text-primary-600"
         >
           <a href={href}>
             {cta}
@@ -86,14 +86,14 @@ const BentoCard = ({
 
     <div
       className={cn(
-        "pointer-events-none absolute bottom-0 hidden w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:flex"
+        "pointer-events-none absolute bottom-0 hidden w-full translate-y-10 transform-gpu flex-row items-center p-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:flex"
       )}
     >
       <Button
         variant="link"
         asChild
         size="sm"
-        className="pointer-events-auto p-0 text-white hover:text-white/80"
+        className="pointer-events-auto p-0 text-primary-600"
       >
         <a href={href}>
           {cta}

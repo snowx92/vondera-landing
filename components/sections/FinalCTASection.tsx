@@ -1,28 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, Zap, Shield, HeadphonesIcon, CreditCard } from 'lucide-react';
+import { ArrowRight, Mail, Phone, MapPin, Send } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 
 export default function FinalCTASection() {
-  const benefits = [
-    { icon: Zap, text: 'Setup in 5 minutes' },
-    { icon: Shield, text: '14-day free trial' },
-    { icon: HeadphonesIcon, text: '24/7 support' },
-    { icon: CreditCard, text: 'No credit card required' },
-  ];
-
-  const features = [
-    'Access to all premium features',
-    'VMedia marketplace access',
-    'Unlimited products & orders',
-    '20+ free themes included',
-    'Multi-channel selling',
-    'Advanced analytics & reports',
-    'Local payment gateways',
-    'Arabic & RTL support',
-  ];
-
   return (
     <section className="py-20 md:py-32 bg-gradient-to-br from-violet-600 via-purple-600 to-violet-700 relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -66,97 +48,77 @@ export default function FinalCTASection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block mb-6">
-                <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-semibold">
-                  🚀 Join 10,000+ Successful Merchants
-                </div>
-              </div>
-
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Ready to Supercharge
-                <br />
-                Your E-Commerce Business?
+                Ask whatever you have in your mind
               </h2>
 
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Start selling online today with the most powerful e-commerce platform built for MENA merchants
+                Whether you have questions or are ready to discuss your business, we're here to help. Reach out today.
               </p>
             </motion.div>
           </div>
 
-          {/* Benefits Pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
-          >
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-white"
-              >
-                <benefit.icon size={20} />
-                <span className="font-medium">{benefit.text}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* CTA Card */}
+          {/* Contact Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-5xl mx-auto"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-6xl mx-auto"
           >
             <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
               <div className="grid lg:grid-cols-2">
-                {/* Left - Form */}
+                {/* Left - Contact Form */}
                 <div className="p-8 md:p-12">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                    Start Your Free Trial
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                    Get in Touch
                   </h3>
-                  <p className="text-gray-600 mb-6">
-                    Create your store in minutes. No technical skills required.
+                  <p className="text-gray-600 mb-8">
+                    Fill out the form and we'll get back to you shortly.
                   </p>
 
-                  <form className="space-y-4">
+                  <form className="space-y-5">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Full Name
+                        Name
                       </label>
                       <input
                         type="text"
-                        placeholder="Ahmed Mohamed"
+                        placeholder="Jane Smith"
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-600 focus:outline-none transition-colors"
                       />
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address
+                        Email
                       </label>
                       <input
                         type="email"
-                        placeholder="ahmed@example.com"
+                        placeholder="Shreef@vondera.app"
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-600 focus:outline-none transition-colors"
                       />
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Store Name
+                        Phone (Optional)
                       </label>
                       <input
-                        type="text"
-                        placeholder="My Awesome Store"
+                        type="tel"
+                        placeholder="+1-555-123-4567"
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-600 focus:outline-none transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Message
+                      </label>
+                      <textarea
+                        rows={4}
+                        placeholder="Hi, I am reaching out for..."
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-600 focus:outline-none transition-colors resize-none"
                       />
                     </div>
 
@@ -166,99 +128,111 @@ export default function FinalCTASection() {
                       whileTap={{ scale: 0.98 }}
                       className="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
                     >
-                      Start Free Trial
-                      <ArrowRight size={20} />
+                      Send Message
+                      <Send size={20} />
                     </motion.button>
-
-                    <p className="text-xs text-gray-500 text-center">
-                      By signing up, you agree to our Terms of Service and Privacy Policy
-                    </p>
                   </form>
                 </div>
 
-                {/* Right - Features */}
-                <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-8 md:p-12 flex flex-col justify-center">
-                  <h4 className="text-xl font-bold text-gray-900 mb-6">
-                    Everything you need to succeed:
-                  </h4>
+                {/* Right - Contact Info & Map */}
+                <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-8 md:p-12 flex flex-col justify-between">
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-6">
+                      Contact Information
+                    </h4>
 
-                  <div className="space-y-4">
-                    {features.map((feature, index) => (
-                      <motion.div
-                        key={index}
+                    <div className="space-y-5">
+                      <motion.a
+                        href="mailto:info@vondera.app"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.5 + index * 0.05 }}
-                        className="flex items-start gap-3"
+                        transition={{ delay: 0.3 }}
+                        className="flex items-start gap-4 group cursor-pointer"
                       >
-                        <div className="w-6 h-6 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Check size={16} className="text-white" />
+                        <div className="w-12 h-12 bg-gradient-to-br from-violet-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                          <Mail size={20} className="text-white" />
                         </div>
-                        <span className="text-gray-700 font-medium">{feature}</span>
-                      </motion.div>
-                    ))}
+                        <div>
+                          <div className="text-sm font-medium text-gray-500 mb-1">Email</div>
+                          <div className="text-gray-900 font-semibold group-hover:text-violet-600 transition-colors">
+                            info@vondera.app
+                          </div>
+                        </div>
+                      </motion.a>
+
+                      <motion.a
+                        href="tel:+201070068383"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                        className="flex items-start gap-4 group cursor-pointer"
+                      >
+                        <div className="w-12 h-12 bg-gradient-to-br from-violet-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                          <Phone size={20} className="text-white" />
+                        </div>
+                        <div>
+                          <div className="text-sm font-medium text-gray-500 mb-1">Phone</div>
+                          <div className="text-gray-900 font-semibold group-hover:text-violet-600 transition-colors">
+                            +20 10 70068383
+                          </div>
+                        </div>
+                      </motion.a>
+
+                      <motion.a
+                        href="https://www.google.com/maps?ll=30.028018,31.201973&z=15&t=m&hl=en&gl=US&mapclient=embed&cid=18276881079965047230"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                        className="flex items-start gap-4 group cursor-pointer"
+                      >
+                        <div className="w-12 h-12 bg-gradient-to-br from-violet-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                          <MapPin size={20} className="text-white" />
+                        </div>
+                        <div>
+                          <div className="text-sm font-medium text-gray-500 mb-1">Address</div>
+                          <div className="text-gray-900 font-semibold group-hover:text-violet-600 transition-colors">
+                            b5105 - Creativa Innovation Hub - Giza
+                          </div>
+                        </div>
+                      </motion.a>
+                    </div>
                   </div>
 
-                  <div className="mt-8 p-4 bg-white/60 backdrop-blur-sm rounded-xl border-2 border-violet-200">
-                    <p className="text-sm text-gray-700 text-center">
-                      <span className="font-bold text-violet-600">Special Offer:</span> Get 20% off your
-                      first 3 months when you sign up today!
-                    </p>
-                  </div>
+                  {/* Map Preview */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 }}
+                    className="mt-8"
+                  >
+                    <a
+                      href="https://www.google.com/maps?ll=30.028018,31.201973&z=15&t=m&hl=en&gl=US&mapclient=embed&cid=18276881079965047230"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
+                    >
+                      <div className="relative h-48 bg-gray-200">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.8!2d31.201973!3d30.028018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfd7a7e3e7e7e7e7e!2sCreativa%20Innovation%20Hub!5e0!3m2!1sen!2seg!4v1234567890"
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          className="grayscale group-hover:grayscale-0 transition-all duration-300"
+                        />
+                      </div>
+                    </a>
+                  </motion.div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Bottom Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="mt-16 text-center"
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              {[
-                { value: '10,000+', label: 'Active Stores' },
-                { value: '$50M+', label: 'Sales Processed' },
-                { value: '99.9%', label: 'Uptime' },
-                { value: '4.9/5', label: 'Customer Rating' },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.7 + index * 0.1 }}
-                  className="text-white"
-                >
-                  <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-sm md:text-base text-white/80">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Trust Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
-            className="mt-12 text-center"
-          >
-            <p className="text-white/80 text-sm mb-4">Trusted by leading brands in MENA</p>
-            <div className="flex justify-center items-center gap-8 flex-wrap opacity-60">
-              {['SSL Secure', 'PCI Compliant', 'GDPR Ready', 'ISO Certified'].map((badge, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg text-white text-sm font-medium"
-                >
-                  {badge}
-                </div>
-              ))}
             </div>
           </motion.div>
         </div>

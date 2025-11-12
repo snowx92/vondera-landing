@@ -77,7 +77,7 @@ export default function HeroSectionModern() {
 
   return (
     <section 
-      className="relative w-full overflow-hidden bg-gray-900 h-screen" 
+      className="relative w-full max-w-full overflow-x-hidden overflow-y-hidden bg-gray-900 h-screen" 
       style={{ 
         height: '110vh',
         minHeight: '110vh',
@@ -92,6 +92,7 @@ export default function HeroSectionModern() {
         muted
         playsInline
         preload="auto"
+        poster=""
         className="absolute inset-0 w-full h-full object-cover"
         onError={(e) => {
           console.error('Video error:', e);
@@ -127,23 +128,23 @@ export default function HeroSectionModern() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
       {/* Content - Full height container */}
-      <div className="relative h-full w-full flex flex-col justify-end px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
+      <div className="relative h-full w-full max-w-full flex flex-col justify-end px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
         {/* Main Content - Bottom Left and Right */}
-        <div className="w-full">
+        <div className="w-full max-w-full">
           {/* Animated Heading */}
-          <div className="mb-6 sm:mb-8 md:mb-10">
+          <div className="mb-6 sm:mb-8 md:mb-10 max-w-full overflow-hidden">
               {/* Static first line */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-1 sm:mb-2 leading-[1.05] tracking-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-1 sm:mb-2 leading-[1.05] tracking-tight break-words"
               >
                 Be the next
               </motion.h1>
 
               {/* Animated rotating text */}
-              <div className="relative" style={{ minHeight: '3.5rem' }}>
+              <div className="relative max-w-full overflow-hidden" style={{ minHeight: '3rem' }}>
                 <AnimatePresence mode="wait">
                   <motion.h2
                     key={currentPhraseIndex}
@@ -151,9 +152,9 @@ export default function HeroSectionModern() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.45, ease: [0.33, 1, 0.68, 1] }}
-                    className="absolute top-0 left-0 w-full text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight"
+                    className="absolute top-0 left-0 w-full max-w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.05] tracking-tight"
                   >
-                    <span className="flex flex-wrap gap-x-2 sm:gap-x-3 md:gap-x-4">
+                    <span className="flex flex-wrap gap-x-2 sm:gap-x-3 md:gap-x-4 break-words">
                       {rotatingPhrases[currentPhraseIndex].map((word, index) => (
                         <motion.span
                           key={`${currentPhraseIndex}-${index}`}
@@ -176,9 +177,9 @@ export default function HeroSectionModern() {
             </div>
 
             {/* Bottom Row: Subtitle & CTA on left, Link on right */}
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 sm:gap-8 w-full">
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 sm:gap-8 w-full max-w-full">
               {/* Left side: Subtitle and CTA */}
-              <div className="flex-1 max-w-md">
+              <div className="flex-1 max-w-full sm:max-w-md">
                 {/* Subtitle */}
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}

@@ -22,9 +22,7 @@
   }
 
   /* Hide default cursor */
-  * {
-    cursor: none !important;
-  }
+
 
   /* Keep text cursor for inputs */
   input,

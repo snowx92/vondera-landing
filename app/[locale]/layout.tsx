@@ -3,7 +3,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/request';
 import { Outfit } from 'next/font/google';
-import { SmoothCursor } from '@/components/ui/smooth-cursor';
+
 import '../globals.css';
 
 const outfit = Outfit({ 
@@ -43,8 +43,8 @@ export default async function LocaleLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={outfit.className}>
-        <div className="cursor-none">
-          <SmoothCursor />
+        <div >
+
           <NextIntlClientProvider messages={messages}>
             {children}
           </NextIntlClientProvider>

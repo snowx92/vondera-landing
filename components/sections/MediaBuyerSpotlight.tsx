@@ -181,17 +181,19 @@ export default function MediaBuyerSpotlight() {
               ))}
             </div>
 
-            <Button variant="primary" size="lg" className="group">
-              {t('cta')}
-              <svg
-                className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Button>
+            <a href="https://mediabuyers.vondera.app/" target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" size="lg" className="group">
+                {t('cta')}
+                <svg
+                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Button>
+            </a>
           </motion.div>
 
           {/* Right Content - Leaderboard */}

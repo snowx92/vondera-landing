@@ -557,14 +557,16 @@ export default function VFunnelPage() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              <motion.button 
-                className="px-12 py-5 bg-white text-purple-600 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-white/30 transition-all inline-flex items-center gap-3"
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Start Building Now
-                <ArrowRight className="w-6 h-6" />
-              </motion.button>
+              <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer">
+                <motion.button 
+                  className="px-12 py-5 bg-white text-purple-600 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-white/30 transition-all inline-flex items-center gap-3"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Start Building Now
+                  <ArrowRight className="w-6 h-6" />
+                </motion.button>
+              </a>
               <p className="text-sm mt-6 opacity-80">No credit card. No commitment. Just results.</p>
             </motion.div>
           </motion.div>

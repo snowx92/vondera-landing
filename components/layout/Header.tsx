@@ -27,7 +27,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
     {
       name: 'VPay',
       description: 'Integrated payment gateway for seamless transactions',
-      href: `/${locale}#vpay`,
+      href: `/${locale}/vpay`,
     },
     {
       name: 'VDomain',
@@ -37,7 +37,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
     {
       name: 'VFunnels',
       description: 'Create high-converting sales funnels',
-      href: `/${locale}#vfunnels`,
+      href: `/${locale}/vfunnel`,
     },
     {
       name: 'VMedia',
@@ -47,7 +47,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
     {
       name: 'VCommunity',
       description: 'Connect with merchants and grow together',
-      href: `/${locale}#vcommunity`,
+      href: `/${locale}/vcommunity`,
     },
     {
       name: 'VSupply',
@@ -216,18 +216,30 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
               <Globe size={18} />
               <span className="text-sm font-medium">{locale === 'en' ? 'AR' : 'EN'}</span>
             </button>
-            <Button 
-              variant={shouldBeWhite ? "ghost" : "outline"} 
-              size="sm"
-              className={cn(
-                !shouldBeWhite && "text-white border-white hover:bg-white/10"
-              )}
+            <a 
+              href="https://dashboard.vondera.app/dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {t('login')}
-            </Button>
-            <Button variant="primary" size="sm">
-              {t('signup')}
-            </Button>
+              <Button 
+                variant={shouldBeWhite ? "ghost" : "outline"} 
+                size="sm"
+                className={cn(
+                  !shouldBeWhite && "text-white border-white hover:bg-white/10"
+                )}
+              >
+                {t('login')}
+              </Button>
+            </a>
+            <a 
+              href="https://dashboard.vondera.app/dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="primary" size="sm">
+                {t('signup')}
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -323,12 +335,26 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
                   <Globe size={18} />
                   <span>{locale === 'en' ? 'العربية' : 'English'}</span>
                 </button>
-                <Button variant="ghost" size="sm" className="w-full">
-                  {t('login')}
-                </Button>
-                <Button variant="primary" size="sm" className="w-full">
-                  {t('signup')}
-                </Button>
+                <a 
+                  href="https://dashboard.vondera.app/dashboard"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  <Button variant="ghost" size="sm" className="w-full">
+                    {t('login')}
+                  </Button>
+                </a>
+                <a 
+                  href="https://dashboard.vondera.app/dashboard"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  <Button variant="primary" size="sm" className="w-full">
+                    {t('signup')}
+                  </Button>
+                </a>
               </div>
             </nav>
           </div>

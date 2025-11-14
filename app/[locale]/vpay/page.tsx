@@ -496,10 +496,12 @@ export default function VPayPage() {
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               Join thousands of businesses using VPay for their payment needs
             </p>
-            <button className="px-10 py-4 bg-white text-primary-600 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all">
-              Start Free Trial
-              <ArrowRight className="inline-block ml-2 w-5 h-5" />
-            </button>
+            <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer">
+              <button className="px-10 py-4 bg-white text-primary-600 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all">
+                Start Free Trial
+                <ArrowRight className="inline-block ml-2 w-5 h-5" />
+              </button>
+            </a>
           </motion.div>
         </Container>
       </section>

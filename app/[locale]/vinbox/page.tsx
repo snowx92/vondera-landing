@@ -360,10 +360,12 @@ export default function VInboxPage() {
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               Try VInbox free for 14 days. Connect all your platforms in 2 minutes.
             </p>
-            <button className="px-12 py-5 bg-white text-primary-600 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
-              Start Free Trial
-              <ArrowRight className="inline-block ml-2 w-5 h-5" />
-            </button>
+            <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer">
+              <button className="px-12 py-5 bg-white text-primary-600 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+                Start Free Trial
+                <ArrowRight className="inline-block ml-2 w-5 h-5" />
+              </button>
+            </a>
             <p className="text-sm mt-4 opacity-75">Free forever for up to 100 conversations/month</p>
           </motion.div>
         </Container>

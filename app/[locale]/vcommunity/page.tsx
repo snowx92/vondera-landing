@@ -472,10 +472,12 @@ export default function VCommunityPage() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <button className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
-              View All Discussions
-              <ArrowRight className="inline-block ml-2 w-5 h-5" />
-            </button>
+            <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer">
+              <button className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+                View All Discussions
+                <ArrowRight className="inline-block ml-2 w-5 h-5" />
+              </button>
+            </a>
           </motion.div>
         </Container>
       </section>

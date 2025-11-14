@@ -480,10 +480,12 @@ export default function VMediaPage() {
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               Join VMedia today and connect with top merchants
             </p>
-            <button className="px-10 py-4 bg-white text-primary-600 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all">
-              Get Started Free
-              <ArrowRight className="inline-block ml-2 w-5 h-5" />
-            </button>
+            <a href="https://mediabuyers.vondera.app/" target="_blank" rel="noopener noreferrer">
+              <button className="px-10 py-4 bg-white text-primary-600 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all">
+                Get Started Free
+                <ArrowRight className="inline-block ml-2 w-5 h-5" />
+              </button>
+            </a>
           </motion.div>
         </Container>
       </section>

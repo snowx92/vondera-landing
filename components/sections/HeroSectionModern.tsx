@@ -77,7 +77,7 @@ export default function HeroSectionModern() {
 
   return (
     <section 
-      className="relative w-full max-w-full overflow-x-hidden overflow-y-hidden bg-gray-900 h-screen" 
+      className="relative w-full overflow-hidden bg-gray-900" 
       style={{ 
         height: '110vh',
         minHeight: '110vh',
@@ -94,6 +94,12 @@ export default function HeroSectionModern() {
         preload="auto"
         poster=""
         className="absolute inset-0 w-full h-full object-cover"
+        style={{ 
+          opacity: videoError ? 0 : 1, 
+          transition: 'opacity 0.3s',
+          objectFit: 'cover',
+          objectPosition: 'center'
+        }}
         onError={(e) => {
           console.error('Video error:', e);
           setVideoError(true);
@@ -104,7 +110,6 @@ export default function HeroSectionModern() {
             videoRef.current.play().catch(err => console.error('Play failed:', err));
           }
         }}
-        style={{ opacity: videoError ? 0 : 1, transition: 'opacity 0.3s' }}
       >
         {/* Primary source from public directory */}
         <source src="/video.webm" type="video/webm" />
@@ -113,38 +118,27 @@ export default function HeroSectionModern() {
         <source src="https://cdn.coverr.co/videos/coverr-woman-working-on-laptop-4646/1080p.mp4" type="video/mp4" />
       </video>
 
-      {/* Fallback background image if video fails */}
-      {videoError && (
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{ 
-            backgroundImage: 'url(https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1920)',
-            filter: 'brightness(0.65)'
-          }}
-        />
-      )}
-
       {/* Dark overlay for better text contrast */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
       {/* Content - Full height container */}
-      <div className="relative h-full w-full max-w-full flex flex-col justify-end px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
+      <div className="relative h-full w-full flex flex-col justify-end px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
         {/* Main Content - Bottom Left and Right */}
-        <div className="w-full max-w-full">
+        <div className="w-full">
           {/* Animated Heading */}
-          <div className="mb-6 sm:mb-8 md:mb-10 max-w-full">
+          <div className="mb-6 sm:mb-8 md:mb-10">
               {/* Static first line */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-1 sm:mb-2 leading-[1.05] tracking-tight break-words"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-1 sm:mb-2 leading-tight tracking-tight"
               >
                 Be the next
               </motion.h1>
 
               {/* Animated rotating text */}
-              <div className="relative max-w-full" style={{ minHeight: '4rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
+              <div className="relative" style={{ minHeight: '3rem' }}>
                 <AnimatePresence mode="wait">
                   <motion.h2
                     key={currentPhraseIndex}
@@ -152,7 +146,7 @@ export default function HeroSectionModern() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.45, ease: [0.33, 1, 0.68, 1] }}
-                    className="absolute top-0 left-0 w-full max-w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.2] tracking-tight"
+                    className="absolute top-0 left-0 w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight"
                   >
                     <span className="flex flex-wrap gap-x-2 sm:gap-x-3 md:gap-x-4 break-words">
                       {rotatingPhrases[currentPhraseIndex].map((word, index) => (
@@ -185,7 +179,7 @@ export default function HeroSectionModern() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
-                  className="text-base sm:text-lg md:text-xl text-white/95 mb-6 sm:mb-8 leading-relaxed"
+                  className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-6 sm:mb-8 leading-relaxed"
                 >
                   Dream big, build fast, and grow far on Vondera.
                 </motion.p>
@@ -196,9 +190,15 @@ export default function HeroSectionModern() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3, ease: [0.33, 1, 0.68, 1] }}
                 >
-                  <button className="px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-gray-900 rounded-lg font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors shadow-xl">
-                    Start for free
-                  </button>
+                  <a 
+                    href="https://dashboard.vondera.app/dashboard" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <button className="px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-gray-900 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-gray-100 transition-colors shadow-xl">
+                      Start for free
+                    </button>
+                  </a>
                 </motion.div>
               </div>
 

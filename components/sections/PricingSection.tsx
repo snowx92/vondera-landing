@@ -116,20 +116,20 @@ export default function PricingSection() {
             </p>
 
             {/* Billing Period Selector */}
-            <div className="inline-flex bg-gray-200 rounded-xl p-1 mb-8">
+            <div className="inline-flex flex-wrap bg-gray-200 rounded-xl p-1 mb-8 gap-1 max-w-full">
               {(['monthly', '3months', '6months', 'yearly'] as const).map((period) => (
                 <button
                   key={period}
                   onClick={() => setBillingPeriod(period)}
-                  className={`px-6 py-2 rounded-lg font-medium transition-all ${
+                  className={`px-3 sm:px-6 py-2 rounded-lg font-medium transition-all text-xs sm:text-sm md:text-base ${
                     billingPeriod === period
                       ? 'bg-white text-primary-600 shadow-sm'
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
-                  {getBillingLabel(period)}
+                  <span className="whitespace-nowrap">{getBillingLabel(period)}</span>
                   {period !== 'monthly' && (
-                    <span className="ml-2 text-xs text-green-600 font-semibold">
+                    <span className="ml-1 sm:ml-2 text-xs text-green-600 font-semibold block sm:inline">
                       {getSavings(period, 700, plans[1].prices[period])}
                     </span>
                   )}
@@ -140,7 +140,7 @@ export default function PricingSection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-16 px-4 sm:px-0">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -150,7 +150,7 @@ export default function PricingSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={plan.popular ? 'md:-mt-4' : ''}
             >
-              <div className={`relative h-full bg-white rounded-2xl shadow-lg p-8 ${
+              <div className={`relative h-full bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 ${
                 plan.popular ? 'border-2 border-primary-500 shadow-xl' : 'border border-gray-200'
               }`}>
                 {plan.popular && (
@@ -162,32 +162,32 @@ export default function PricingSection() {
                 )}
                 
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
-                  <div className="mb-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">{plan.name}</h3>
+                  <div className="mb-4 sm:mb-6">
                     {billingPeriod === 'monthly' ? (
                       <>
-                        <div className="text-5xl font-bold text-gray-900">
+                        <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
                           {plan.prices[billingPeriod]}
-                          <span className="text-lg text-gray-500 font-normal"> EGP</span>
+                          <span className="text-sm sm:text-base md:text-lg text-gray-500 font-normal"> EGP</span>
                         </div>
-                        <div className="text-sm text-gray-500 mt-2">per month</div>
+                        <div className="text-xs sm:text-sm text-gray-500 mt-2">per month</div>
                       </>
                     ) : (
                       <>
                         {/* Monthly Equivalent as Main Price */}
-                        <div className="text-5xl font-bold text-gray-900">
+                        <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
                           {(() => {
                             const months = billingPeriod === '3months' ? 3 : billingPeriod === '6months' ? 6 : 12;
                             const monthlyEquivalent = Math.round(plan.prices[billingPeriod] / months);
                             return monthlyEquivalent;
                           })()}
-                          <span className="text-lg text-gray-500 font-normal"> EGP</span>
+                          <span className="text-sm sm:text-base md:text-lg text-gray-500 font-normal"> EGP</span>
                         </div>
-                        <div className="text-sm text-gray-500 mt-1">per month</div>
+                        <div className="text-xs sm:text-sm text-gray-500 mt-1">per month</div>
                         
                         {/* Package Price & Savings */}
-                        <div className="mt-3 space-y-1.5">
-                          <div className="text-base text-gray-600">
+                        <div className="mt-2 sm:mt-3 space-y-1 sm:space-y-1.5">
+                          <div className="text-sm sm:text-base text-gray-600">
                             {plan.prices[billingPeriod]} EGP {
                               billingPeriod === '3months' ? 'every 3 months' :
                               billingPeriod === '6months' ? 'every 6 months' : 'per year'
@@ -209,13 +209,15 @@ export default function PricingSection() {
                     )}
                   </div>
                   
-                  <Button 
-                    variant={plan.popular ? 'primary' : 'outline'}
-                    size="lg"
-                    className="w-full"
-                  >
-                    Get Started
-                  </Button>
+                  <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer" className="w-full">
+                    <Button 
+                      variant={plan.popular ? 'primary' : 'outline'}
+                      size="lg"
+                      className="w-full"
+                    >
+                      Get Started
+                    </Button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -228,22 +230,22 @@ export default function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="max-w-6xl mx-auto"
+          className="max-w-6xl mx-auto px-4 sm:px-0"
         >
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
                   <tr className="bg-gradient-to-r from-primary-50 to-violet-50 border-b-2 border-primary-200">
-                    <th className="py-5 px-6 text-left text-base font-bold text-gray-900 sticky left-0 bg-gradient-to-r from-primary-50 to-violet-50 z-10">
+                    <th className="py-3 sm:py-5 px-3 sm:px-6 text-left text-sm sm:text-base font-bold text-gray-900 sticky left-0 bg-gradient-to-r from-primary-50 to-violet-50 z-10 min-w-[200px] sm:min-w-0">
                       Features Comparison
                     </th>
                     {plans.map((plan, idx) => (
-                      <th key={plan.name} className={`py-5 px-6 text-center ${
+                      <th key={plan.name} className={`py-3 sm:py-5 px-2 sm:px-6 text-center min-w-[80px] sm:min-w-[120px] ${
                         plan.popular ? 'bg-primary-100/50' : ''
                       }`}>
                         <div className="flex flex-col items-center gap-1">
-                          <span className="text-base font-bold text-gray-900">{plan.name}</span>
+                          <span className="text-sm sm:text-base font-bold text-gray-900">{plan.name}</span>
                           {plan.popular && (
                             <Badge variant="success" className="text-xs px-2">
                               Popular
@@ -259,15 +261,15 @@ export default function PricingSection() {
                     <tr key={index} className={`transition-all duration-200 ${
                       index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
                     } hover:bg-primary-50/30 hover:shadow-sm`}>
-                      <td className={`py-4 px-6 text-sm font-medium text-gray-800 sticky left-0 z-10 ${
+                      <td className={`py-2 sm:py-4 px-3 sm:px-6 text-xs sm:text-sm font-medium text-gray-800 sticky left-0 z-10 ${
                         index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
                       } hover:bg-primary-50/30`}>
                         <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary-400"></div>
-                          {feature.name}
+                          <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-primary-400"></div>
+                          <span className="line-clamp-2">{feature.name}</span>
                         </div>
                       </td>
-                      <td className={`py-4 px-6 text-center text-sm ${
+                      <td className={`py-2 sm:py-4 px-2 sm:px-6 text-center text-xs sm:text-sm ${
                         plans[0].popular ? 'bg-primary-50/20' : ''
                       }`}>
                         {typeof feature.starter === 'boolean' ? (

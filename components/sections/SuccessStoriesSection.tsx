@@ -234,9 +234,11 @@ export default function SuccessStoriesSection() {
           <p className="text-gray-600 text-lg mb-6">
             Join thousands of successful merchants growing with Vondera
           </p>
-          <button className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">
-            Start Your Success Story
-          </button>
+          <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer">
+            <button className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all">
+              Start Your Success Story
+            </button>
+          </a>
         </motion.div>
       </Container>
     </section>

@@ -9,13 +9,19 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 
-export default function Header() {
+interface HeaderProps {
+  variant?: 'transparent' | 'solid';
+}
+
+export default function Header({ variant = 'transparent' }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSolutionOpen, setIsSolutionOpen] = useState(false);
   const locale = useLocale();
   const t = useTranslations('nav');
   const isRTL = locale === 'ar';
+
+  const isSolidVariant = variant === 'solid';
 
   const products = [
     {
@@ -70,11 +76,14 @@ export default function Header() {
     window.location.href = `/${newLocale}`;
   };
 
+  // Determine if we should show solid background
+  const shouldBeWhite = isSolidVariant || isScrolled;
+
   return (
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out',
-        isScrolled 
+        shouldBeWhite
           ? 'bg-white/95 backdrop-blur-lg shadow-md' 
           : 'bg-transparent before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-b before:from-black/20 before:to-transparent before:pointer-events-none'
       )}
@@ -94,7 +103,7 @@ export default function Header() {
             />
             <span className={cn(
               "text-xl md:text-2xl font-bold font-outfit transition-colors duration-300",
-              isScrolled ? "gradient-text" : "text-white"
+              shouldBeWhite ? "gradient-text" : "text-white"
             )}>Vondera</span>
           </Link>
 
@@ -104,7 +113,7 @@ export default function Header() {
               href={`/${locale}#why-vondera`} 
               className={cn(
                 "transition-colors duration-300 hover:text-primary-500",
-                isScrolled ? "text-gray-700" : "text-white"
+                shouldBeWhite ? "text-gray-700" : "text-white"
               )}
             >
               Why Vondera
@@ -119,7 +128,7 @@ export default function Header() {
               <button
                 className={cn(
                   "flex items-center gap-1 transition-colors duration-300 hover:text-primary-500",
-                  isScrolled ? "text-gray-700" : "text-white"
+                  shouldBeWhite ? "text-gray-700" : "text-white"
                 )}
               >
                 Solution
@@ -170,7 +179,7 @@ export default function Header() {
               href={`/${locale}/vmedia`} 
               className={cn(
                 "font-semibold transition-colors duration-300",
-                isScrolled ? "text-vmedia-600 hover:text-vmedia-700" : "text-white hover:text-vmedia-400"
+                shouldBeWhite ? "text-vmedia-600 hover:text-vmedia-700" : "text-white hover:text-vmedia-400"
               )}
             >
               Media Buyers
@@ -179,7 +188,7 @@ export default function Header() {
               href={`/${locale}#pricing`} 
               className={cn(
                 "transition-colors duration-300 hover:text-primary-500",
-                isScrolled ? "text-gray-700" : "text-white"
+                shouldBeWhite ? "text-gray-700" : "text-white"
               )}
             >
               Pricing
@@ -188,7 +197,7 @@ export default function Header() {
               href={`/${locale}/about`} 
               className={cn(
                 "transition-colors duration-300 hover:text-primary-500",
-                isScrolled ? "text-gray-700" : "text-white"
+                shouldBeWhite ? "text-gray-700" : "text-white"
               )}
             >
               About
@@ -201,17 +210,17 @@ export default function Header() {
               onClick={toggleLanguage}
               className={cn(
                 "flex items-center space-x-1 transition-colors duration-300 hover:text-primary-500",
-                isScrolled ? "text-gray-700" : "text-white"
+                shouldBeWhite ? "text-gray-700" : "text-white"
               )}
             >
               <Globe size={18} />
               <span className="text-sm font-medium">{locale === 'en' ? 'AR' : 'EN'}</span>
             </button>
             <Button 
-              variant={isScrolled ? "ghost" : "outline"} 
+              variant={shouldBeWhite ? "ghost" : "outline"} 
               size="sm"
               className={cn(
-                !isScrolled && "text-white border-white hover:bg-white/10"
+                !shouldBeWhite && "text-white border-white hover:bg-white/10"
               )}
             >
               {t('login')}
@@ -226,7 +235,7 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={cn(
               "lg:hidden p-2 transition-colors duration-300 hover:text-primary-500",
-              isScrolled ? "text-gray-700" : "text-white"
+              shouldBeWhite ? "text-gray-700" : "text-white"
             )}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

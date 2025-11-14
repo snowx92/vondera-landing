@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import AnnouncementBanner from '@/components/layout/AnnouncementBanner';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSectionModern from '@/components/sections/HeroSectionModern';
@@ -9,7 +8,6 @@ import ProductDemoSection from '@/components/sections/ProductDemoSection';
 import SubProductsSection from '@/components/sections/SubProductsSection';
 import ComparisonSection from '@/components/sections/ComparisonSection';
 import MediaBuyerSpotlight from '@/components/sections/MediaBuyerSpotlight';
-import SuccessStoriesSection from '@/components/sections/SuccessStoriesSection';
 import SocialProofSection from '@/components/sections/SocialProofSection';
 import MobileAppsSection from '@/components/sections/MobileAppsSection';
 import PricingSection from '@/components/sections/PricingSection';
@@ -45,7 +43,7 @@ export default function HomePage() {
         <SubProductsSection />
         <ComparisonSection />
         <MediaBuyerSpotlight />
-        <SuccessStoriesSection />
+
         <SocialProofSection />
 
         <MobileAppsSection />

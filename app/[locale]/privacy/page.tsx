@@ -12,122 +12,54 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   const sections = [
     {
-      title: '1. Information We Collect',
-      content: `We collect information you provide directly to us when you create an account, make a purchase, or communicate with us. This includes:
-
-• Name, email address, and contact information
-• Payment information (processed securely through our payment partners)
-• Store information and business details
-• Product listings and inventory data
-• Customer data you input into our platform
-• Usage data and analytics
-• Communications with our support team`,
+      title: '1. Description of Service',
+      content: `This website operates an online service engaged in Human Hair business operations. The Terms of Use Agreement set forth the legally binding terms for your use of the Website. By using the Website in any manner, including but not limited to visiting or browsing the Website, you agree to be bound by this Agreement all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.`,
     },
     {
-      title: '2. How We Use Your Information',
-      content: `We use the information we collect to:
-
-• Provide, maintain, and improve our services
-• Process transactions and send related information
-• Send you technical notices and support messages
-• Respond to your comments and questions
-• Monitor and analyze trends and usage
-• Detect, prevent, and address technical issues
-• Personalize and improve your experience
-• Send you marketing communications (with your consent)`,
+      title: '2. General Information',
+      content: `When you register with us and/or place an order, you will be asked to provide certain information, such as your name, email address, and contact details. You agree that any information you provide will always be accurate, correct, and up to date.`,
     },
     {
-      title: '3. Information Sharing',
-      content: `We do not sell, trade, or rent your personal information to third parties. We may share your information with:
-
-• Service providers who assist in our operations (payment processors, hosting providers, email services)
-• VMedia media buyers (only the information necessary for order fulfillment)
-• Legal authorities when required by law
-• With your consent or at your direction`,
+      title: '3. Usage Information',
+      content: `We collect information on how you use our services, such as the types of content you view or engage with, the features you use, the actions you take, and the time, frequency, and duration of your activities.`,
     },
     {
-      title: '4. Data Security',
-      content: `We take data security seriously and implement appropriate technical and organizational measures to protect your data:
-
-• 256-bit SSL encryption for all data transmission
-• Encrypted data storage
-• Regular security audits and penetration testing
-• Access controls and authentication
-• Employee training on data protection
-• Incident response procedures
-
-While we strive to protect your data, no method of transmission over the Internet is 100% secure.`,
+      title: '4. Device Information',
+      content: `We collect information from and about the devices you use to access our services, including hardware and software information such as IP address, device ID and type, device-specific settings and characteristics, app crashes, browser type.`,
     },
     {
-      title: '5. Data Retention',
-      content: `We retain your information for as long as your account is active or as needed to provide you services. We will retain and use your information as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements.
-
-Upon account deletion, we will delete or anonymize your personal data within 30 days, except where we are required to retain it by law.`,
+      title: '5. How We Use Your Information',
+      content: `We use the information we collect to provide, personalize, and improve our products and services. This includes using the information to customize the ads and content you see, and provide recommendations.`,
     },
     {
-      title: '6. Your Rights',
-      content: `Depending on your location, you may have the following rights regarding your personal data:
-
-• Access: Request a copy of your personal data
-• Rectification: Correct inaccurate or incomplete data
-• Erasure: Request deletion of your data
-• Restriction: Limit how we use your data
-• Portability: Receive your data in a portable format
-• Object: Object to processing of your data
-• Withdraw consent: Withdraw consent for data processing
-
-To exercise these rights, please contact us at privacy@vondera.com`,
+      title: '6. Providing Services',
+      content: `We use your information to fulfill requests for products, services, support, or information, and to process transactions. We may use your information to contact you about your account, security updates, product information, and other service-related issues.`,
     },
     {
-      title: '7. Cookies and Tracking',
-      content: `We use cookies and similar tracking technologies to:
-
-• Keep you signed in
-• Remember your preferences
-• Understand how you use our platform
-• Improve our services
-• Provide relevant advertising
-
-You can control cookies through your browser settings. However, disabling cookies may limit your ability to use certain features.`,
+      title: '7. Personalization',
+      content: `We use your information to personalize your experience, including displaying content or features that might be more relevant or interesting to you.`,
     },
     {
-      title: '8. Third-Party Services',
-      content: `Our platform integrates with third-party services (payment gateways, shipping providers, social media platforms). These services have their own privacy policies. We are not responsible for their privacy practices.
+      title: '8. Communication',
+      content: `We may use your information to communicate with you, such as responding to your comments, questions, and requests. We may also send you technical notices, security alerts, support and administrative messages.`,
+    },
+    {
+      title: '9. Legal Compliance',
+      content: `We may use your information as we believe necessary or appropriate to comply with applicable laws, lawful requests and legal processes, such as to respond to subpoenas or requests from government authorities.`,
+    },
+    {
+      title: '10. Data Security',
+      content: `We implement appropriate technical and organizational measures to protect the security of any personal information we process. However, please also remember that we cannot guarantee that the internet itself is 100% secure.`,
+    },
+    {
+      title: '11. Terms & Conditions',
+      content: `By accessing this website, you are agreeing to be bound by these website Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.`,
+    },
+    {
+      title: 'Contact Us',
+      content: `If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please don't hesitate to reach out to us.
 
-We encourage you to review the privacy policies of any third-party services you use through our platform.`,
-    },
-    {
-      title: '9. International Data Transfers',
-      content: `Your information may be transferred to and processed in countries other than your own. These countries may have different data protection laws. We ensure appropriate safeguards are in place to protect your data in accordance with this privacy policy.`,
-    },
-    {
-      title: "10. Children's Privacy",
-      content: `Our Service is not intended for users under the age of 18. We do not knowingly collect personal information from children under 18. If you become aware that a child has provided us with personal information, please contact us.`,
-    },
-    {
-      title: '11. GDPR Compliance',
-      content: `For users in the European Economic Area (EEA), we comply with GDPR requirements:
-
-• Lawful basis for processing your data
-• Data protection by design and default
-• Data Protection Impact Assessments when required
-• Appointment of a Data Protection Officer
-• Compliance with data subject rights
-• Data breach notification procedures`,
-    },
-    {
-      title: '12. Changes to Privacy Policy',
-      content: `We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date. We encourage you to review this privacy policy periodically.`,
-    },
-    {
-      title: '13. Contact Us',
-      content: `If you have questions about this privacy policy or our data practices, please contact us:
-
-Email: privacy@vondera.com
-Data Protection Officer: dpo@vondera.com
-Address: Cairo, Egypt
-
-For GDPR-related inquiries, please specify "GDPR Request" in your subject line.`,
+info@vondera.app`,
     },
   ];
 
@@ -138,7 +70,7 @@ For GDPR-related inquiries, please specify "GDPR Request" in your subject line.`
       <main className="min-h-screen">
         <LegalContent
           title="Privacy Policy"
-          lastUpdated="January 1, 2024"
+          lastUpdated="July 3, 2022"
           sections={sections}
         />
       </main>

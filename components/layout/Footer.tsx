@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, ArrowUpRight, Sparkles } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 
 export default function Footer() {
@@ -27,10 +28,11 @@ export default function Footer() {
   ];
 
   const products = [
-    { name: 'VPay', href: `/${locale}#vpay` },
-    { name: 'VDomain', href: `/${locale}#vdomain` },
-    { name: 'VFunnels', href: `/${locale}#vfunnels` },
-    { name: 'VCommunity', href: `/${locale}#vcommunity` },
+    { name: 'VPay', href: `/${locale}/vpay` },
+    { name: 'VMedia', href: `/${locale}/vmedia` },
+    { name: 'VInbox', href: `/${locale}/vinbox` },
+    { name: 'VFunnel', href: `/${locale}/vfunnel` },
+    { name: 'VCommunity', href: `/${locale}/vcommunity` },
     { name: 'VSupply', href: '#', comingSoon: true },
     { name: 'VShip', href: '#', comingSoon: true },
     { name: 'VStore', href: '#', comingSoon: true },
@@ -71,46 +73,72 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-950 via-black to-gray-950 text-gray-300 border-t border-gray-800/50" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-500/5 via-transparent to-secondary-500/5 pointer-events-none" />
+    <footer className="relative bg-gradient-to-b from-gray-950 via-gray-900 to-black text-gray-300 overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Gradient Orbs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-600/5 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* Top Border Gradient */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
       
       <Container>
         {/* Main Footer Content */}
         <div className="relative py-16 md:py-20">
           {/* Top Section - Logo & Description */}
-          <div className="mb-12 pb-12 border-b border-gray-800/50">
-            <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-              <div className="max-w-md">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 via-primary-600 to-secondary-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
-                    <span className="text-white font-bold text-2xl">V</span>
+          <div className="mb-16 pb-12 border-b border-gray-800/50">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div className="max-w-lg">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-2xl blur-md opacity-75 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                      <Image 
+                        src="/logo.webp" 
+                        alt="Vondera Logo" 
+                        width={56} 
+                        height={56}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                   </div>
-                  <span className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Vondera</span>
+                  <span className="text-3xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">Vondera</span>
                 </div>
-                <p className="text-gray-400 leading-relaxed">
-                  The all-in-one e-commerce platform empowering businesses to grow, scale, and succeed in the digital marketplace.
+                <p className="text-gray-400 leading-relaxed text-lg mb-6">
+                  The all-in-one e-commerce platform empowering Egyptian businesses to grow, scale, and succeed in the digital marketplace.
                 </p>
+                <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <span>Trusted by 10,000+ merchants</span>
+                </div>
               </div>
               
               {/* Social Links - Top Right */}
-              <div>
-                <h4 className="text-white font-semibold mb-4">Connect With Us</h4>
-                <div className="flex flex-wrap gap-3">
+              <div className="lg:text-right">
+                <h4 className="text-white font-bold mb-6 text-lg flex items-center gap-2 lg:justify-end">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"></span>
+                  Connect With Us
+                </h4>
+                <div className="flex flex-wrap gap-3 lg:justify-end">
                   {socialLinks.map((social) => (
                     social.comingSoon ? (
-                      <button
+                      <div
                         key={social.name}
-                        disabled
-                        className="w-11 h-11 bg-gray-800/50 rounded-xl flex items-center justify-center opacity-40 cursor-not-allowed border border-gray-700/50"
-                        aria-label={`${social.name} (Coming Soon)`}
+                        className="relative group"
                       >
-                        {social.svg && (
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <g dangerouslySetInnerHTML={{ __html: social.svg }} />
-                          </svg>
-                        )}
-                      </button>
+                        <div className="w-12 h-12 bg-gray-800/50 rounded-xl flex items-center justify-center opacity-40 cursor-not-allowed border border-gray-700/50">
+                          {social.svg && (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <g dangerouslySetInnerHTML={{ __html: social.svg }} />
+                            </svg>
+                          )}
+                        </div>
+                        <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-gray-400 text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                          Coming Soon
+                        </span>
+                      </div>
                     ) : (
                       <a
                         key={social.name}
@@ -118,15 +146,21 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={social.name}
-                        className="group w-11 h-11 bg-gray-800/50 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-primary-500 hover:to-secondary-500 transition-all duration-300 border border-gray-700/50 hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/20 hover:scale-110"
+                        className="relative group"
                       >
-                        {social.icon ? (
-                          <social.icon size={20} className="group-hover:scale-110 transition-transform" />
-                        ) : social.svg ? (
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="group-hover:scale-110 transition-transform">
-                            <g dangerouslySetInnerHTML={{ __html: social.svg }} />
-                          </svg>
-                        ) : null}
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-xl opacity-0 group-hover:opacity-100 blur transition-opacity"></div>
+                        <div className="relative w-12 h-12 bg-gray-800/80 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-gray-700/80 transition-all border border-gray-700/50 group-hover:border-purple-500/50 transform group-hover:scale-110 group-hover:-translate-y-1">
+                          {social.icon ? (
+                            <social.icon size={20} className="transition-transform" />
+                          ) : social.svg ? (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="transition-transform">
+                              <g dangerouslySetInnerHTML={{ __html: social.svg }} />
+                            </svg>
+                          ) : null}
+                        </div>
+                        <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                          {social.name}
+                        </span>
                       </a>
                     )
                   ))}
@@ -136,22 +170,22 @@ export default function Footer() {
           </div>
 
           {/* Links Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
             {/* Sections */}
             <div>
-              <h4 className="text-white font-semibold mb-5 text-lg relative inline-block">
+              <h4 className="text-white font-bold mb-6 text-base flex items-center gap-2">
+                <span className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
                 Sections
-                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 -mb-2"></span>
               </h4>
-              <ul className="space-y-3.5">
+              <ul className="space-y-3">
                 {sections.map((link) => (
                   <li key={link.name}>
                     <Link 
                       href={link.href} 
-                      className="group inline-flex items-center gap-2 text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                      className="group inline-flex items-center gap-2 text-gray-400 hover:text-white transition-all duration-300"
                     >
-                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-primary-400 transition-colors"></span>
-                      {link.name}
+                      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
+                      <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
                     </Link>
                   </li>
                 ))}
@@ -160,43 +194,45 @@ export default function Footer() {
 
             {/* Pages */}
             <div>
-              <h4 className="text-white font-semibold mb-5 text-lg relative inline-block">
+              <h4 className="text-white font-bold mb-6 text-base flex items-center gap-2">
+                <span className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
                 Pages
-                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 -mb-2"></span>
               </h4>
-              <ul className="space-y-3.5">
+              <ul className="space-y-3">
                 {pages.map((link) => (
                   <li key={link.name}>
                     <Link 
                       href={link.href} 
-                      className="group inline-flex items-center gap-2 text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                      className="group inline-flex items-center gap-2 text-gray-400 hover:text-white transition-all duration-300"
                     >
-                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-primary-400 transition-colors"></span>
-                      {link.name}
+                      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
+                      <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Product */}
-            <div>
-              <h4 className="text-white font-semibold mb-5 text-lg relative inline-block">
-                Product
-                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 -mb-2"></span>
+            {/* Products */}
+            <div className="col-span-2 md:col-span-1">
+              <h4 className="text-white font-bold mb-6 text-base flex items-center gap-2">
+                <span className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
+                Products
               </h4>
-              <ul className="space-y-3.5">
+              <ul className="space-y-3">
                 {products.map((link) => (
                   <li key={link.name}>
                     <Link 
                       href={link.href} 
-                      className="group inline-flex items-center gap-2 text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                      className="group inline-flex items-center gap-2 text-gray-400 hover:text-white transition-all duration-300"
                     >
-                      <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-primary-400 transition-colors"></span>
-                      <span>
+                      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" />
+                      <span className="group-hover:translate-x-1 transition-transform">
                         {link.name}
                         {link.comingSoon && (
-                          <span className="ml-2 text-xs px-2 py-0.5 rounded-full bg-gray-800/80 text-gray-500 border border-gray-700/50">Soon</span>
+                          <span className="ml-2 text-[10px] px-2 py-0.5 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30">
+                            Soon
+                          </span>
                         )}
                       </span>
                     </Link>
@@ -206,32 +242,38 @@ export default function Footer() {
             </div>
 
             {/* Contact Us */}
-            <div>
-              <h4 className="text-white font-semibold mb-5 text-lg relative inline-block">
+            <div className="col-span-2">
+              <h4 className="text-white font-bold mb-6 text-base flex items-center gap-2">
+                <span className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
                 Contact Us
-                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 -mb-2"></span>
               </h4>
               <ul className="space-y-4">
                 <li>
                   <a
                     href="mailto:info@vondera.app"
-                    className="group flex items-start gap-3 text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                    className="group flex items-start gap-3 text-gray-400 hover:text-white transition-all duration-300"
                   >
-                    <div className="w-9 h-9 bg-gray-800/50 rounded-lg flex items-center justify-center group-hover:bg-primary-500/10 border border-gray-700/50 group-hover:border-primary-500/30 transition-all flex-shrink-0">
-                      <Mail size={16} />
+                    <div className="w-10 h-10 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:from-purple-500/20 group-hover:to-pink-500/20 border border-gray-700/50 group-hover:border-purple-500/50 transition-all flex-shrink-0">
+                      <Mail size={18} />
                     </div>
-                    <span className="leading-9 text-sm">info@vondera.app</span>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-0.5">Email</div>
+                      <span className="text-sm font-medium">info@vondera.app</span>
+                    </div>
                   </a>
                 </li>
                 <li>
                   <a
                     href="tel:+201070068383"
-                    className="group flex items-start gap-3 text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                    className="group flex items-start gap-3 text-gray-400 hover:text-white transition-all duration-300"
                   >
-                    <div className="w-9 h-9 bg-gray-800/50 rounded-lg flex items-center justify-center group-hover:bg-primary-500/10 border border-gray-700/50 group-hover:border-primary-500/30 transition-all flex-shrink-0">
-                      <Phone size={16} />
+                    <div className="w-10 h-10 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:from-purple-500/20 group-hover:to-pink-500/20 border border-gray-700/50 group-hover:border-purple-500/50 transition-all flex-shrink-0">
+                      <Phone size={18} />
                     </div>
-                    <span className="leading-9 text-sm">+20 10 70068383</span>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-0.5">Phone</div>
+                      <span className="text-sm font-medium">+20 10 70068383</span>
+                    </div>
                   </a>
                 </li>
                 <li>
@@ -239,12 +281,15 @@ export default function Footer() {
                     href="https://www.google.com/maps?ll=30.028018,31.201973&z=15&t=m&hl=en&gl=US&mapclient=embed&cid=18276881079965047230"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-start gap-3 text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                    className="group flex items-start gap-3 text-gray-400 hover:text-white transition-all duration-300"
                   >
-                    <div className="w-9 h-9 bg-gray-800/50 rounded-lg flex items-center justify-center group-hover:bg-primary-500/10 border border-gray-700/50 group-hover:border-primary-500/30 transition-all flex-shrink-0">
-                      <MapPin size={16} />
+                    <div className="w-10 h-10 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:from-purple-500/20 group-hover:to-pink-500/20 border border-gray-700/50 group-hover:border-purple-500/50 transition-all flex-shrink-0">
+                      <MapPin size={18} />
                     </div>
-                    <span className="leading-relaxed text-sm">b5105 - Creativa Innovation Hub - Giza</span>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-0.5">Address</div>
+                      <span className="text-sm font-medium leading-relaxed">b5105 - Creativa Innovation Hub<br />Giza, Egypt</span>
+                    </div>
                   </a>
                 </li>
               </ul>
@@ -254,17 +299,30 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="relative border-t border-gray-800/50 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-6 text-sm text-gray-400">
-              <span>© {new Date().getFullYear()} Vondera. All rights reserved.</span>
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
+          
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <div className="flex items-center gap-2 text-gray-500">
+              <span>© {new Date().getFullYear()} Vondera.</span>
+              <span className="hidden sm:inline">•</span>
+              <span className="hidden sm:inline">Empowering e-commerce</span>
             </div>
             
-            <div className="flex items-center gap-6 text-sm">
-              <Link href={`/${locale}/privacy`} className="text-gray-400 hover:text-primary-400 transition-colors">
+            <div className="flex items-center gap-6">
+              <Link 
+                href={`/${locale}/privacy`} 
+                className="text-gray-400 hover:text-purple-400 transition-colors relative group"
+              >
                 Privacy Policy
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></span>
               </Link>
-              <Link href={`/${locale}/terms`} className="text-gray-400 hover:text-primary-400 transition-colors">
+              <span className="text-gray-700">•</span>
+              <Link 
+                href={`/${locale}/terms`} 
+                className="text-gray-400 hover:text-purple-400 transition-colors relative group"
+              >
                 Terms of Service
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></span>
               </Link>
             </div>
           </div>

@@ -132,7 +132,7 @@ export default function HeroSectionModern() {
         {/* Main Content - Bottom Left and Right */}
         <div className="w-full max-w-full">
           {/* Animated Heading */}
-          <div className="mb-6 sm:mb-8 md:mb-10 max-w-full overflow-hidden">
+          <div className="mb-6 sm:mb-8 md:mb-10 max-w-full">
               {/* Static first line */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -144,7 +144,7 @@ export default function HeroSectionModern() {
               </motion.h1>
 
               {/* Animated rotating text */}
-              <div className="relative max-w-full overflow-hidden" style={{ minHeight: '3rem' }}>
+              <div className="relative max-w-full" style={{ minHeight: '4rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
                 <AnimatePresence mode="wait">
                   <motion.h2
                     key={currentPhraseIndex}
@@ -152,22 +152,22 @@ export default function HeroSectionModern() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.45, ease: [0.33, 1, 0.68, 1] }}
-                    className="absolute top-0 left-0 w-full max-w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.05] tracking-tight"
+                    className="absolute top-0 left-0 w-full max-w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.2] tracking-tight"
                   >
                     <span className="flex flex-wrap gap-x-2 sm:gap-x-3 md:gap-x-4 break-words">
                       {rotatingPhrases[currentPhraseIndex].map((word, index) => (
                         <motion.span
                           key={`${currentPhraseIndex}-${index}`}
-                          initial={{ y: '100%', opacity: 0 }}
+                          initial={{ y: 20, opacity: 0 }}
                           animate={{ y: 0, opacity: 1 }}
                           transition={{
                             duration: 0.45,
                             delay: index * 0.15,
                             ease: [0.33, 1, 0.68, 1],
                           }}
-                          className="inline-block overflow-hidden pb-2 -mt-2"
+                          className="inline-block"
                         >
-                          <span className="inline-block">{word}</span>
+                          {word}
                         </motion.span>
                       ))}
                     </span>

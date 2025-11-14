@@ -152,5 +152,710 @@
     "address": "Dokki, Giza, Egypt",
     "email": "Info@vondera.app",
     "phone": "+20 10 70068383"
+  },
+  "vpay": {
+    "meta": {
+      "title": "VPay - Integrated Payment Gateway | Vondera",
+      "description": "Accept payments seamlessly with VPay. Multiple payment methods, instant settlement, fraud protection, and comprehensive analytics for your e-commerce store."
+    },
+    "hero": {
+      "badge": "Payment Gateway",
+      "title": "Accept Payments",
+      "titleHighlight": "with One Click",
+      "subtitle": "Integrated payment solution for your e-commerce store. Accept cards, wallets, and cash on delivery with enterprise-grade security.",
+      "cta1": "Start Free Trial",
+      "cta2": "Watch Demo",
+      "stats": {
+        "uptime": "Uptime",
+        "transactionTime": "Transaction Time",
+        "paymentMethods": "Payment Methods"
+      }
+    },
+    "demo": {
+      "title": "Seamless Payment Processing",
+      "subtitle": "Process payments faster and more securely than ever before with our integrated payment gateway."
+    },
+    "features": {
+      "multiplePayments": {
+        "title": "Multiple Payment Methods",
+        "description": "Accept credit cards, debit cards, digital wallets, and cash on delivery. Give your customers flexibility in how they pay."
+      },
+      "instantSettlement": {
+        "title": "Instant Settlement",
+        "description": "Get your money faster with instant settlement options. No more waiting days for your payments to clear."
+      },
+      "fraudProtection": {
+        "title": "Advanced Fraud Protection",
+        "description": "Enterprise-grade security with AI-powered fraud detection. Protect your business and your customers."
+      },
+      "analytics": {
+        "title": "Payment Analytics",
+        "description": "Detailed insights into your payment data. Track success rates, identify issues, and optimize your checkout."
+      },
+      "refundManagement": {
+        "title": "Easy Refund Management",
+        "description": "Process refunds with a single click. Automated refund workflows save you time and keep customers happy."
+      },
+      "conversionOptimization": {
+        "title": "Conversion Optimization",
+        "description": "Optimize your checkout flow to reduce cart abandonment and increase conversions by up to 30%."
+      }
+    },
+    "bentoGrid": {
+      "title": "Everything You Need to Accept Payments",
+      "subtitle": "Powerful features to streamline your payment processing"
+    },
+    "testimonials": {
+      "title": "Trusted by 10,000+ Merchants",
+      "subtitle": "See what our customers have to say about VPay",
+      "testimonial1": {
+        "quote": "VPay reduced our payment processing time by 70%. Our customers love how fast and secure it is.",
+        "name": "Ahmed Hassan",
+        "role": "Founder, Fashion Store"
+      },
+      "testimonial2": {
+        "quote": "The multiple payment options increased our conversion rate significantly. Best decision we made.",
+        "name": "Sara Mohamed",
+        "role": "Owner, Electronics Shop"
+      },
+      "testimonial3": {
+        "quote": "Instant settlement means we can reinvest in inventory faster. VPay is a game-changer for our business.",
+        "name": "Khaled Ali",
+        "role": "CEO, Sports Equipment"
+      }
+    },
+    "pricing": {
+      "title": "Simple, Transparent Pricing",
+      "subtitle": "No hidden fees. Pay only for what you use.",
+      "perMonth": "month",
+      "mostPopular": "Most Popular",
+      "getStarted": "Get Started",
+      "starter": {
+        "name": "Starter",
+        "price": "2.9%",
+        "features": {
+          "feature1": "2.9% + 2 EGP per transaction",
+          "feature2": "All major payment methods",
+          "feature3": "Basic fraud protection",
+          "feature4": "Standard support",
+          "feature5": "Payment analytics dashboard"
+        }
+      },
+      "professional": {
+        "name": "Professional",
+        "price": "2.5%",
+        "features": {
+          "feature1": "2.5% + 2 EGP per transaction",
+          "feature2": "All payment methods",
+          "feature3": "Advanced fraud protection",
+          "feature4": "Priority support",
+          "feature5": "Advanced analytics",
+          "feature6": "Custom checkout design"
+        }
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "features": {
+          "feature1": "Custom transaction rates",
+          "feature2": "Dedicated account manager",
+          "feature3": "Enterprise fraud protection",
+          "feature4": "24/7 phone support",
+          "feature5": "API access",
+          "feature6": "Custom integrations",
+          "feature7": "SLA guarantee"
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about VPay",
+      "question1": {
+        "q": "How long does it take to set up VPay?",
+        "a": "VPay can be set up in less than 5 minutes. Simply connect your account, verify your business information, and you're ready to start accepting payments."
+      },
+      "question2": {
+        "q": "What payment methods does VPay support?",
+        "a": "VPay supports all major credit and debit cards (Visa, Mastercard, Amex), digital wallets (Apple Pay, Google Pay), bank transfers, and cash on delivery for the MENA region."
+      },
+      "question3": {
+        "q": "Is VPay PCI compliant?",
+        "a": "Yes, VPay is fully PCI DSS Level 1 compliant, the highest level of payment security certification. Your customer data is always encrypted and secure."
+      },
+      "question4": {
+        "q": "How long does it take to receive my money?",
+        "a": "With instant settlement, you can receive your funds within hours. Standard settlement takes 1-2 business days depending on your plan."
+      },
+      "question5": {
+        "q": "Are there any hidden fees?",
+        "a": "No hidden fees. You only pay the transaction rate shown in your plan. No setup fees, no monthly minimums, no cancellation fees."
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Start Accepting Payments?",
+      "subtitle": "Join 10,000+ merchants already using VPay",
+      "cta1": "Start Free Trial",
+      "cta2": "Contact Sales"
+    },
+    "common": {
+      "learnMore": "Learn More"
+    }
+  },
+  "vinbox": {
+    "meta": {
+      "title": "VInbox - Unified Social Inbox | Vondera",
+      "description": "Manage all your customer messages in one place. Connect WhatsApp, Facebook, Instagram, and more. Never miss a message with VInbox."
+    },
+    "hero": {
+      "badge": "Social Inbox",
+      "title": "All Your Messages",
+      "titleHighlight": "in One Place",
+      "subtitle": "Unified inbox for WhatsApp, Facebook, Instagram, Twitter, TikTok, and more. Respond faster, sell more, delight your customers.",
+      "cta1": "Start Free Trial",
+      "cta2": "Watch Demo",
+      "stats": {
+        "platforms": "Platforms",
+        "fasterResponse": "Faster Response",
+        "conversations": "Conversations"
+      }
+    },
+    "platforms": {
+      "title": "Connect All Your Channels",
+      "subtitle": "One inbox for all your customer conversations"
+    },
+    "demo": {
+      "title": "Unified Customer Communication",
+      "subtitle": "Manage all your social media messages from one powerful inbox."
+    },
+    "features": {
+      "unifiedInbox": {
+        "title": "Unified Inbox",
+        "description": "All messages from WhatsApp, Facebook, Instagram, Twitter, TikTok, and more in one place. No more switching between apps."
+      },
+      "autoResponses": {
+        "title": "Smart Auto-Responses",
+        "description": "Set up automated replies for common questions. Respond instantly 24/7 even when you're offline."
+      },
+      "customerTagging": {
+        "title": "Customer Tagging",
+        "description": "Organize conversations with tags. Easily find and follow up with specific customer segments."
+      },
+      "teamCollaboration": {
+        "title": "Team Collaboration",
+        "description": "Assign conversations to team members. Internal notes and mentions keep everyone aligned."
+      },
+      "templates": {
+        "title": "Message Templates",
+        "description": "Save and reuse common responses. Speed up your reply time with pre-written templates."
+      },
+      "orderCreation": {
+        "title": "Create Orders from Chat",
+        "description": "Convert conversations into orders without leaving the inbox. Seamless sales workflow."
+      }
+    },
+    "bentoGrid": {
+      "title": "Powerful Features for Customer Communication",
+      "subtitle": "Everything you need to provide exceptional customer service"
+    },
+    "testimonials": {
+      "title": "Loved by 5,000+ Merchants",
+      "subtitle": "See how VInbox helps businesses respond faster",
+      "testimonial1": {
+        "quote": "VInbox cut our response time from hours to minutes. Our customers are happier and sales are up 40%.",
+        "name": "Fatma Ibrahim",
+        "role": "Owner, Beauty Store"
+      },
+      "testimonial2": {
+        "quote": "Managing messages from 6 platforms was overwhelming. VInbox made it so simple. Game changer!",
+        "name": "Omar Khalil",
+        "role": "Founder, Home Decor"
+      },
+      "testimonial3": {
+        "quote": "The team collaboration features are amazing. We can now handle 3x more customer inquiries.",
+        "name": "Mariam Saeed",
+        "role": "Customer Service Manager"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about VInbox",
+      "question1": {
+        "q": "Which platforms does VInbox support?",
+        "a": "VInbox connects to WhatsApp Business, Facebook Messenger, Instagram DMs, Twitter DMs, TikTok, Telegram, and your website live chat."
+      },
+      "question2": {
+        "q": "Can multiple team members use VInbox?",
+        "a": "Yes! VInbox supports unlimited team members. You can assign conversations, add internal notes, and collaborate seamlessly."
+      },
+      "question3": {
+        "q": "How do auto-responses work?",
+        "a": "Set up automated replies based on keywords, time of day, or customer tags. Auto-responses work 24/7 to provide instant replies when you're unavailable."
+      },
+      "question4": {
+        "q": "Can I create orders directly from chat?",
+        "a": "Absolutely! VInbox integrates with your Vondera store. You can create orders, add products, and process payments without leaving the conversation."
+      },
+      "question5": {
+        "q": "Is there a limit on messages?",
+        "a": "No limits! Handle unlimited conversations across all your connected platforms. VInbox scales with your business."
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Centralize Your Messages?",
+      "subtitle": "Join 5,000+ merchants managing all their conversations in one place",
+      "cta1": "Start Free Trial",
+      "cta2": "Contact Sales"
+    },
+    "common": {
+      "learnMore": "Learn More"
+    }
+  },
+  "vfunnel": {
+    "meta": {
+      "title": "VFunnel - Sales Funnel Builder | Vondera",
+      "description": "Create high-converting sales funnels in minutes. Drag-and-drop builder, 50+ templates, A/B testing, and advanced analytics. Boost your conversions by 300%."
+    },
+    "hero": {
+      "badge": "Funnel Builder",
+      "title": "Create Funnels That",
+      "titleHighlight": "Convert Like Crazy",
+      "subtitle": "Build high-converting sales funnels in minutes with our drag-and-drop builder. No coding required. Boost your sales by up to 300%.",
+      "cta1": "Start Free Trial",
+      "cta2": "View Templates",
+      "stats": {
+        "templates": "Templates",
+        "conversionIncrease": "Avg. Conversion Boost",
+        "setupTime": "Setup Time"
+      }
+    },
+    "demo": {
+      "title": "Build Beautiful Funnels Fast",
+      "subtitle": "Drag, drop, and launch high-converting sales funnels in minutes."
+    },
+    "features": {
+      "dragDrop": {
+        "title": "Drag-and-Drop Builder",
+        "description": "Visual editor makes it easy to build professional funnels. No coding or design skills needed."
+      },
+      "templates": {
+        "title": "50+ Pre-Built Templates",
+        "description": "Start with proven templates for every industry. Customize colors, images, and copy to match your brand."
+      },
+      "abTesting": {
+        "title": "A/B Testing Built-In",
+        "description": "Test different versions of your funnel to find what converts best. Data-driven optimization."
+      },
+      "upsellDownsell": {
+        "title": "Upsells & Downsells",
+        "description": "Increase average order value with strategic upsells and downsells. Maximize revenue per customer."
+      },
+      "analytics": {
+        "title": "Advanced Analytics",
+        "description": "Track every step of your funnel. See exactly where visitors drop off and optimize accordingly."
+      },
+      "mobileOptimized": {
+        "title": "Mobile-Optimized",
+        "description": "All funnels are fully responsive and optimized for mobile. Over 70% of traffic comes from mobile."
+      }
+    },
+    "templatesSection": {
+      "title": "Start with Proven Templates",
+      "subtitle": "50+ professionally designed templates for every use case",
+      "useTemplate": "Use This Template"
+    },
+    "templates": {
+      "template1": {
+        "name": "Product Launch",
+        "description": "Perfect for launching new products with pre-launch buzz and urgency",
+        "category": "Launch"
+      },
+      "template2": {
+        "name": "Lead Magnet",
+        "description": "Capture emails with irresistible lead magnets and build your list",
+        "category": "Lead Gen"
+      },
+      "template3": {
+        "name": "Webinar Registration",
+        "description": "Drive webinar signups with high-converting registration funnels",
+        "category": "Webinar"
+      },
+      "template4": {
+        "name": "Flash Sale",
+        "description": "Create urgency with countdown timers and limited-time offers",
+        "category": "Sales"
+      },
+      "template5": {
+        "name": "Membership Signup",
+        "description": "Convert visitors into paying members with subscription funnels",
+        "category": "Subscription"
+      },
+      "template6": {
+        "name": "Bundle Offer",
+        "description": "Increase AOV with product bundles and package deals",
+        "category": "Upsell"
+      }
+    },
+    "bentoGrid": {
+      "title": "Everything You Need to Build Funnels",
+      "subtitle": "Powerful features to maximize your conversions"
+    },
+    "successStories": {
+      "title": "Real Results from Real Merchants",
+      "subtitle": "See how VFunnel helped businesses boost their conversions",
+      "story1": {
+        "merchant": "Fashion Boutique",
+        "result": "Increased checkout completion rate from 45% to 78%",
+        "quote": "VFunnel's upsell features increased our average order value by $45. Incredible ROI.",
+        "metric": "Conversion Rate"
+      },
+      "story2": {
+        "merchant": "Electronics Store",
+        "result": "Reduced cart abandonment by 60% with optimized checkout flow",
+        "quote": "The A/B testing helped us find the perfect funnel. Sales doubled in 3 months.",
+        "metric": "Cart Recovery"
+      },
+      "story3": {
+        "merchant": "Beauty Products",
+        "result": "Grew email list from 2K to 15K subscribers in 2 months",
+        "quote": "The lead magnet templates are pure gold. We captured 15K leads in 60 days.",
+        "metric": "Lead Growth"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about VFunnel",
+      "question1": {
+        "q": "Do I need coding skills to use VFunnel?",
+        "a": "Not at all! VFunnel's drag-and-drop builder is designed for anyone. Just pick a template, customize it, and launch. No coding required."
+      },
+      "question2": {
+        "q": "How many funnels can I create?",
+        "a": "Create unlimited funnels on all plans. Build as many as you need for different products, campaigns, or customer segments."
+      },
+      "question3": {
+        "q": "Can I A/B test my funnels?",
+        "a": "Yes! Built-in A/B testing lets you test different headlines, images, offers, and layouts. VFunnel automatically shows the winning version."
+      },
+      "question4": {
+        "q": "Are the templates mobile-friendly?",
+        "a": "Absolutely! All templates are fully responsive and optimized for mobile devices. Your funnels will look perfect on any screen size."
+      },
+      "question5": {
+        "q": "Can I integrate VFunnel with other tools?",
+        "a": "VFunnel integrates seamlessly with your Vondera store, email marketing platforms, analytics tools, and payment gateways."
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Build Your First Funnel?",
+      "subtitle": "Join 3,000+ merchants creating high-converting funnels with VFunnel",
+      "cta1": "Start Free Trial",
+      "cta2": "View Templates"
+    },
+    "common": {
+      "learnMore": "Learn More"
+    }
+  },
+  "vcommunity": {
+    "meta": {
+      "title": "VCommunity - Merchant Network | Vondera",
+      "description": "Connect with 5,000+ e-commerce merchants. Share experiences, get advice, and grow together. Join the largest merchant community in MENA."
+    },
+    "hero": {
+      "badge": "Merchant Network",
+      "title": "Connect, Learn, and",
+      "titleHighlight": "Grow Together",
+      "subtitle": "Join 5,000+ merchants sharing experiences, solving problems, and celebrating wins. Get advice from those who've been there.",
+      "cta1": "Join Community",
+      "cta2": "Browse Discussions",
+      "stats": {
+        "merchants": "Active Merchants",
+        "discussions": "Discussions",
+        "support": "Community Support"
+      }
+    },
+    "activityFeed": {
+      "title": "What's Happening in the Community",
+      "subtitle": "Real conversations from real merchants"
+    },
+    "activities": {
+      "activity1": {
+        "user": "Layla Ahmed",
+        "action": "asked",
+        "topic": "Best shipping companies for Alexandria? Need reliable partner for 50+ daily orders",
+        "time": "5 min ago"
+      },
+      "activity2": {
+        "user": "Youssef Hassan",
+        "action": "shared",
+        "topic": "Just hit 1M EGP in monthly sales! Here's what worked for us...",
+        "time": "1 hour ago"
+      },
+      "activity3": {
+        "user": "Nour Khalil",
+        "action": "asked",
+        "topic": "Which payment gateway has the lowest fees? Comparing VPay vs others",
+        "time": "2 hours ago"
+      },
+      "activity4": {
+        "user": "Ahmed Saeed",
+        "action": "shared",
+        "topic": "Instagram ads strategy that 3x'd our ROAS. Detailed breakdown inside...",
+        "time": "4 hours ago"
+      }
+    },
+    "demo": {
+      "title": "A Community Built for Merchants",
+      "subtitle": "Get answers, share insights, and build relationships with fellow entrepreneurs."
+    },
+    "features": {
+      "connectMerchants": {
+        "title": "Connect with Merchants",
+        "description": "Network with 5,000+ e-commerce store owners. Make connections that can change your business."
+      },
+      "shareExperiences": {
+        "title": "Share Experiences & Tips",
+        "description": "Learn from others' successes and mistakes. Share what you've learned to help others grow."
+      },
+      "askQuestions": {
+        "title": "Ask Questions",
+        "description": "Get expert advice from merchants who've faced the same challenges. Real answers from real experience."
+      },
+      "recommendations": {
+        "title": "Product Recommendations",
+        "description": "Discover winning products, reliable suppliers, and trending items from community members."
+      },
+      "successStories": {
+        "title": "Success Stories",
+        "description": "Get inspired by merchants who started where you are. See what's possible and learn their strategies."
+      },
+      "industryInsights": {
+        "title": "Industry Insights",
+        "description": "Stay updated on e-commerce trends, platform updates, and market shifts. Knowledge is power."
+      }
+    },
+    "bentoGrid": {
+      "title": "More Than Just a Forum",
+      "subtitle": "A complete merchant support ecosystem"
+    },
+    "testimonials": {
+      "title": "Hear from Community Members",
+      "subtitle": "Real stories from merchants in VCommunity",
+      "testimonial1": {
+        "quote": "I got my shipping question answered in 10 minutes. The community saved me hours of research.",
+        "name": "Mona Fathy",
+        "role": "Clothing Store Owner"
+      },
+      "testimonial2": {
+        "quote": "Found my media buyer through VCommunity. Best business decision I made this year.",
+        "name": "Tarek Mahmoud",
+        "role": "Electronics Merchant"
+      },
+      "testimonial3": {
+        "quote": "The success stories motivated me to keep going. Now I'm sharing my own journey to help others.",
+        "name": "Dina Youssef",
+        "role": "Cosmetics Brand"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about VCommunity",
+      "question1": {
+        "q": "Is VCommunity free to join?",
+        "a": "Yes! VCommunity is completely free for all Vondera merchants. Just sign up for a Vondera account and you'll get instant access."
+      },
+      "question2": {
+        "q": "How active is the community?",
+        "a": "Very active! With 5,000+ merchants and 100+ daily discussions, you'll always find someone online to help. Average response time is under 30 minutes."
+      },
+      "question3": {
+        "q": "Can I promote my products in the community?",
+        "a": "We have dedicated sections for product showcases and promotions. Spamming is not allowed, but genuine sharing is encouraged."
+      },
+      "question4": {
+        "q": "Are there community guidelines?",
+        "a": "Yes. We maintain a respectful, helpful environment. No spamming, be respectful, and focus on adding value. Full guidelines available after joining."
+      },
+      "question5": {
+        "q": "Can I message members directly?",
+        "a": "Yes! You can send direct messages to other community members, create group chats, and build your own merchant network."
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Join the Community?",
+      "subtitle": "5,000+ merchants are waiting to connect with you",
+      "cta1": "Join VCommunity",
+      "cta2": "Browse Discussions"
+    },
+    "common": {
+      "learnMore": "Learn More"
+    }
+  },
+  "vmedia": {
+    "meta": {
+      "title": "VMedia - Media Buying Marketplace | Vondera",
+      "description": "Connect with verified media buyers, set your own rates, and grow your online store with the best marketing campaigns"
+    },
+    "hero": {
+      "badge": "Media Buying Marketplace",
+      "title": "Connect with the Best",
+      "titleHighlight": "Media Buyers",
+      "subtitle": "A trusted platform that connects online merchants with verified media buyers to grow sales and build successful partnerships",
+      "cta1": "Browse Media Buyers",
+      "cta2": "Register as a Buyer",
+      "stats": {
+        "buyers": {
+          "value": "500+",
+          "label": "Verified Buyer"
+        },
+        "campaigns": {
+          "value": "10K+",
+          "label": "Successful Campaign"
+        },
+        "merchants": {
+          "value": "5K+",
+          "label": "Active Merchant"
+        }
+      }
+    },
+    "demo": {
+      "title": "Discover, Connect, and Grow",
+      "subtitle": "Browse verified media buyer profiles, compare performance, and start successful partnerships in minutes"
+    },
+    "benefits": {
+      "accessMerchants": {
+        "title": "Access Thousands of Merchants",
+        "description": "Connect with online store owners looking for professional media buyers"
+      },
+      "setRates": {
+        "title": "Set Your Own Rates",
+        "description": "Full control over your pricing and commission structure"
+      },
+      "trackEarnings": {
+        "title": "Track Your Earnings",
+        "description": "Real-time dashboard to monitor your campaigns and earnings"
+      },
+      "buildReputation": {
+        "title": "Build Your Reputation",
+        "description": "Earn ratings and reviews from merchants you work with"
+      },
+      "verifiedBadge": {
+        "title": "Get Verified Badge",
+        "description": "Stand out with our verification system for professional buyers"
+      },
+      "securePayments": {
+        "title": "Secure Payments",
+        "description": "Protected payment system with transparent commission tracking"
+      }
+    },
+    "servicesSection": {
+      "title": "Services You Can Offer",
+      "subtitle": "Showcase your expertise across multiple advertising platforms"
+    },
+    "services": {
+      "facebook": {
+        "name": "Facebook Ads",
+        "description": "Meta advertising campaigns"
+      },
+      "instagram": {
+        "name": "Instagram Ads",
+        "description": "Instagram story and feed ads"
+      },
+      "google": {
+        "name": "Google Ads",
+        "description": "Search and display campaigns"
+      },
+      "tiktok": {
+        "name": "TikTok Ads",
+        "description": "TikTok video advertising"
+      },
+      "snapchat": {
+        "name": "Snapchat Ads",
+        "description": "Snap ads and stories"
+      },
+      "fullFunnel": {
+        "name": "Full Funnel Management",
+        "description": "Complete marketing strategy"
+      }
+    },
+    "topBuyers": {
+      "title": "Top Performing Buyers",
+      "subtitle": "Our verified media buyers with proven track records",
+      "buyer1": {
+        "name": "Ahmed Hassan",
+        "specialty": "Facebook & Instagram Specialist",
+        "bio": "5+ years experience in e-commerce advertising with 300+ successful campaigns"
+      },
+      "buyer2": {
+        "name": "Sara Mohammed",
+        "specialty": "Google Ads Expert",
+        "bio": "Specialized in search campaigns with average 4x ROAS for clients"
+      },
+      "buyer3": {
+        "name": "Khalid Ali",
+        "specialty": "Full Funnel Strategist",
+        "bio": "Complete marketing solutions from awareness to conversion"
+      },
+      "rating": "rating",
+      "projects": "completed projects",
+      "earnings": "total earnings",
+      "viewProfile": "View Profile"
+    },
+    "bentoGrid": {
+      "title": "Why Choose VMedia?",
+      "subtitle": "The most trusted media buying marketplace in MENA region"
+    },
+    "testimonials": {
+      "title": "Success Stories",
+      "subtitle": "Hear from merchants and buyers who grew their business through VMedia",
+      "testimonial1": {
+        "text": "I found amazing media buyers through VMedia. My sales increased by 300% in the first month!",
+        "author": "Nour Khalil",
+        "role": "Fashion Store Owner"
+      },
+      "testimonial2": {
+        "text": "As a media buyer, VMedia helped me connect with serious merchants and build long-term partnerships.",
+        "author": "Omar Saeed",
+        "role": "Certified Media Buyer"
+      },
+      "testimonial3": {
+        "text": "The verification system gives me confidence. I only work with professional buyers now.",
+        "author": "Layla Ahmed",
+        "role": "Beauty Products Store"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about VMedia marketplace",
+      "question1": {
+        "q": "How do I become a verified media buyer?",
+        "a": "Complete your profile, submit your portfolio and previous campaign results, and pass our verification process. It usually takes 2-3 business days."
+      },
+      "question2": {
+        "q": "What commission does VMedia take?",
+        "a": "VMedia takes a small service fee (5-10%) from completed projects to maintain the platform and verification system."
+      },
+      "question3": {
+        "q": "How are payments handled?",
+        "a": "All payments are processed securely through VMedia. Merchants pay upfront, and buyers receive payment after campaign completion and merchant approval."
+      },
+      "question4": {
+        "q": "Can I work with multiple merchants at once?",
+        "a": "Yes! You can manage multiple campaigns simultaneously. Our dashboard helps you track all your active projects in one place."
+      },
+      "question5": {
+        "q": "What happens if a campaign doesn't perform well?",
+        "a": "We encourage open communication between buyers and merchants. Our support team is available to mediate and help resolve any issues."
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Start?",
+      "subtitle": "Join hundreds of media buyers and thousands of merchants",
+      "cta1": "Register as Media Buyer",
+      "cta2": "Find a Media Buyer",
+      "note": "Free registration • Get verified in 48 hours"
+    },
+    "common": {
+      "learnMore": "Learn More"
+    }
   }
 }

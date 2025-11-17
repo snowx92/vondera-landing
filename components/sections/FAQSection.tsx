@@ -15,12 +15,12 @@ export default function FAQSection() {
 
   // Build FAQs array from translations
   const faqs = [
-    { question: tFaqs('question1.q'), answer: tFaqs('question1.a') },
-    { question: tFaqs('question2.q'), answer: tFaqs('question2.a') },
-    { question: tFaqs('question3.q'), answer: tFaqs('question3.a') },
-    { question: tFaqs('question4.q'), answer: tFaqs('question4.a') },
-    { question: tFaqs('question5.q'), answer: tFaqs('question5.a') },
-    { question: tFaqs('question6.q'), answer: tFaqs('question6.a') },
+    { key: 'question1', question: tFaqs('question1.q'), answer: tFaqs('question1.a') },
+    { key: 'question2', question: tFaqs('question2.q'), answer: tFaqs('question2.a') },
+    { key: 'question3', question: tFaqs('question3.q'), answer: tFaqs('question3.a') },
+    { key: 'question4', question: tFaqs('question4.q'), answer: tFaqs('question4.a') },
+    { key: 'question5', question: tFaqs('question5.q'), answer: tFaqs('question5.a') },
+    { key: 'question6', question: tFaqs('question6.q'), answer: tFaqs('question6.a') },
   ];
 
   return (
@@ -57,7 +57,7 @@ export default function FAQSection() {
               >
                 <div className="flex justify-between items-center">
                   <h3 className="text-lg font-semibold text-gray-900 pr-8">
-                    {t(`${faq.key}.q`)}
+                    {tFaqs(`${faq.key}.q`)}
                   </h3>
                   <ChevronDown
                     size={24}
@@ -76,7 +76,7 @@ export default function FAQSection() {
                       className="overflow-hidden"
                     >
                       <p className="text-gray-600 mt-4 leading-relaxed">
-                        {t(`${faq.key}.a`)}
+                        {tFaqs(`${faq.key}.a`)}
                       </p>
                     </motion.div>
                   )}

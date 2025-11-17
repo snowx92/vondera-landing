@@ -110,10 +110,10 @@ export default function Footer() {
                   <span className="text-3xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">Vondera</span>
                 </div>
                 <p className="text-gray-400 leading-relaxed text-lg mb-6">
-                  The all-in-one e-commerce platform empowering Egyptian businesses to grow, scale, and succeed in the digital marketplace.
+                  {t('tagline')}
                 </p>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <span>Trusted by 10,000+ merchants</span>
+                  <span>{t('trustedBy')}</span>
                 </div>
               </div>
               
@@ -121,7 +121,7 @@ export default function Footer() {
               <div className="lg:text-right">
                 <h4 className="text-white font-bold mb-6 text-lg flex items-center gap-2 lg:justify-end">
                   <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"></span>
-                  Connect With Us
+                  {t('connectWithUs')}
                 </h4>
                 <div className="flex flex-wrap gap-3 lg:justify-end">
                   {socialLinks.map((social) => (
@@ -138,7 +138,7 @@ export default function Footer() {
                           )}
                         </div>
                         <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-gray-400 text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                          Coming Soon
+                          {t('comingSoon')}
                         </span>
                       </div>
                     ) : (
@@ -177,7 +177,7 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-bold mb-6 text-base flex items-center gap-2">
                 <span className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
-                Sections
+                {t('sections')}
               </h4>
               <ul className="space-y-3">
                 {sections.map((link) => (
@@ -198,7 +198,7 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-bold mb-6 text-base flex items-center gap-2">
                 <span className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
-                Pages
+                {t('pages')}
               </h4>
               <ul className="space-y-3">
                 {pages.map((link) => (
@@ -219,7 +219,7 @@ export default function Footer() {
             <div className="col-span-2 md:col-span-1">
               <h4 className="text-white font-bold mb-6 text-base flex items-center gap-2">
                 <span className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
-                Products
+                {t('products')}
               </h4>
               <ul className="space-y-3">
                 {products.map((link) => (
@@ -233,7 +233,7 @@ export default function Footer() {
                         {link.name}
                         {link.comingSoon && (
                           <span className="ml-2 text-[10px] px-2 py-0.5 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30">
-                            Soon
+                            {t('soon')}
                           </span>
                         )}
                       </span>
@@ -247,7 +247,7 @@ export default function Footer() {
             <div className="col-span-2">
               <h4 className="text-white font-bold mb-6 text-base flex items-center gap-2">
                 <span className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
-                Contact Us
+                {t('contactUs')}
               </h4>
               <ul className="space-y-4">
                 <li>
@@ -259,8 +259,8 @@ export default function Footer() {
                       <Mail size={18} />
                     </div>
                     <div>
-                      <div className="text-xs text-gray-500 mb-0.5">Email</div>
-                      <span className="text-sm font-medium">info@vondera.app</span>
+                      <div className="text-xs text-gray-500 mb-0.5">{t('emailLabel')}</div>
+                      <span className="text-sm font-medium">{t('email')}</span>
                     </div>
                   </a>
                 </li>
@@ -273,8 +273,8 @@ export default function Footer() {
                       <Phone size={18} />
                     </div>
                     <div>
-                      <div className="text-xs text-gray-500 mb-0.5">Phone</div>
-                      <span className="text-sm font-medium">+20 10 70068383</span>
+                      <div className="text-xs text-gray-500 mb-0.5">{t('phoneLabel')}</div>
+                      <span className="text-sm font-medium">{t('phone')}</span>
                     </div>
                   </a>
                 </li>
@@ -289,8 +289,8 @@ export default function Footer() {
                       <MapPin size={18} />
                     </div>
                     <div>
-                      <div className="text-xs text-gray-500 mb-0.5">Address</div>
-                      <span className="text-sm font-medium leading-relaxed">b5105 - Creativa Innovation Hub<br />Giza, Egypt</span>
+                      <div className="text-xs text-gray-500 mb-0.5">{t('addressLabel')}</div>
+                      <span className="text-sm font-medium leading-relaxed whitespace-pre-line">{t('address')}</span>
                     </div>
                   </a>
                 </li>
@@ -307,23 +307,23 @@ export default function Footer() {
             <div className="flex items-center gap-2 text-gray-500">
               <span>© {new Date().getFullYear()} Vondera.</span>
               <span className="hidden sm:inline">•</span>
-              <span className="hidden sm:inline">Empowering e-commerce</span>
+              <span className="hidden sm:inline">{t('empoweringEcommerce')}</span>
             </div>
             
             <div className="flex items-center gap-6">
-              <Link 
-                href={`/${locale}/privacy`} 
+              <Link
+                href={`/${locale}/privacy`}
                 className="text-gray-400 hover:text-purple-400 transition-colors relative group"
               >
-                Privacy Policy
+                {t('privacyPolicy')}
                 <span className="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></span>
               </Link>
               <span className="text-gray-700">•</span>
-              <Link 
-                href={`/${locale}/terms`} 
+              <Link
+                href={`/${locale}/terms`}
                 className="text-gray-400 hover:text-purple-400 transition-colors relative group"
               >
-                Terms of Service
+                {t('termsOfService')}
                 <span className="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-300"></span>
               </Link>
             </div>

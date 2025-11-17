@@ -1,33 +1,35 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import StaggeredMenu from '@/components/ui/StaggeredMenu';
 
 export default function MobileFooter() {
   const locale = useLocale();
+  const t = useTranslations('footer');
+  const tNav = useTranslations('nav');
 
   const menuItems = [
-    { label: 'Home', ariaLabel: 'Go to home page', link: `/${locale}` },
-    { label: 'Why Vondera', ariaLabel: 'Learn why choose Vondera', link: `/${locale}#why-vondera` },
-    { label: 'Products', ariaLabel: 'View our products', link: `/${locale}#products` },
-    { label: 'VPay', ariaLabel: 'Payment solutions', link: `/${locale}/vpay` },
-    { label: 'VMedia', ariaLabel: 'Media buyers marketplace', link: `/${locale}/vmedia` },
-    { label: 'VInbox', ariaLabel: 'Unified inbox', link: `/${locale}/vinbox` },
-    { label: 'VFunnel', ariaLabel: 'Sales funnels', link: `/${locale}/vfunnel` },
-    { label: 'VCommunity', ariaLabel: 'Merchant community', link: `/${locale}/vcommunity` },
-    { label: 'Pricing', ariaLabel: 'View pricing plans', link: `/${locale}#pricing` },
-    { label: 'About', ariaLabel: 'Learn about us', link: `/${locale}/about` },
-    { label: 'Blog', ariaLabel: 'Read our blog', link: `/${locale}/blog` },
-    { label: 'Contact', ariaLabel: 'Get in touch', link: `/${locale}/contact` },
+    { label: t('home'), ariaLabel: 'Go to home page', link: `/${locale}` },
+    { label: tNav('whyVondera'), ariaLabel: 'Learn why choose Vondera', link: `/${locale}#why-vondera` },
+    { label: t('products'), ariaLabel: 'View our products', link: `/${locale}#products` },
+    { label: t('vpay'), ariaLabel: 'Payment solutions', link: `/${locale}/vpay` },
+    { label: t('vmedia'), ariaLabel: 'Media buyers marketplace', link: `/${locale}/vmedia` },
+    { label: t('vinbox'), ariaLabel: 'Unified inbox', link: `/${locale}/vinbox` },
+    { label: t('vfunnel'), ariaLabel: 'Sales funnels', link: `/${locale}/vfunnel` },
+    { label: t('vcommunity'), ariaLabel: 'Merchant community', link: `/${locale}/vcommunity` },
+    { label: t('plans'), ariaLabel: 'View pricing plans', link: `/${locale}#pricing` },
+    { label: t('aboutUs'), ariaLabel: 'Learn about us', link: `/${locale}/about` },
+    { label: t('blogs'), ariaLabel: 'Read our blog', link: `/${locale}/blog` },
+    { label: t('contact'), ariaLabel: 'Get in touch', link: `/${locale}/contact` },
   ];
 
   const socialItems = [
-    { label: 'LinkedIn', link: 'https://www.linkedin.com/company/vondera/' },
-    { label: 'Facebook', link: 'https://www.facebook.com/vondera.eg' },
-    { label: 'Instagram', link: 'https://www.instagram.com/vondera.eg/' },
-    { label: 'TikTok', link: 'https://www.tiktok.com/@vondera.eg' },
-    { label: 'Telegram', link: 'https://t.me/Vonderaa' },
-    { label: 'WhatsApp', link: 'https://wa.me/201070068383' },
+    { label: t('linkedin'), link: 'https://www.linkedin.com/company/vondera/' },
+    { label: t('facebook'), link: 'https://www.facebook.com/vondera.eg' },
+    { label: t('instagram'), link: 'https://www.instagram.com/vondera.eg/' },
+    { label: t('tiktok'), link: 'https://www.tiktok.com/@vondera.eg' },
+    { label: t('telegram'), link: 'https://t.me/Vonderaa' },
+    { label: t('whatsapp'), link: 'https://wa.me/201070068383' },
   ];
 
   return (

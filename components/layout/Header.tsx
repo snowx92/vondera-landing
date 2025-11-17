@@ -27,43 +27,43 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
   const products = [
     {
       name: t('vpay'),
-      description: locale === 'ar' ? 'بوابة دفع متكاملة للمعاملات السلسة' : 'Integrated payment gateway for seamless transactions',
+      description: t('productDescriptions.vpay'),
       href: `/${locale}/vpay`,
     },
     {
       name: t('vdomain'),
-      description: locale === 'ar' ? 'إدارة النطاقات المخصصة لمتجرك' : 'Custom domain management for your store',
+      description: t('productDescriptions.vdomain'),
       href: `/${locale}/vdomain`,
     },
     {
       name: t('vinbox'),
-      description: locale === 'ar' ? 'صندوق وارد موحد لجميع رسائل العملاء' : 'Unified inbox for all your customer messages',
+      description: t('productDescriptions.vinbox'),
       href: `/${locale}/vinbox`,
     },
     {
       name: t('vfunnel'),
-      description: locale === 'ar' ? 'أنشئ مسارات مبيعات عالية التحويل' : 'Create high-converting sales funnels',
+      description: t('productDescriptions.vfunnel'),
       href: `/${locale}/vfunnel`,
     },
     {
       name: t('vmedia'),
-      description: locale === 'ar' ? 'تواصل مع أفضل  ميديا باير لحملاتك' : 'Connect with top media buyers for your campaigns',
+      description: t('productDescriptions.vmedia'),
       href: `/${locale}/vmedia`,
     },
     {
       name: t('vcommunity'),
-      description: locale === 'ar' ? 'تواصل مع التجار وانمُ معاً' : 'Connect with merchants and grow together',
+      description: t('productDescriptions.vcommunity'),
       href: `/${locale}/vcommunity`,
     },
     {
       name: t('vsupply'),
-      description: locale === 'ar' ? 'إدارة سلسلة التوريد (قريباً)' : 'Supply chain management (Coming Soon)',
+      description: t('productDescriptions.vsupply'),
       href: '#',
       comingSoon: true,
     },
     {
       name: t('vship'),
-      description: locale === 'ar' ? 'تكامل الشحن واللوجستيات (قريباً)' : 'Shipping & logistics integration (Coming Soon)',
+      description: t('productDescriptions.vship'),
       href: '#',
       comingSoon: true,
     },

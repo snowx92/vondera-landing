@@ -1,15 +1,9 @@
-import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import ChromaGrid from '@/components/ChromaGrid';
 import BlurText from '@/components/BlurText';
 import LightRays from '@/components/LightRays';
-
-export const metadata: Metadata = {
-  title: 'About Us | Vondera',
-  description: 'Learn about Vondera - the all-in-one e-commerce platform for MENA. Our mission is to make e-commerce accessible to everyone.',
-};
 
 export default function AboutPage() {
   const teamMembers = [

@@ -6,32 +6,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 
-const faqs = [
-  {
-    key: 'question1',
-  },
-  {
-    key: 'question2',
-  },
-  {
-    key: 'question3',
-  },
-  {
-    key: 'question4',
-  },
-  {
-    key: 'question5',
-  },
-  {
-    key: 'question6',
-  },
-];
-
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const locale = useLocale();
   const t = useTranslations('faq');
+  const tFaqs = useTranslations('seo.faqs');
   const isRTL = locale === 'ar';
+
+  // Build FAQs array from translations
+  const faqs = [
+    { question: tFaqs('question1.q'), answer: tFaqs('question1.a') },
+    { question: tFaqs('question2.q'), answer: tFaqs('question2.a') },
+    { question: tFaqs('question3.q'), answer: tFaqs('question3.a') },
+    { question: tFaqs('question4.q'), answer: tFaqs('question4.a') },
+    { question: tFaqs('question5.q'), answer: tFaqs('question5.a') },
+    { question: tFaqs('question6.q'), answer: tFaqs('question6.a') },
+  ];
 
   return (
     <section className="py-20 md:py-32 bg-white" dir={isRTL ? 'rtl' : 'ltr'}>

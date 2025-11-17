@@ -8,28 +8,22 @@ import { Container } from '@/components/ui/Container';
 
 const faqs = [
   {
-    question: 'What is Vondera?',
-    answer: 'Vondera is an all-in-one e-commerce platform designed specifically for the MENA region. It provides everything you need to build, manage, and scale your online store.',
+    key: 'question1',
   },
   {
-    question: 'How is Vondera different from Shopify?',
-    answer: 'Vondera is tailored for the MENA market with local payment methods, Arabic language support, lower pricing, and unique features like VMedia marketplace connecting you with media buyers.',
+    key: 'question2',
   },
   {
-    question: 'What is VMedia?',
-    answer: 'VMedia is our media buying marketplace that connects merchants with professional media buyers. Merchants can find experts to run their ads, while media buyers can offer their services to 10,000+ active stores.',
+    key: 'question3',
   },
   {
-    question: 'Do you have mobile apps?',
-    answer: 'Yes! We have full-featured mobile apps for both iOS and Android, allowing you to manage your store, process orders, and chat with customers from anywhere.',
+    key: 'question4',
   },
   {
-    question: 'What payment methods are supported?',
-    answer: 'Through VPay, we support all major credit cards (VISA, Mastercard, AMEX) and local mobile wallets like Vodafone Cash, Orange Money, InstaPay, and WE Pay.',
+    key: 'question5',
   },
   {
-    question: 'Is there customer support available?',
-    answer: 'Yes, we provide 24/7 customer support via live chat, email, and phone to help you with any questions or issues.',
+    key: 'question6',
   },
 ];
 
@@ -73,7 +67,7 @@ export default function FAQSection() {
               >
                 <div className="flex justify-between items-center">
                   <h3 className="text-lg font-semibold text-gray-900 pr-8">
-                    {faq.question}
+                    {t(`${faq.key}.q`)}
                   </h3>
                   <ChevronDown
                     size={24}
@@ -92,7 +86,7 @@ export default function FAQSection() {
                       className="overflow-hidden"
                     >
                       <p className="text-gray-600 mt-4 leading-relaxed">
-                        {faq.answer}
+                        {t(`${faq.key}.a`)}
                       </p>
                     </motion.div>
                   )}

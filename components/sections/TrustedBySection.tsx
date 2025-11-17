@@ -3,11 +3,13 @@
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import { useEffect, useState } from 'react';
+import { useTranslations } from "next-intl";
 import { getPartners } from '@/lib/apis/partners';
 import { Partner } from '@/lib/apis/types';
 import Image from 'next/image';
 
 export default function TrustedBySection() {
+  const t = useTranslations();
   const [partners, setPartners] = useState<Partner[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -43,7 +45,7 @@ export default function TrustedBySection() {
             viewport={{ once: true }}
             className="text-xs sm:text-sm font-semibold text-violet-600 uppercase tracking-wide mb-1.5 sm:mb-2"
           >
-            Trusted by Industry Leaders
+            {t('partners.hero.badge')}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +54,7 @@ export default function TrustedBySection() {
             transition={{ delay: 0.1 }}
             className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900"
           >
-            Join 10,000+ Successful Merchants
+            {t('partners.hero.title')}
           </motion.h2>
         </div>
 

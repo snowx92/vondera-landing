@@ -2,14 +2,20 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/request';
-import { Outfit } from 'next/font/google';
+import { Outfit, Cairo } from 'next/font/google';
 
 import '../globals.css';
 
-const outfit = Outfit({ 
+const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-outfit',
+});
+
+const cairo = Cairo({
+  subsets: ['arabic', 'latin'],
+  display: 'swap',
+  variable: '--font-cairo',
 });
 
 export function generateStaticParams() {
@@ -30,9 +36,10 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
+  const isArabic = locale === 'ar';
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className={outfit.variable}>
+    <html lang={locale} dir={isArabic ? 'rtl' : 'ltr'} className={`${outfit.variable} ${cairo.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -42,7 +49,7 @@ export default async function LocaleLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={outfit.className}>
+      <body className={isArabic ? cairo.className : outfit.className}>
         <div >
 
           <NextIntlClientProvider messages={messages}>

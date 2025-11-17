@@ -3,29 +3,33 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, X, Star } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 import { Container } from '@/components/ui/Container';
 
 export default function ComparisonSection() {
+  const locale = useLocale();
+  const t = useTranslations('comparison');
+  const isRTL = locale === 'ar';
   const [activeCompetitor, setActiveCompetitor] = useState('shopify');
 
   const competitors = [
-    { id: 'shopify', name: 'Shopify', color: 'green' },
-    { id: 'woocommerce', name: 'WooCommerce', color: 'purple' },
+    { id: 'shopify', name: 'Shopify', label: t('vsShopify'), color: 'green' },
+    { id: 'woocommerce', name: 'WooCommerce', label: t('vsWooCommerce'), color: 'purple' },
   ];
 
   const features = [
-    { name: 'Starting Price', vondera: '300 EGP/mo', shopify: '$29/mo (~1,450 EGP)', woocommerce: 'Free + $50/mo (~2,500 EGP)' },
-    { name: 'Arabic Interface', vondera: true, shopify: 'Limited', woocommerce: 'Plugins Required' },
-    { name: 'RTL Support', vondera: true, shopify: 'Plugins Required', woocommerce: 'Plugins Required' },
-    { name: 'Local Payment Gateways', vondera: true, shopify: 'Limited', woocommerce: 'Plugins Required' },
-    { name: 'Media Buyer Marketplace', vondera: true, shopify: false, woocommerce: false },
-    { name: 'Free Themes', vondera: '20+', shopify: '8', woocommerce: '10+' },
-    { name: 'Mobile Apps', vondera: true, shopify: true, woocommerce: false },
-    { name: 'Transaction Fees', vondera: '0%', shopify: '2%', woocommerce: '0%' },
-    { name: '24/7 Support', vondera: true, shopify: 'Paid Plans', woocommerce: 'Community' },
-    { name: 'Multi-Channel Selling', vondera: true, shopify: true, woocommerce: 'Plugins Required' },
-    { name: 'Social Media Integration', vondera: true, shopify: 'Limited', woocommerce: 'Plugins Required' },
-    { name: 'Built for MENA', vondera: true, shopify: false, woocommerce: false },
+    { name: t('features.startingPrice'), vondera: '300 EGP/mo', shopify: '$29/mo (~1,450 EGP)', woocommerce: 'Free + $50/mo (~2,500 EGP)' },
+    { name: t('features.arabicInterface'), vondera: true, shopify: t('values.limited'), woocommerce: t('values.pluginsRequired') },
+    { name: t('features.rtlSupport'), vondera: true, shopify: t('values.pluginsRequired'), woocommerce: t('values.pluginsRequired') },
+    { name: t('features.localPaymentGateways'), vondera: true, shopify: t('values.limited'), woocommerce: t('values.pluginsRequired') },
+    { name: t('features.mediaBuyerMarketplace'), vondera: true, shopify: false, woocommerce: false },
+    { name: t('features.freeThemes'), vondera: '20+', shopify: '8', woocommerce: '10+' },
+    { name: t('features.mobileApps'), vondera: true, shopify: true, woocommerce: false },
+    { name: t('features.transactionFees'), vondera: '0%', shopify: '2%', woocommerce: '0%' },
+    { name: t('features.support247'), vondera: true, shopify: t('values.paidPlans'), woocommerce: t('values.community') },
+    { name: t('features.multiChannelSelling'), vondera: true, shopify: true, woocommerce: t('values.pluginsRequired') },
+    { name: t('features.socialMediaIntegration'), vondera: true, shopify: t('values.limited'), woocommerce: t('values.pluginsRequired') },
+    { name: t('features.builtForMENA'), vondera: true, shopify: false, woocommerce: false },
   ];
 
   const getCompetitorValue = (feature: typeof features[0]) => {
@@ -50,7 +54,7 @@ export default function ComparisonSection() {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-violet-50 to-white">
+    <section className="py-20 md:py-32 bg-gradient-to-b from-violet-50 to-white" dir={isRTL ? 'rtl' : 'ltr'}>
       <Container>
         <div className="text-center mb-16">
           <motion.div
@@ -60,14 +64,14 @@ export default function ComparisonSection() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Why Merchants Choose
+              {t('title')}
               <br />
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                Vondera Over Others
+                {t('titleHighlight')}
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Compare Vondera with leading e-commerce platforms and see why we're the best choice for MENA
+              {t('subtitle')}
             </p>
 
             {/* Competitor Selector */}
@@ -84,7 +88,7 @@ export default function ComparisonSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  vs {competitor.name}
+                  {competitor.label}
                 </motion.button>
               ))}
             </div>
@@ -102,13 +106,13 @@ export default function ComparisonSection() {
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
             {/* Header */}
             <div className="grid grid-cols-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white p-6">
-              <div className="font-semibold text-lg">Feature</div>
+              <div className="font-semibold text-lg">{t('feature')}</div>
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 mb-1">
                   <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                   <span className="font-bold text-lg">Vondera</span>
                 </div>
-                <span className="text-xs opacity-80">Recommended</span>
+                <span className="text-xs opacity-80">{t('recommended')}</span>
               </div>
               <div className="text-center font-semibold text-lg">
                 {competitors.find((c) => c.id === activeCompetitor)?.name}
@@ -136,17 +140,17 @@ export default function ComparisonSection() {
             {/* Footer CTA */}
             <div className="bg-gradient-to-r from-violet-600 to-purple-600 p-8 text-center">
               <p className="text-white text-lg mb-4 font-medium">
-                Join 10,000+ merchants who switched to Vondera
+                {t('footer.joinMerchants')}
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-violet-600 px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all"
               >
-                Start Your Free Trial
+                {t('footer.startTrial')}
               </motion.button>
               <p className="text-white text-sm mt-4 opacity-80">
-                No credit card required • 14-day free trial • Cancel anytime
+                {t('footer.noCredit')} • {t('footer.freeTrial')} • {t('footer.cancelAnytime')}
               </p>
             </div>
           </div>
@@ -160,12 +164,12 @@ export default function ComparisonSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">Why Merchants Switch to Vondera</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">{t('switchReasons.title')}</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Save 60%', description: 'Lower costs without compromising on features' },
-              { title: 'MENA-First', description: 'Built specifically for Arabic-speaking merchants' },
-              { title: 'VMedia Access', description: 'Exclusive marketplace for media buyers' },
+              { title: t('switchReasons.save60.title'), description: t('switchReasons.save60.description') },
+              { title: t('switchReasons.menaFirst.title'), description: t('switchReasons.menaFirst.description') },
+              { title: t('switchReasons.vmediaAccess.title'), description: t('switchReasons.vmediaAccess.description') },
             ].map((reason, index) => (
               <div key={index} className="p-6 bg-white rounded-xl shadow-lg border border-gray-100">
                 <div className="text-3xl font-bold text-violet-600 mb-2">{reason.title}</div>

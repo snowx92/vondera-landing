@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import FuzzyText from '@/components/FuzzyText';
+import { useTranslations } from 'next-intl';
 
 export default function MapSection() {
+  const t = useTranslations('map');
   return (
     <section className="relative w-full max-w-full overflow-x-hidden overflow-y-visible bg-white pb-12 sm:pb-16 md:pb-20">
       {/* Top Shadow Overlay for Text - Long Fog Style */}
@@ -25,20 +27,20 @@ export default function MapSection() {
         >
           <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 flex flex-col items-center gap-3 sm:gap-4 max-w-full">
             <div className="overflow-visible w-full">
-              <FuzzyText 
+              <FuzzyText
                 fontSize="clamp(1.75rem, 5vw, 4rem)"
                 fontWeight={700}
                 color="#111827"
                 enableHover={false}
                 baseIntensity={0.15}
               >
-                Reaching new heights...
+                {t('title')}
               </FuzzyText>
             </div>
             <div className="mt-2 flex items-center gap-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 flex-wrap justify-center max-w-full px-4">
-              <span>from</span>
-              <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">Egypt</span>
-              <span className="whitespace-nowrap">to the Middle East</span>
+              <span>{t('from')}</span>
+              <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">{t('egypt')}</span>
+              <span className="whitespace-nowrap">{t('toMiddleEast')}</span>
             </div>
           </div>
         </motion.div>

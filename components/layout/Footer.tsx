@@ -10,34 +10,34 @@ export default function Footer() {
   const isRTL = locale === 'ar';
 
   const sections = [
-    { name: 'Process', href: `/${locale}#process` },
-    { name: 'Services', href: `/${locale}#services` },
-    { name: 'Benefits', href: `/${locale}#benefits` },
-    { name: 'Plans', href: `/${locale}#pricing` },
-    { name: 'Contact', href: `/${locale}/contact` },
+    { name: t('process'), href: `/${locale}#process` },
+    { name: t('services'), href: `/${locale}#services` },
+    { name: t('benefits'), href: `/${locale}#benefits` },
+    { name: t('plans'), href: `/${locale}#pricing` },
+    { name: t('contact'), href: `/${locale}/contact` },
   ];
 
   const pages = [
-    { name: 'Home', href: `/${locale}` },
-    { name: 'About Us', href: `/${locale}/about` },
-    { name: 'Blogs', href: `/${locale}/blog` },
-    { name: 'Tutorials', href: `/${locale}/tutorials` },
-    { name: 'Careers', href: `/${locale}/careers` },
-    { name: 'Developers', href: `/${locale}/developers` },
-    { name: 'Partners', href: `/${locale}/partners` },
-    { name: 'Investment', href: `/${locale}/investment` },
+    { name: t('home'), href: `/${locale}` },
+    { name: t('aboutUs'), href: `/${locale}/about` },
+    { name: t('blogs'), href: `/${locale}/blog` },
+    { name: t('tutorials'), href: `/${locale}/tutorials` },
+    { name: t('careers'), href: `/${locale}/careers` },
+    { name: t('developers'), href: `/${locale}/developers` },
+    { name: t('partners'), href: `/${locale}/partners` },
+    { name: t('investment'), href: `/${locale}/investment` },
   ];
 
   const products = [
-    { name: 'VPay', href: `/${locale}/vpay` },
-    { name: 'VDomain', href: `/${locale}/vdomain` },
-    { name: 'VMedia', href: `/${locale}/vmedia` },
-    { name: 'VInbox', href: `/${locale}/vinbox` },
-    { name: 'VFunnel', href: `/${locale}/vfunnel` },
-    { name: 'VCommunity', href: `/${locale}/vcommunity` },
-    { name: 'VSupply', href: '#', comingSoon: true },
-    { name: 'VShip', href: '#', comingSoon: true },
-    { name: 'VStore', href: '#', comingSoon: true },
+    { name: t('vpay'), href: `/${locale}/vpay` },
+    { name: t('vdomain'), href: `/${locale}/vdomain` },
+    { name: t('vmedia'), href: `/${locale}/vmedia` },
+    { name: t('vinbox'), href: `/${locale}/vinbox` },
+    { name: t('vfunnel'), href: `/${locale}/vfunnel` },
+    { name: t('vcommunity'), href: `/${locale}/vcommunity` },
+    { name: t('vsupply'), href: '#', comingSoon: true },
+    { name: t('vship'), href: '#', comingSoon: true },
+    { name: t('vstore'), href: '#', comingSoon: true },
   ];
 
   const socialLinks = [

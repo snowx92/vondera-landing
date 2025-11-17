@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, Phone, MapPin, Send } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
+import { useTranslations } from 'next-intl';
 
 export default function FinalCTASection() {
+  const t = useTranslations('finalCTA');
   return (
     <section className="py-20 md:py-32 bg-gradient-to-br from-violet-600 via-purple-600 to-violet-700 relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -49,11 +51,11 @@ export default function FinalCTASection() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                Ask whatever you have in your mind
+                {t('title')}
               </h2>
 
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Whether you have questions or are ready to discuss your business, we're here to help. Reach out today.
+                {t('subtitle')}
               </p>
             </motion.div>
           </div>
@@ -71,53 +73,53 @@ export default function FinalCTASection() {
                 {/* Left - Contact Form */}
                 <div className="p-8 md:p-12">
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                    Get in Touch
+                    {t('form.title')}
                   </h3>
                   <p className="text-gray-600 mb-8">
-                    Fill out the form and we'll get back to you shortly.
+                    {t('form.subtitle')}
                   </p>
 
                   <form className="space-y-5">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Name
+                        {t('form.name')}
                       </label>
                       <input
                         type="text"
-                        placeholder="Jane Smith"
+                        placeholder={t('form.namePlaceholder')}
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-600 focus:outline-none transition-colors"
                       />
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email
+                        {t('form.email')}
                       </label>
                       <input
                         type="email"
-                        placeholder="Shreef@vondera.app"
+                        placeholder={t('form.emailPlaceholder')}
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-600 focus:outline-none transition-colors"
                       />
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone (Optional)
+                        {t('form.phone')}
                       </label>
                       <input
                         type="tel"
-                        placeholder="+1-555-123-4567"
+                        placeholder={t('form.phonePlaceholder')}
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-600 focus:outline-none transition-colors"
                       />
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Message
+                        {t('form.message')}
                       </label>
                       <textarea
                         rows={4}
-                        placeholder="Hi, I am reaching out for..."
+                        placeholder={t('form.messagePlaceholder')}
                         className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-600 focus:outline-none transition-colors resize-none"
                       />
                     </div>
@@ -128,7 +130,7 @@ export default function FinalCTASection() {
                       whileTap={{ scale: 0.98 }}
                       className="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
                     >
-                      Send Message
+                      {t('form.submit')}
                       <Send size={20} />
                     </motion.button>
                   </form>
@@ -138,7 +140,7 @@ export default function FinalCTASection() {
                 <div className="bg-gradient-to-br from-violet-50 to-purple-50 p-8 md:p-12 flex flex-col justify-between">
                   <div>
                     <h4 className="text-xl font-bold text-gray-900 mb-6">
-                      Contact Information
+                      {t('contactInfo.title')}
                     </h4>
 
                     <div className="space-y-5">
@@ -154,7 +156,7 @@ export default function FinalCTASection() {
                           <Mail size={20} className="text-white" />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-gray-500 mb-1">Email</div>
+                          <div className="text-sm font-medium text-gray-500 mb-1">{t('contactInfo.email')}</div>
                           <div className="text-gray-900 font-semibold group-hover:text-violet-600 transition-colors">
                             info@vondera.app
                           </div>
@@ -173,7 +175,7 @@ export default function FinalCTASection() {
                           <Phone size={20} className="text-white" />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-gray-500 mb-1">Phone</div>
+                          <div className="text-sm font-medium text-gray-500 mb-1">{t('contactInfo.phone')}</div>
                           <div className="text-gray-900 font-semibold group-hover:text-violet-600 transition-colors">
                             +20 10 70068383
                           </div>
@@ -194,9 +196,9 @@ export default function FinalCTASection() {
                           <MapPin size={20} className="text-white" />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-gray-500 mb-1">Address</div>
+                          <div className="text-sm font-medium text-gray-500 mb-1">{t('contactInfo.address')}</div>
                           <div className="text-gray-900 font-semibold group-hover:text-violet-600 transition-colors">
-                            b5105 - Creativa Innovation Hub - Giza
+                            {t('contactInfo.addressValue')}
                           </div>
                         </div>
                       </motion.a>

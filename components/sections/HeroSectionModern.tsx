@@ -4,19 +4,35 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play } from 'lucide-react';
 import Link from 'next/link';
-
-const rotatingPhrases = [
-  ['store', 'they', 'line', 'up', 'for'],
-  ['big', 'thing'],
-  ['one', 'to', 'watch'],
-  ['category', 'creator'],
-  ['unicorn', 'startup'],
-  ['household', 'name'],
-  ['global', 'empire'],
-  ['solo', 'flier'],
-];
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function HeroSectionModern() {
+  const locale = useLocale();
+  const t = useTranslations('heroModern');
+  const isRTL = locale === 'ar';
+
+const rotatingPhrases = locale === 'ar'
+  ? [
+      ['علامة', 'يعشقها', 'الناس'],
+      ['متجر', 'الأكثر', 'مبيعًا'],
+      ['قصة', 'نجاح', 'تجارية'],
+      ['رائد', 'السوق'],
+      ['آلة', 'نمو'],
+      ['علامة', 'موثوقة'],
+      ['متجر', 'عالمي'],
+      ['صانع', 'النمو'],
+    ]
+  : [
+      ['brand', 'customers', 'love'],
+      ['top', 'selling', 'store'],
+      ['ecommerce', 'success', 'story'],
+      ['market', 'leader'],
+      ['scaling', 'machine'],
+      ['trusted', 'brand'],
+      ['global', 'storefront'],
+      ['growth', 'creator'],
+    ];
+
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoError, setVideoError] = useState(false);
@@ -26,43 +42,66 @@ export default function HeroSectionModern() {
     const playVideo = async () => {
       if (videoRef.current) {
         try {
-          // Force video attributes
+          // Force video attributes for mobile compatibility
           videoRef.current.muted = true;
           videoRef.current.playsInline = true;
-          videoRef.current.setAttribute('playsinline', '');
-          videoRef.current.setAttribute('webkit-playsinline', '');
-          
+          videoRef.current.setAttribute('playsinline', 'true');
+          videoRef.current.setAttribute('webkit-playsinline', 'true');
+          videoRef.current.setAttribute('x5-playsinline', 'true'); // For WeChat browser
+          videoRef.current.setAttribute('x5-video-player-type', 'h5'); // For WeChat browser
+          videoRef.current.setAttribute('x5-video-player-fullscreen', 'false'); // For WeChat browser
+
           // Load and play
           await videoRef.current.load();
           const playPromise = videoRef.current.play();
-          
+
           if (playPromise !== undefined) {
             await playPromise;
             console.log('Video is playing successfully');
           }
         } catch (error) {
           console.error('Error playing video:', error);
-          setVideoError(true);
+          // Don't set error on mobile, just retry silently
+          if (window.innerWidth > 768) {
+            setVideoError(true);
+          }
         }
       }
     };
 
-    // Initial play attempt
-    playVideo();
+    // Initial play attempt - delayed for mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const delay = isMobile ? 300 : 0;
 
-    // Retry on user interaction
+    const timeoutId = setTimeout(() => {
+      playVideo();
+    }, delay);
+
+    // Retry on user interaction (important for iOS)
     const handleInteraction = () => {
       playVideo();
-      document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('touchstart', handleInteraction);
     };
 
-    document.addEventListener('click', handleInteraction);
-    document.addEventListener('touchstart', handleInteraction);
+    // Multiple interaction events for better mobile coverage
+    const events = ['click', 'touchstart', 'touchend', 'scroll'];
+    events.forEach(event => {
+      document.addEventListener(event, handleInteraction, { once: true, passive: true });
+    });
+
+    // Also try to play on visibility change
+    const handleVisibilityChange = () => {
+      if (!document.hidden && videoRef.current) {
+        playVideo();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
-      document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('touchstart', handleInteraction);
+      clearTimeout(timeoutId);
+      events.forEach(event => {
+        document.removeEventListener(event, handleInteraction);
+      });
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 
@@ -76,11 +115,12 @@ export default function HeroSectionModern() {
 
 
   return (
-    <section 
-      className="relative w-full overflow-hidden bg-gray-900 h-[85vh] sm:h-[95vh] md:h-[100vh] lg:h-[110vh]" 
-      style={{ 
+    <section
+      className="relative w-full overflow-hidden bg-gray-900 h-[85vh] sm:h-[95vh] md:h-[100vh] lg:h-[110vh]"
+      style={{
         minHeight: '600px'
       }}
+      dir={isRTL ? 'rtl' : 'ltr'}
     >
       {/* Background Video - Using multiple sources for better compatibility */}
       <video
@@ -91,9 +131,13 @@ export default function HeroSectionModern() {
         playsInline
         preload="auto"
         poster=""
+        webkit-playsinline="true"
+        x5-playsinline="true"
+        x5-video-player-type="h5"
+        x5-video-player-fullscreen="false"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ 
-          opacity: videoError ? 0 : 1, 
+        style={{
+          opacity: videoError ? 0 : 1,
           transition: 'opacity 0.3s',
           objectFit: 'cover',
           objectPosition: 'center center',
@@ -102,12 +146,29 @@ export default function HeroSectionModern() {
         }}
         onError={(e) => {
           console.error('Video error:', e);
-          setVideoError(true);
+          // Only show error on desktop
+          if (window.innerWidth > 768) {
+            setVideoError(true);
+          }
         }}
         onCanPlay={() => {
           console.log('Video can play');
           if (videoRef.current) {
-            videoRef.current.play().catch(err => console.error('Play failed:', err));
+            videoRef.current.play().catch(err => {
+              console.error('Play failed:', err);
+              // Retry on next tick
+              setTimeout(() => {
+                if (videoRef.current) {
+                  videoRef.current.play().catch(() => {});
+                }
+              }, 100);
+            });
+          }
+        }}
+        onLoadedData={() => {
+          // Try to play when video data is loaded
+          if (videoRef.current) {
+            videoRef.current.play().catch(() => {});
           }
         }}
       >
@@ -134,7 +195,7 @@ export default function HeroSectionModern() {
                 transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-1 sm:mb-2 leading-tight tracking-tight"
               >
-                Be the next
+                {t('title')}
               </motion.h1>
 
               {/* Animated rotating text */}
@@ -181,7 +242,7 @@ export default function HeroSectionModern() {
                   transition={{ duration: 0.6, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
                   className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-6 sm:mb-8 leading-relaxed"
                 >
-                  Dream big, build fast, and grow far on Vondera.
+                  {t('subtitle')}
                 </motion.p>
 
                 {/* Primary CTA Button */}
@@ -196,7 +257,7 @@ export default function HeroSectionModern() {
                     rel="noopener noreferrer"
                   >
                     <button className="px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-gray-900 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-gray-100 transition-colors shadow-xl">
-                      Start for free
+                      {t('cta')}
                     </button>
                   </a>
                 </motion.div>
@@ -209,12 +270,12 @@ export default function HeroSectionModern() {
                 transition={{ duration: 0.6, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 className="hidden sm:block"
               >
-                <Link 
+                <Link
                   href="#why-vondera"
                   className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors group"
                 >
                   <Play className="w-3 h-3 fill-current" />
-                  <span className="text-base sm:text-lg font-medium">Why we build Vondera</span>
+                  <span className="text-base sm:text-lg font-medium">{t('whyVondera')}</span>
                 </Link>
               </motion.div>
 
@@ -225,11 +286,11 @@ export default function HeroSectionModern() {
                 transition={{ duration: 0.6, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 className="sm:hidden"
               >
-                <Link 
+                <Link
                   href="#why-vondera"
                   className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors underline underline-offset-4"
                 >
-                  <span className="text-base font-medium">Why we build Vondera</span>
+                  <span className="text-base font-medium">{t('whyVondera')}</span>
                 </Link>
               </motion.div>
             </div>

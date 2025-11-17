@@ -96,20 +96,22 @@ export default function MobileAppsSection() {
 
             {/* Download Buttons */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <AppStoreButton 
-                size="lg"
-                href="https://apps.apple.com/eg/app/vondera/id6459148256"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer"
-              />
-              <GooglePlayButton 
-                size="lg"
-                href="https://play.google.com/store/apps/details?id=com.vee.vcommerce"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer"
-              />
+                <div className="flex flex-row gap-3 w-auto">
+                  <AppStoreButton 
+                    size="lg"
+                    href="https://apps.apple.com/eg/app/vondera/id6459148256"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  />
+                  <GooglePlayButton 
+                    size="lg"
+                    href="https://play.google.com/store/apps/details?id=com.vee.vcommerce"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  />
+                </div>
             </div>
 
             <p className="text-xs sm:text-sm text-gray-600 mt-3 sm:mt-4">{t('platforms')}</p>

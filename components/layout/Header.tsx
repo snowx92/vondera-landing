@@ -26,44 +26,44 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
 
   const products = [
     {
-      name: 'VPay',
-      description: 'Integrated payment gateway for seamless transactions',
+      name: t('vpay'),
+      description: locale === 'ar' ? 'بوابة دفع متكاملة للمعاملات السلسة' : 'Integrated payment gateway for seamless transactions',
       href: `/${locale}/vpay`,
     },
     {
-      name: 'VDomain',
-      description: 'Custom domain management for your store',
+      name: t('vdomain'),
+      description: locale === 'ar' ? 'إدارة النطاقات المخصصة لمتجرك' : 'Custom domain management for your store',
       href: `/${locale}/vdomain`,
     },
     {
-      name: 'VInbox',
-      description: 'Unified inbox for all your customer messages',
+      name: t('vinbox'),
+      description: locale === 'ar' ? 'صندوق وارد موحد لجميع رسائل العملاء' : 'Unified inbox for all your customer messages',
       href: `/${locale}/vinbox`,
     },
     {
-      name: 'VFunnels',
-      description: 'Create high-converting sales funnels',
+      name: t('vfunnel'),
+      description: locale === 'ar' ? 'أنشئ مسارات مبيعات عالية التحويل' : 'Create high-converting sales funnels',
       href: `/${locale}/vfunnel`,
     },
     {
-      name: 'VMedia',
-      description: 'Connect with top media buyers for your campaigns',
+      name: t('vmedia'),
+      description: locale === 'ar' ? 'تواصل مع أفضل  ميديا باير لحملاتك' : 'Connect with top media buyers for your campaigns',
       href: `/${locale}/vmedia`,
     },
     {
-      name: 'VCommunity',
-      description: 'Connect with merchants and grow together',
+      name: t('vcommunity'),
+      description: locale === 'ar' ? 'تواصل مع التجار وانمُ معاً' : 'Connect with merchants and grow together',
       href: `/${locale}/vcommunity`,
     },
     {
-      name: 'VSupply',
-      description: 'Supply chain management (Coming Soon)',
+      name: t('vsupply'),
+      description: locale === 'ar' ? 'إدارة سلسلة التوريد (قريباً)' : 'Supply chain management (Coming Soon)',
       href: '#',
       comingSoon: true,
     },
     {
-      name: 'VShip',
-      description: 'Shipping & logistics integration (Coming Soon)',
+      name: t('vship'),
+      description: locale === 'ar' ? 'تكامل الشحن واللوجستيات (قريباً)' : 'Shipping & logistics integration (Coming Soon)',
       href: '#',
       comingSoon: true,
     },
@@ -79,11 +79,26 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
 
   useEffect(() => {
     if (isMobileMenuOpen) {
+      // Get current scroll position
+      const scrollY = window.scrollY;
+      // Prevent body scroll and maintain scroll position
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
     } else {
+      // Restore scroll position
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
       document.body.style.overflow = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
     return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
       document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen]);
@@ -133,9 +148,8 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
                 shouldBeWhite ? "text-gray-700" : "text-white"
               )}
             >
-              Why Vondera
+              {t('whyVondera')}
             </Link>
-            
             {/* Solution Dropdown */}
             <div 
               className="relative group"
@@ -147,17 +161,22 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
                   "flex items-center gap-1 transition-colors duration-300 hover:text-primary-500",
                   shouldBeWhite ? "text-gray-700" : "text-white"
                 )}
+                onMouseEnter={() => setIsSolutionOpen(true)}
+                onMouseLeave={() => setIsSolutionOpen(false)}
               >
-                Solution
+                {t('solution')}
                 <ChevronDown size={16} className={cn(
                   "transition-transform duration-200",
                   isSolutionOpen && "rotate-180"
                 )} />
               </button>
-
               {/* Dropdown Menu - Full Width */}
               {isSolutionOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-screen max-w-5xl bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+                <div 
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-screen max-w-5xl bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden"
+                  onMouseEnter={() => setIsSolutionOpen(true)}
+                  onMouseLeave={() => setIsSolutionOpen(false)}
+                >
                   <div className="p-4">
                     <div className="grid grid-cols-2 gap-2">
                       {products.map((product, index) => (
@@ -177,7 +196,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
                               {product.name}
                               {product.comingSoon && (
                                 <span className="ml-2 text-xs font-normal text-gray-500">
-                                  Coming Soon
+                                  {locale === 'ar' ? 'قريباً' : 'Coming Soon'}
                                 </span>
                               )}
                             </div>
@@ -199,7 +218,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
                 shouldBeWhite ? "text-vmedia-600 hover:text-vmedia-700" : "text-white hover:text-vmedia-400"
               )}
             >
-              Media Buyers
+              {t('mediaBuyers')}
             </Link>
             <Link 
               href={`/${locale}#pricing`} 
@@ -208,7 +227,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
                 shouldBeWhite ? "text-gray-700" : "text-white"
               )}
             >
-              Pricing
+              {t('pricing')}
             </Link>
             <Link 
               href={`/${locale}/developers`} 
@@ -217,7 +236,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
                 shouldBeWhite ? "text-gray-700" : "text-white"
               )}
             >
-              Developers
+              {t('developers')}
             </Link>
             <Link 
               href={`/${locale}/about`} 
@@ -226,7 +245,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
                 shouldBeWhite ? "text-gray-700" : "text-white"
               )}
             >
-              About
+              {t('about')}
             </Link>
           </nav>
 
@@ -289,9 +308,9 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
         )}
 
         {/* Mobile Menu Sidebar */}
-        <div 
+        <div
           className={cn(
-            "lg:hidden fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-black/95 backdrop-blur-xl z-50 transform transition-transform duration-500 ease-out shadow-2xl",
+            "lg:hidden fixed top-0 right-0 h-screen w-[85%] max-w-sm bg-black/95 backdrop-blur-xl z-50 transform transition-transform duration-500 ease-out shadow-2xl overflow-hidden",
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           )}
           style={{

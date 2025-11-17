@@ -1,18 +1,121 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Check, X, Minus } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Check, X, Minus, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+interface Plan {
+  name: string;
+  prices: {
+    monthly: number;
+    '3months': number;
+    '6months': number;
+    yearly: number;
+  };
+  popular: boolean;
+}
+
+interface PricingCardProps {
+  plan: Plan;
+  billingPeriod: 'monthly' | '3months' | '6months' | 'yearly';
+  getSavings: (period: 'monthly' | '3months' | '6months' | 'yearly', monthlyPrice: number, discountedPrice: number) => string | null;
+}
+
+function PricingCard({ plan, billingPeriod, getSavings }: PricingCardProps) {
+  return (
+    <div className={`relative h-full bg-white rounded-2xl shadow-lg p-6 md:p-8 ${
+      plan.popular ? 'border-2 border-primary-500 shadow-xl' : 'border border-gray-200'
+    }`}>
+      {plan.popular && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+          <Badge variant="success" className="px-4 py-1 text-sm">
+            Most Popular
+          </Badge>
+        </div>
+      )}
+
+      <div className="text-center">
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
+        <div className="mb-6">
+          {billingPeriod === 'monthly' ? (
+            <>
+              <div className="text-4xl md:text-5xl font-bold text-gray-900">
+                {plan.prices[billingPeriod]}
+                <span className="text-base md:text-lg text-gray-500 font-normal"> EGP</span>
+              </div>
+              <div className="text-sm text-gray-500 mt-2">per month</div>
+            </>
+          ) : (
+            <>
+              {/* Monthly Equivalent as Main Price */}
+              <div className="text-4xl md:text-5xl font-bold text-gray-900">
+                {(() => {
+                  const months = billingPeriod === '3months' ? 3 : billingPeriod === '6months' ? 6 : 12;
+                  const monthlyEquivalent = Math.round(plan.prices[billingPeriod] / months);
+                  return monthlyEquivalent;
+                })()}
+                <span className="text-base md:text-lg text-gray-500 font-normal"> EGP</span>
+              </div>
+              <div className="text-sm text-gray-500 mt-1">per month</div>
+
+              {/* Package Price & Savings */}
+              <div className="mt-3 space-y-1.5">
+                <div className="text-base text-gray-600">
+                  {plan.prices[billingPeriod]} EGP {
+                    billingPeriod === '3months' ? 'every 3 months' :
+                    billingPeriod === '6months' ? 'every 6 months' : 'per year'
+                  }
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-sm text-gray-400 line-through">
+                    {(() => {
+                      const months = billingPeriod === '3months' ? 3 : billingPeriod === '6months' ? 6 : 12;
+                      return `${plan.prices.monthly * months} EGP`;
+                    })()}
+                  </span>
+                  <Badge variant="success" className="text-xs px-2 py-0.5">
+                    {getSavings(billingPeriod, plan.prices.monthly, plan.prices[billingPeriod])}
+                  </Badge>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+
+        <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer" className="w-full">
+          <Button
+            variant={plan.popular ? 'primary' : 'outline'}
+            size="lg"
+            className="w-full"
+          >
+            Get Started
+          </Button>
+        </a>
+      </div>
+    </div>
+  );
+}
 
 export default function PricingSection() {
   const locale = useLocale();
   const t = useTranslations('pricing');
   const isRTL = locale === 'ar';
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | '3months' | '6months' | 'yearly'>('yearly');
+  const [currentSlide, setCurrentSlide] = useState(1); // Start with the popular plan (Plus)
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const plans = [
     {
@@ -80,6 +183,8 @@ export default function PricingSection() {
     { name: 'Customer Support', starter: 'Email & Chat (Business Hours)', plus: '24/7 Chat & WhatsApp', pro: 'Dedicated Account Manager' },
   ];
 
+  const billingOptions = ['monthly', '3months', '6months', 'yearly'] as const;
+
   const getBillingLabel = (period: typeof billingPeriod) => {
     switch (period) {
       case 'monthly': return 'Monthly';
@@ -96,6 +201,18 @@ export default function PricingSection() {
     const savings = normalTotal - discountedPrice;
     const percentage = Math.round((savings / normalTotal) * 100);
     return `Save ${percentage}%`;
+  };
+
+  const handleSliderChange = (value: number) => {
+    setBillingPeriod(billingOptions[value]);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % plans.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + plans.length) % plans.length);
   };
 
   return (
@@ -115,113 +232,107 @@ export default function PricingSection() {
               {t('subtitle')}
             </p>
 
-            {/* Billing Period Selector */}
-            <div className="inline-flex flex-wrap bg-gray-200 rounded-xl p-1 mb-8 gap-1 max-w-full">
-              {(['monthly', '3months', '6months', 'yearly'] as const).map((period) => (
-                <button
-                  key={period}
-                  onClick={() => setBillingPeriod(period)}
-                  className={`px-3 sm:px-6 py-2 rounded-lg font-medium transition-all text-xs sm:text-sm md:text-base ${
-                    billingPeriod === period
-                      ? 'bg-white text-primary-600 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  <span className="whitespace-nowrap">{getBillingLabel(period)}</span>
-                  {period !== 'monthly' && (
-                    <span className="ml-1 sm:ml-2 text-xs text-green-600 font-semibold block sm:inline">
-                      {getSavings(period, 700, plans[1].prices[period])}
-                    </span>
-                  )}
-                </button>
-              ))}
+            {/* Billing Period Slider */}
+            <div className="max-w-md mx-auto mb-8 px-4">
+              <div className="text-center mb-4">
+                <div className="text-2xl font-bold text-gray-900 mb-1">
+                  {getBillingLabel(billingPeriod)}
+                </div>
+                {billingPeriod !== 'monthly' && (
+                  <div className="text-sm text-green-600 font-semibold">
+                    {getSavings(billingPeriod, 700, plans[1].prices[billingPeriod])}
+                  </div>
+                )}
+              </div>
+
+              <div className="relative">
+                <input
+                  type="range"
+                  min="0"
+                  max="3"
+                  value={billingOptions.indexOf(billingPeriod)}
+                  onChange={(e) => handleSliderChange(parseInt(e.target.value))}
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary-600 [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-primary-600 [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-md [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:rounded-lg [&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded-lg"
+                  style={{
+                    background: `linear-gradient(to right, rgb(99 102 241) 0%, rgb(99 102 241) ${(billingOptions.indexOf(billingPeriod) / 3) * 100}%, rgb(229 231 235) ${(billingOptions.indexOf(billingPeriod) / 3) * 100}%, rgb(229 231 235) 100%)`
+                  }}
+                />
+                <div className="flex justify-between mt-3 text-xs text-gray-500 font-medium">
+                  <span>Monthly</span>
+                  <span>3M</span>
+                  <span>6M</span>
+                  <span>12M</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-16 px-4 sm:px-0">
-          {plans.map((plan, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={plan.popular ? 'md:-mt-4' : ''}
+        {/* Pricing Cards - Desktop Grid & Mobile Carousel */}
+        <div className="max-w-6xl mx-auto mb-16 px-4">
+          {/* Desktop: Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
+            {plans.map((plan, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={plan.popular ? 'md:-mt-4' : ''}
+              >
+                <PricingCard plan={plan} billingPeriod={billingPeriod} getSavings={getSavings} />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile: Carousel */}
+          <div className="md:hidden relative">
+            <div className="overflow-hidden">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.3 }}
+                  className="w-full"
+                >
+                  <PricingCard plan={plans[currentSlide]} billingPeriod={billingPeriod} getSavings={getSavings} />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Carousel Controls */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 bg-white rounded-full p-2 shadow-lg z-10 hover:bg-gray-50 transition-colors"
+              aria-label="Previous plan"
             >
-              <div className={`relative h-full bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 ${
-                plan.popular ? 'border-2 border-primary-500 shadow-xl' : 'border border-gray-200'
-              }`}>
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge variant="success" className="px-4 py-1 text-sm">
-                      Most Popular
-                    </Badge>
-                  </div>
-                )}
-                
-                <div className="text-center">
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">{plan.name}</h3>
-                  <div className="mb-4 sm:mb-6">
-                    {billingPeriod === 'monthly' ? (
-                      <>
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-                          {plan.prices[billingPeriod]}
-                          <span className="text-sm sm:text-base md:text-lg text-gray-500 font-normal"> EGP</span>
-                        </div>
-                        <div className="text-xs sm:text-sm text-gray-500 mt-2">per month</div>
-                      </>
-                    ) : (
-                      <>
-                        {/* Monthly Equivalent as Main Price */}
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-                          {(() => {
-                            const months = billingPeriod === '3months' ? 3 : billingPeriod === '6months' ? 6 : 12;
-                            const monthlyEquivalent = Math.round(plan.prices[billingPeriod] / months);
-                            return monthlyEquivalent;
-                          })()}
-                          <span className="text-sm sm:text-base md:text-lg text-gray-500 font-normal"> EGP</span>
-                        </div>
-                        <div className="text-xs sm:text-sm text-gray-500 mt-1">per month</div>
-                        
-                        {/* Package Price & Savings */}
-                        <div className="mt-2 sm:mt-3 space-y-1 sm:space-y-1.5">
-                          <div className="text-sm sm:text-base text-gray-600">
-                            {plan.prices[billingPeriod]} EGP {
-                              billingPeriod === '3months' ? 'every 3 months' :
-                              billingPeriod === '6months' ? 'every 6 months' : 'per year'
-                            }
-                          </div>
-                          <div className="flex items-center justify-center gap-2">
-                            <span className="text-sm text-gray-400 line-through">
-                              {(() => {
-                                const months = billingPeriod === '3months' ? 3 : billingPeriod === '6months' ? 6 : 12;
-                                return `${plan.prices.monthly * months} EGP`;
-                              })()}
-                            </span>
-                            <Badge variant="success" className="text-xs px-2 py-0.5">
-                              {getSavings(billingPeriod, plan.prices.monthly, plan.prices[billingPeriod])}
-                            </Badge>
-                          </div>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                  
-                  <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer" className="w-full">
-                    <Button 
-                      variant={plan.popular ? 'primary' : 'outline'}
-                      size="lg"
-                      className="w-full"
-                    >
-                      Get Started
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              <ChevronLeft className="w-6 h-6 text-gray-700" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 bg-white rounded-full p-2 shadow-lg z-10 hover:bg-gray-50 transition-colors"
+              aria-label="Next plan"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-700" />
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-2 mt-6">
+              {plans.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    currentSlide === index ? 'bg-primary-600 w-8' : 'bg-gray-300'
+                  }`}
+                  aria-label={`Go to plan ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Feature Comparison Table */}

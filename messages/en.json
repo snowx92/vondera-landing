@@ -30,6 +30,58 @@
       "support": "24/7 Support"
     }
   },
+  "heroModern": {
+    "title": "Be the next",
+    "subtitle": "Dream big, build fast, and grow far on Vondera.",
+    "cta": "Start for free",
+    "whyVondera": "Why we build Vondera"
+  },
+  "comparison": {
+    "title": "Why Merchants Choose",
+    "titleHighlight": "Vondera Over Others",
+    "subtitle": "Compare Vondera with leading e-commerce platforms and see why we're the best choice for MENA",
+    "vsButton": "vs",
+    "feature": "Feature",
+    "recommended": "Recommended",
+    "footerText": "Join 10,000+ merchants who switched to Vondera",
+    "footerCta": "Start Your Free Trial",
+    "footerNote": "No credit card required • 14-day free trial • Cancel anytime",
+    "whySwitch": "Why Merchants Switch to Vondera",
+    "reasons": {
+      "save": {
+        "title": "Save 60%",
+        "description": "Lower costs without compromising on features"
+      },
+      "mena": {
+        "title": "MENA-First",
+        "description": "Built specifically for Arabic-speaking merchants"
+      },
+      "vmedia": {
+        "title": "VMedia Access",
+        "description": "Exclusive marketplace for media buyers"
+      }
+    },
+    "features": {
+      "startingPrice": "Starting Price",
+      "arabicInterface": "Arabic Interface",
+      "rtlSupport": "RTL Support",
+      "localPayment": "Local Payment Gateways",
+      "mediaBuyer": "Media Buyer Marketplace",
+      "freeThemes": "Free Themes",
+      "mobileApps": "Mobile Apps",
+      "transactionFees": "Transaction Fees",
+      "support247": "24/7 Support",
+      "multiChannel": "Multi-Channel Selling",
+      "socialMedia": "Social Media Integration",
+      "builtMena": "Built for MENA"
+    },
+    "values": {
+      "limited": "Limited",
+      "pluginsRequired": "Plugins Required",
+      "paidPlans": "Paid Plans",
+      "community": "Community"
+    }
+  },
   "mediaBuyerBanner": {
     "title": "Are you a Media Buyer?",
     "subtitle": "Join VMedia - Offer your services to 10,000+ active merchants",
@@ -70,9 +122,39 @@
   "features": {
     "title": "Everything You Need to Succeed Online",
     "subtitle": "Powerful features built for modern e-commerce",
+    "description": "Explore our powerful features designed to streamline your e-commerce operations",
     "websiteBuilder": {
       "title": "Website Builder",
-      "description": "20 free professional themes, no coding required"
+      "description": "20 free professional themes, no coding required",
+      "subtitle": "Build your online store in minutes",
+      "features": {
+        "dragDrop": "Drag & drop builder",
+        "mobileResponsive": "Mobile responsive",
+        "seoOptimized": "SEO optimized",
+        "customTemplates": "Custom templates"
+      }
+    },
+    "funnelBuilder": {
+      "title": "Funnel Builder",
+      "description": "Convert visitors into customers",
+      "subtitle": "Build high-converting sales funnels",
+      "features": {
+        "preBuiltTemplates": "Pre-built templates",
+        "abTesting": "A/B testing",
+        "analyticsTracking": "Analytics tracking",
+        "upsellDownsell": "Upsell & downsell"
+      }
+    },
+    "socialInbox": {
+      "title": "Social Inbox",
+      "description": "Manage all conversations",
+      "subtitle": "Unified inbox for all social media",
+      "features": {
+        "multiPlatformSupport": "Multi-platform support",
+        "aiPoweredResponses": "AI-powered responses",
+        "teamCollaboration": "Team collaboration",
+        "autoResponses": "Auto-responses"
+      }
     },
     "multiChannel": {
       "title": "Multi-Channel Selling",
@@ -370,7 +452,61 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Everything you need to know about Vondera"
+    "subtitle": "Everything you need to know about Vondera",
+    "question1": {
+      "q": "What is Vondera?",
+      "a": "Vondera is an all-in-one e-commerce platform designed specifically for the MENA region. It provides everything you need to build, manage, and scale your online store."
+    },
+    "question2": {
+      "q": "How is Vondera different from Shopify?",
+      "a": "Vondera is tailored for the MENA market with local payment methods, Arabic language support, lower pricing, and unique features like VMedia marketplace connecting you with media buyers."
+    },
+    "question3": {
+      "q": "What is VMedia?",
+      "a": "VMedia is our media buying marketplace that connects merchants with professional media buyers. Merchants can find experts to run their ads, while media buyers can offer their services to 10,000+ active stores."
+    },
+    "question4": {
+      "q": "Do you have mobile apps?",
+      "a": "Yes! We have full-featured mobile apps for both iOS and Android, allowing you to manage your store, process orders, and chat with customers from anywhere."
+    },
+    "question5": {
+      "q": "What payment methods are supported?",
+      "a": "Through VPay, we support all major credit cards (VISA, Mastercard, AMEX) and local mobile wallets like Vodafone Cash, Orange Money, InstaPay, and WE Pay."
+    },
+    "question6": {
+      "q": "Is there customer support available?",
+      "a": "Yes, we provide 24/7 customer support via live chat, email, and phone to help you with any questions or issues."
+    }
+  },
+  "finalCTA": {
+    "title": "Ask whatever you have in your mind",
+    "subtitle": "Whether you have questions or are ready to discuss your business, we're here to help. Reach out today.",
+    "form": {
+      "title": "Get in Touch",
+      "subtitle": "Fill out the form and we'll get back to you shortly.",
+      "name": "Name",
+      "namePlaceholder": "Jane Smith",
+      "email": "Email",
+      "emailPlaceholder": "Shreef@vondera.app",
+      "phone": "Phone (Optional)",
+      "phonePlaceholder": "+1-555-123-4567",
+      "message": "Message",
+      "messagePlaceholder": "Hi, I am reaching out for...",
+      "submit": "Send Message"
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "addressValue": "b5105 - Creativa Innovation Hub - Giza"
+    }
+  },
+  "map": {
+    "title": "Reaching new heights...",
+    "from": "from",
+    "egypt": "Egypt",
+    "toMiddleEast": "to the Middle East"
   },
   "footer": {
     "tagline": "We Make E-commerce Much Easier",

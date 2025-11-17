@@ -25,10 +25,12 @@ export default function Footer() {
     { name: 'Careers', href: `/${locale}/careers` },
     { name: 'Developers', href: `/${locale}/developers` },
     { name: 'Partners', href: `/${locale}/partners` },
+    { name: 'Investment', href: `/${locale}/investment` },
   ];
 
   const products = [
     { name: 'VPay', href: `/${locale}/vpay` },
+    { name: 'VDomain', href: `/${locale}/vdomain` },
     { name: 'VMedia', href: `/${locale}/vmedia` },
     { name: 'VInbox', href: `/${locale}/vinbox` },
     { name: 'VFunnel', href: `/${locale}/vfunnel` },

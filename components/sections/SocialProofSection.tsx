@@ -58,27 +58,27 @@ export default function SocialProofSection() {
   }));
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-white to-violet-50 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-b from-white to-violet-50 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5" />
 
       <Container>
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
               Loved by Thousands
               <br />
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
                 of Merchants
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8">
               See what merchants are saying about their experience with Vondera
             </p>
             
@@ -106,7 +106,7 @@ export default function SocialProofSection() {
             <div className="overflow-hidden">
               {/* First Row - Scroll Left */}
               <motion.div
-                className="flex gap-6 mb-6"
+                className="flex gap-4 sm:gap-6 mb-4 sm:mb-6"
                 animate={{
                   x: [0, -1920],
                 }}
@@ -122,31 +122,31 @@ export default function SocialProofSection() {
                 {[...displayReviews, ...displayReviews, ...displayReviews].map((testimonial, index) => (
                   <div
                     key={`${testimonial.id}-${index}`}
-                    className="min-w-[400px] bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+                    className="min-w-[280px] sm:min-w-[320px] md:min-w-[400px] bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg border border-gray-100"
                   >
                     {/* Rating */}
-                    <div className="flex items-center gap-1 mb-4">
+                    <div className="flex items-center gap-0.5 sm:gap-1 mb-3 sm:mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
+                        <Star key={i} size={16} className="sm:w-[18px] sm:h-[18px] fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
 
                     {/* Content */}
-                    <Quote className="w-8 h-8 text-violet-200 mb-2" />
-                    <p className="text-gray-700 mb-4 leading-relaxed line-clamp-3">{testimonial.review}</p>
+                    <Quote className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-violet-200 mb-2" />
+                    <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed line-clamp-3">{testimonial.review}</p>
 
                     {/* Author */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <div 
-                        className="w-12 h-12 rounded-full bg-cover bg-center border-2 border-violet-200"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cover bg-center border-2 border-violet-200 flex-shrink-0"
                         style={{ backgroundImage: `url(${testimonial.logo || 'https://i.pravatar.cc/150'})` }}
                       />
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5 sm:gap-2">
+                          <div className="font-semibold text-sm sm:text-base text-gray-900 truncate">{testimonial.name}</div>
                           {testimonial.featured && (
-                            <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                              <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <div className="w-4 h-4 sm:w-5 sm:h-5 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                              <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -156,7 +156,7 @@ export default function SocialProofSection() {
                             </div>
                           )}
                         </div>
-                        <div className="text-sm text-gray-500">{testimonial.storeName}</div>
+                        <div className="text-xs sm:text-sm text-gray-500 truncate">{testimonial.storeName}</div>
                       </div>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ export default function SocialProofSection() {
 
               {/* Second Row - Scroll Right */}
               <motion.div
-                className="flex gap-6"
+                className="flex gap-4 sm:gap-6"
                 animate={{
                   x: [-1920, 0],
                 }}
@@ -181,31 +181,31 @@ export default function SocialProofSection() {
                 {[...displayReviews, ...displayReviews, ...displayReviews].map((testimonial, index) => (
                   <div
                     key={`${testimonial.id}-${index}-reverse`}
-                    className="min-w-[400px] bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+                    className="min-w-[280px] sm:min-w-[320px] md:min-w-[400px] bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg border border-gray-100"
                   >
                     {/* Rating */}
-                    <div className="flex items-center gap-1 mb-4">
+                    <div className="flex items-center gap-0.5 sm:gap-1 mb-3 sm:mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
+                        <Star key={i} size={16} className="sm:w-[18px] sm:h-[18px] fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
 
                     {/* Content */}
-                    <Quote className="w-8 h-8 text-violet-200 mb-2" />
-                    <p className="text-gray-700 mb-4 leading-relaxed line-clamp-3">{testimonial.review}</p>
+                    <Quote className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-violet-200 mb-2" />
+                    <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed line-clamp-3">{testimonial.review}</p>
 
                     {/* Author */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <div 
-                        className="w-12 h-12 rounded-full bg-cover bg-center border-2 border-violet-200"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cover bg-center border-2 border-violet-200 flex-shrink-0"
                         style={{ backgroundImage: `url(${testimonial.logo || 'https://i.pravatar.cc/150'})` }}
                       />
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5 sm:gap-2">
+                          <div className="font-semibold text-sm sm:text-base text-gray-900 truncate">{testimonial.name}</div>
                           {testimonial.featured && (
-                            <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                              <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <div className="w-4 h-4 sm:w-5 sm:h-5 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                              <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -215,7 +215,7 @@ export default function SocialProofSection() {
                             </div>
                           )}
                         </div>
-                        <div className="text-sm text-gray-500">{testimonial.storeName}</div>
+                        <div className="text-xs sm:text-sm text-gray-500 truncate">{testimonial.storeName}</div>
                       </div>
                     </div>
                   </div>
@@ -225,8 +225,8 @@ export default function SocialProofSection() {
           )}
 
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-violet-50 to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-violet-50 to-transparent pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-violet-50 to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-violet-50 to-transparent pointer-events-none" />
         </div>
 
         {/* Bottom CTA */}
@@ -235,19 +235,19 @@ export default function SocialProofSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16 px-4"
         >
-          <p className="text-gray-600 mb-6 text-lg">
+          <p className="text-gray-600 mb-4 sm:mb-6 text-base sm:text-lg">
             Join 10,000+ satisfied merchants growing their business with Vondera
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+            className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all"
           >
             Start Your Free Trial
           </motion.button>
-          <p className="text-sm text-gray-500 mt-4">No credit card required • 14-day free trial</p>
+          <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">No credit card required • 14-day free trial</p>
         </motion.div>
       </Container>
     </section>

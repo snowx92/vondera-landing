@@ -34,25 +34,25 @@ export default function MobileAppsSection() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gray-50" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-gray-50" dir={isRTL ? 'rtl' : 'ltr'}>
       <Container>
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
               {t('title')}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               {t('subtitle')}
             </p>
           </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           {/* Features List */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -60,7 +60,7 @@ export default function MobileAppsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="space-y-4 mb-8">
+            <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -68,28 +68,28 @@ export default function MobileAppsSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-lg sm:rounded-xl shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <feature.icon size={24} className="text-primary-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <feature.icon size={20} className="text-primary-600 sm:w-6 sm:h-6" />
                   </div>
-                  <p className="text-gray-700 font-medium">{feature.text}</p>
+                  <p className="text-sm sm:text-base text-gray-700 font-medium">{feature.text}</p>
                 </motion.div>
               ))}
             </div>
 
             {/* Download Stats */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
               <Card>
-                <CardContent className="p-4 text-center">
-                  <div className="text-3xl font-bold text-primary-600 mb-1">⭐ 4.5</div>
-                  <div className="text-sm text-gray-600">{t('rating')}</div>
+                <CardContent className="p-3 sm:p-4 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">⭐ 4.5</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{t('rating')}</div>
                 </CardContent>
               </Card>
               <Card>
-                <CardContent className="p-4 text-center">
-                  <div className="text-3xl font-bold text-primary-600 mb-1">50K+</div>
-                  <div className="text-sm text-gray-600">{t('downloads')}</div>
+                <CardContent className="p-3 sm:p-4 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">50K+</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{t('downloads')}</div>
                 </CardContent>
               </Card>
             </div>
@@ -112,7 +112,7 @@ export default function MobileAppsSection() {
               />
             </div>
 
-            <p className="text-sm text-gray-600 mt-4">{t('platforms')}</p>
+            <p className="text-xs sm:text-sm text-gray-600 mt-3 sm:mt-4">{t('platforms')}</p>
           </motion.div>
 
           {/* Mobile Mockup Images - Sliding Carousel */}
@@ -121,9 +121,9 @@ export default function MobileAppsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative mt-8 lg:mt-0"
           >
-            <div className="relative max-w-sm mx-auto aspect-[9/16] rounded-2xl shadow-2xl">
+            <div className="relative max-w-[280px] sm:max-w-xs md:max-w-sm mx-auto aspect-[9/16] rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
@@ -144,14 +144,14 @@ export default function MobileAppsSection() {
               </AnimatePresence>
 
               {/* Dots Indicator */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
                 {images.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
+                    className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
                       index === currentIndex 
-                        ? 'bg-primary-600 w-6' 
+                        ? 'bg-primary-600 w-4 sm:w-6' 
                         : 'bg-gray-400'
                     }`}
                     aria-label={`Go to screenshot ${index + 1}`}

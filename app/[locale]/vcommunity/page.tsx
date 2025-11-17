@@ -74,123 +74,123 @@ export default function VCommunityPage() {
     {
       id: 1,
       author: {
-        name: 'Ahmed Hassan',
-        avatar: 'AH',
-        badge: 'Top Contributor',
-        role: 'COD Expert'
+        name: 'أحمد حسن',
+        avatar: 'أح',
+        badge: 'توب كونتريبيوتر',
+        role: 'صاحب متجر ملابس | fashionhub.store'
       },
-      title: 'How I Scaled from 10 to 250 Orders/Day in 3 Months',
-      excerpt: 'I\'ll share my exact strategy for scaling a COD store without burning cash on ads. Key was optimizing my shipping partners and automating customer service with Vondera...',
-      category: 'Success Stories',
-      tags: ['COD', 'Scaling', 'Case Study'],
+      title: 'حد يعرف مصنع كويس للملابس في القاهرة؟',
+      excerpt: 'السلام عليكم يا جماعة، انا محتاج مصنع موثوق للملابس الرياضية، جودة كويسة وسعر معقول. اللي عنده تجربة يا ريت يشاركها معايا. بدور من شهر ومش لاقي حاجة محترمة...',
+      category: 'توصيات',
+      tags: ['مصانع', 'ملابس', 'القاهرة'],
       stats: {
-        likes: 847,
-        comments: 124,
-        views: 5200
+        likes: 234,
+        comments: 67,
+        views: 1890
       },
-      time: '2 hours ago',
+      time: 'منذ ساعتين',
       trending: true,
       solved: false
     },
     {
       id: 2,
       author: {
-        name: 'Sara Mohamed',
-        avatar: 'SM',
-        role: 'Fashion Store Owner'
+        name: 'سارة محمد',
+        avatar: 'س',
+        role: 'متجر مستحضرات تجميل | beautysara.shop'
       },
-      title: 'Best Shipping Companies in Cairo? Need Honest Reviews',
-      excerpt: 'I\'m launching my fashion store next week and need to choose between Aramex, Bosta, and MylerZ. Who has the best COD confirmation rates and customer service? Real experiences only please...',
-      category: 'Shipping & Logistics',
-      tags: ['Shipping', 'Cairo', 'Question'],
+      title: 'انا اتعاملت مع أحمد المصمم، دا من أشطر الديزينرز اللي اتعاملت معاهم',
+      excerpt: 'بجد الراجل محترم جداً. عملي تصميمات للمتجر والإعلانات وكل حاجة طلعت فوق الممتاز. سعره معقول وملتزم بالمواعيد. لو حد محتاج مصمم فاهم في الإعلانات، أحمد هو الشخص المناسب. رقمه 01012345678...',
+      category: 'تجارب ناجحة',
+      tags: ['تصميم', 'توصية', 'مصمم'],
       stats: {
-        likes: 156,
+        likes: 445,
         comments: 89,
-        views: 2100
+        views: 2340
       },
-      time: '4 hours ago',
-      trending: false,
-      solved: true
+      time: 'منذ 4 ساعات',
+      trending: true,
+      solved: false
     },
     {
       id: 3,
       author: {
-        name: 'Khaled Ibrahim',
-        avatar: 'KI',
-        badge: 'Media Buyer Pro',
-        role: 'Performance Marketer'
+        name: 'محمد خالد',
+        avatar: 'م',
+        badge: 'ميديا باير',
+        role: 'اعلانات فيسبوك | mkads.store'
       },
-      title: 'My Facebook Ads Strategy for Budget Under 5K EGP/Day',
-      excerpt: 'Stop wasting money on broad audiences. Here\'s the exact targeting, creative format, and bidding strategy I use to get 4-6x ROAS consistently. Tested on 15+ products...',
-      category: 'Facebook Ads',
-      tags: ['Facebook Ads', 'ROAS', 'Strategy', 'Budget'],
+      title: 'شباب انا بجد عاوز اشكر منصة فونديرا...',
+      excerpt: 'والله من أحسن القرارات اللي خدتها في حياتي. المنصة سهلت عليا حاجات كتير من إدارة الأوردرات، متابعة الشحنات، والتواصل مع العملاء. الدعم الفني بتاعهم محترمين جداً وبيردوا بسرعة. شكراً فونديرا على المجهود ده ❤️',
+      category: 'شكر وتقدير',
+      tags: ['فونديرا', 'منصة', 'شكر'],
       stats: {
-        likes: 623,
-        comments: 178,
-        views: 4800
+        likes: 892,
+        comments: 156,
+        views: 4200
       },
-      time: '6 hours ago',
+      time: 'منذ 6 ساعات',
       trending: true,
       solved: false
     },
     {
       id: 4,
       author: {
-        name: 'Mona Ali',
-        avatar: 'MA',
-        role: 'Skincare Brand'
+        name: 'ياسمين عادل',
+        avatar: 'ي',
+        role: 'منتجات العناية بالبشرة | yasbeauty.eg'
       },
-      title: 'Found a Reliable Photographer in Cairo - Highly Recommended!',
-      excerpt: 'After testing 5 different photographers, finally found one who gets e-commerce. Fast turnaround, white background, lifestyle shots. Fair prices too. DM for contact...',
-      category: 'Resources',
-      tags: ['Photography', 'Cairo', 'Recommendation'],
+      title: 'مين عنده تجربة مع شركة شحن الأمانة؟',
+      excerpt: 'محتاجة أعرف تجاربكم معاهم، هل الخدمة كويسة؟ الأسعار إيه؟ بيلتزموا بالمواعيد؟ أنا في الإسكندرية ومحتاجة شركة موثوقة للشحن. شكراً مقدماً للي هيفيدني 🙏',
+      category: 'استفسارات',
+      tags: ['شحن', 'الإسكندرية', 'استفسار'],
       stats: {
-        likes: 234,
-        comments: 67,
-        views: 1500
+        likes: 67,
+        comments: 43,
+        views: 890
       },
-      time: '8 hours ago',
+      time: 'منذ 3 ساعات',
       trending: false,
-      solved: false
+      solved: true
     },
     {
       id: 5,
       author: {
-        name: 'Omar Youssef',
-        avatar: 'OY',
-        badge: 'Verified Seller',
-        role: 'Electronics Store'
+        name: 'كريم يوسف',
+        avatar: 'ك',
+        role: 'متجر إلكترونيات | techstore.shop'
       },
-      title: 'Handling Returns & Refunds: My Complete System',
-      excerpt: 'Returns were killing my margins until I implemented this system. Now I have 80% fewer returns and happier customers. Here\'s the exact process, templates, and automation...',
-      category: 'Customer Service',
-      tags: ['Returns', 'Customer Service', 'Automation'],
+      title: 'إزاي زودت المبيعات من 10 لـ 150 أوردر في اليوم؟',
+      excerpt: 'السلام عليكم، حبيت أشارك معاكم تجربتي في زيادة المبيعات. استخدمت VPay من فونديرا وفرق معايا جداً، العملاء بقوا يدفعوا أسهل. كمان استخدمت الإعلانات الممولة بشكل صح وركزت على خدمة العملاء. التفاصيل في البوست...',
+      category: 'قصص نجاح',
+      tags: ['مبيعات', 'نجاح', 'نصائح'],
       stats: {
-        likes: 445,
-        comments: 92,
-        views: 3200
+        likes: 1234,
+        comments: 234,
+        views: 5600
       },
-      time: '12 hours ago',
-      trending: false,
+      time: 'منذ يوم',
+      trending: true,
       solved: false
     },
     {
       id: 6,
       author: {
-        name: 'Fatima Khaled',
-        avatar: 'FK',
-        role: 'New Seller'
+        name: 'ندى إبراهيم',
+        avatar: 'ن',
+        badge: 'رايزنج ستار',
+        role: 'ديكور منزلي | homedecor.store'
       },
-      title: 'Just Hit My First 100 Orders! Here\'s What Worked',
-      excerpt: 'Launched 6 weeks ago and hit 100 orders yesterday! Want to share what worked (and what didn\'t). Product selection, ad creatives, and the one thing that made the biggest difference...',
-      category: 'Success Stories',
-      tags: ['Beginner', 'Milestone', 'Tips'],
+      title: 'أخيراً وصلت لـ 100 ألف جنيه مبيعات الشهر ده! 🎉',
+      excerpt: 'الحمد لله، مكنتش متخيلة اني هوصل للرقم ده بصراحة. شكراً لكل اللي ساعدني في المجموعة بنصايحهم. من اختيار المنتجات، للتصاميم، لطريقة التعامل مع العملاء. المجموعة دي فعلاً غيرت شغلي كله. شكراً فونديرا ❤️',
+      category: 'قصص نجاح',
+      tags: ['إنجاز', 'شكر', 'مبيعات'],
       stats: {
-        likes: 567,
-        comments: 145,
-        views: 2800
+        likes: 1567,
+        comments: 198,
+        views: 6200
       },
-      time: '1 day ago',
+      time: 'منذ 8 ساعات',
       trending: true,
       solved: false
     }
@@ -280,56 +280,56 @@ export default function VCommunityPage() {
       <Header variant="solid" />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-primary-50 overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-20 right-20 w-96 h-96 bg-purple-200 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-64 h-64 sm:w-96 sm:h-96 bg-primary-100 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-64 h-64 sm:w-96 sm:h-96 bg-primary-100 rounded-full blur-3xl opacity-30"></div>
         
         <Container>
-          <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="max-w-5xl mx-auto text-center relative z-10 px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Badge className="mb-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none inline-flex items-center px-6 py-2">
-                <Users2 className="w-4 h-4 mr-2" />
+              <Badge className="mb-4 sm:mb-6 bg-primary-600 text-white border-none inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base">
+                <Users2 className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                 10,000+ Active Merchants
               </Badge>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
                 <span className="text-gray-900">Stop Googling.</span>
                 <br />
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
+                <span className="text-primary-600">
                   Ask Real Merchants.
                 </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4">
                 Egypt's largest e-commerce community. Real advice from sellers running real businesses. 
                 <span className="font-semibold text-gray-900"> No BS, just results.</span>
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group px-10 py-5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all"
+                  className="group w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 md:py-5 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-bold text-base sm:text-lg hover:shadow-2xl transition-all"
                 >
                   Join Free Now
-                  <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="inline-block ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-10 py-5 bg-white border-2 border-gray-200 text-gray-900 rounded-xl font-bold text-lg hover:border-purple-500 hover:bg-gray-50 transition-all shadow-sm"
+                  className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 md:py-5 bg-white border-2 border-gray-200 text-gray-900 rounded-xl font-bold text-base sm:text-lg hover:border-primary-500 hover:bg-gray-50 transition-all shadow-sm"
                 >
                   Browse Discussions
                 </motion.button>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto px-4">
                 {[
                   { label: 'Active Members', value: '10K+', icon: Users2 },
                   { label: 'Daily Posts', value: '500+', icon: MessageSquare },
@@ -341,11 +341,11 @@ export default function VCommunityPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 + idx * 0.1 }}
-                    className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-lg"
+                    className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white/50 shadow-lg"
                   >
-                    <stat.icon className="w-8 h-8 text-purple-600 mb-2 mx-auto" />
-                    <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
+                    <stat.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary-600 mb-1 sm:mb-2 mx-auto" />
+                    <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-0.5 sm:mb-1">{stat.value}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -355,32 +355,32 @@ export default function VCommunityPage() {
       </section>
 
       {/* Trending Posts Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12"
+            className="mb-8 sm:mb-10 md:mb-12 px-4"
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 sm:mb-6">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-                  <Sparkles className="inline-block w-10 h-10 text-orange-500 mr-3" />
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3">
+                  <Sparkles className="inline-block w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-orange-500 mr-2 sm:mr-3" />
                   Trending Discussions
                 </h2>
-                <p className="text-lg text-gray-600">
+                <p className="text-sm sm:text-base md:text-lg text-gray-600">
                   Real posts from real merchants. Join the conversation.
                 </p>
               </div>
-              <Badge className="bg-green-100 text-green-700 border-green-200 px-4 py-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2 inline-block" />
+              <Badge className="bg-green-100 text-green-700 border-green-200 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm">
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse mr-1.5 sm:mr-2 inline-block" />
                 Live Now
               </Badge>
             </div>
           </motion.div>
 
-          <div className="grid gap-6">
+          <div className="grid gap-4 sm:gap-5 md:gap-6 px-4">
             {communityPosts.map((post, idx) => (
               <motion.div
                 key={post.id}
@@ -389,12 +389,12 @@ export default function VCommunityPage() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <Card className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-purple-200 group cursor-pointer">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
+                <Card className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary-200 group cursor-pointer">
+                  <CardContent className="p-4 sm:p-5 md:p-6">
+                    <div className="flex items-start gap-3 sm:gap-4">
                       {/* Avatar */}
                       <div className="flex-shrink-0">
-                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold text-sm sm:text-base md:text-lg shadow-lg">
                           {post.author.avatar}
                         </div>
                       </div>
@@ -402,59 +402,60 @@ export default function VCommunityPage() {
                       {/* Content */}
                       <div className="flex-1 min-w-0">
                         {/* Author Info */}
-                        <div className="flex items-center gap-2 mb-2 flex-wrap">
-                          <span className="font-bold text-gray-900">{post.author.name}</span>
+                        <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2 flex-wrap">
+                          <span className="font-bold text-gray-900 text-sm sm:text-base">{post.author.name}</span>
                           {post.author.badge && (
-                            <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white border-none text-xs px-2 py-0.5">
-                              <Star className="w-3 h-3 mr-1" />
+                            <Badge className="bg-yellow-400 text-gray-900 border-none text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">
+                              <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-0.5 sm:mr-1" />
                               {post.author.badge}
                             </Badge>
                           )}
                           {post.author.role && (
-                            <span className="text-sm text-gray-500">• {post.author.role}</span>
+                            <span className="text-xs sm:text-sm text-gray-500 hidden xs:inline">• {post.author.role}</span>
                           )}
-                          <span className="text-sm text-gray-400">• {post.time}</span>
+                          <span className="text-xs sm:text-sm text-gray-400">• {post.time}</span>
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2 group-hover:text-primary-600 transition-colors">
                           {post.trending && (
-                            <TrendingUpIcon className="inline-block w-5 h-5 text-orange-500 mr-2" />
+                            <TrendingUpIcon className="inline-block w-4 h-4 sm:w-5 sm:h-5 text-orange-500 mr-1 sm:mr-2" />
                           )}
                           {post.solved && (
-                            <CheckCircle2 className="inline-block w-5 h-5 text-green-500 mr-2" />
+                            <CheckCircle2 className="inline-block w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-1 sm:mr-2" />
                           )}
                           {post.title}
                         </h3>
 
                         {/* Excerpt */}
-                        <p className="text-gray-600 mb-3 line-clamp-2">{post.excerpt}</p>
+                        <p className="text-sm sm:text-base text-gray-600 mb-2 sm:mb-3 line-clamp-2">{post.excerpt}</p>
 
                         {/* Tags & Category */}
-                        <div className="flex items-center gap-2 mb-4 flex-wrap">
-                          <Badge className="bg-purple-100 text-purple-700 border-purple-200">
+                        <div className="flex items-center gap-1.5 sm:gap-2 mb-3 sm:mb-4 flex-wrap">
+                          <Badge className="bg-primary-100 text-primary-700 border-primary-200 text-xs sm:text-sm">
                             {post.category}
                           </Badge>
                           {post.tags.map((tag, tagIdx) => (
-                            <Badge key={tagIdx} className="bg-white text-gray-600 border border-gray-300">
+                            <Badge key={tagIdx} className="bg-white text-gray-600 border border-gray-300 text-xs sm:text-sm">
                               #{tag}
                             </Badge>
                           ))}
                         </div>
 
                         {/* Stats */}
-                        <div className="flex items-center gap-6 text-sm text-gray-500">
-                          <div className="flex items-center gap-1.5 hover:text-purple-600 transition-colors">
-                            <ThumbsUp className="w-4 h-4" />
+                        <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500">
+                          <div className="flex items-center gap-1 sm:gap-1.5 hover:text-primary-600 transition-colors">
+                            <ThumbsUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                             <span className="font-semibold">{post.stats.likes}</span>
                           </div>
-                          <div className="flex items-center gap-1.5 hover:text-purple-600 transition-colors">
-                            <MessageSquare className="w-4 h-4" />
+                          <div className="flex items-center gap-1 sm:gap-1.5 hover:text-primary-600 transition-colors">
+                            <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                             <span className="font-semibold">{post.stats.comments}</span>
                           </div>
-                          <div className="flex items-center gap-1.5">
-                            <Eye className="w-4 h-4" />
-                            <span>{post.stats.views.toLocaleString()} views</span>
+                          <div className="flex items-center gap-1 sm:gap-1.5">
+                            <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                            <span className="hidden xs:inline">{post.stats.views.toLocaleString()} views</span>
+                            <span className="xs:hidden">{post.stats.views.toLocaleString()}</span>
                           </div>
                         </div>
                       </div>
@@ -470,12 +471,12 @@ export default function VCommunityPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mt-12"
+            className="text-center mt-8 sm:mt-10 md:mt-12 px-4"
           >
             <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer">
-              <button className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+              <button className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-bold text-base sm:text-lg hover:shadow-2xl hover:scale-105 transition-all">
                 View All Discussions
-                <ArrowRight className="inline-block ml-2 w-5 h-5" />
+                <ArrowRight className="inline-block ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </a>
           </motion.div>
@@ -483,7 +484,7 @@ export default function VCommunityPage() {
       </section>
 
       {/* Live Activity Feed */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50/30">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -492,7 +493,7 @@ export default function VCommunityPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Badge className="mb-6 bg-purple-100 text-purple-700 border-purple-200 inline-flex items-center px-4 py-2">
+              <Badge className="mb-6 bg-primary-100 text-primary-700 border-primary-200 inline-flex items-center px-4 py-2">
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Popular Topics
               </Badge>
@@ -548,7 +549,7 @@ export default function VCommunityPage() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -557,7 +558,7 @@ export default function VCommunityPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <Badge className="mb-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white border-none inline-flex items-center px-6 py-2">
+            <Badge className="mb-4 bg-primary-600 text-white border-none inline-flex items-center px-6 py-2">
               <Sparkles className="w-4 h-4 mr-2" />
               Why Join VCommunity
             </Badge>
@@ -578,9 +579,9 @@ export default function VCommunityPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-purple-500 group">
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary-500 group">
                   <CardContent className="p-8">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       <feature.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -589,7 +590,7 @@ export default function VCommunityPage() {
                     <p className="text-gray-600 leading-relaxed mb-4">
                       {feature.description}
                     </p>
-                    <Badge className="bg-purple-100 text-purple-700 border border-purple-200 font-semibold">
+                    <Badge className="bg-primary-100 text-primary-700 border border-primary-200 font-semibold">
                       {feature.stats}
                     </Badge>
                   </CardContent>
@@ -601,7 +602,7 @@ export default function VCommunityPage() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-primary-50">
         <Container>
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -666,7 +667,7 @@ export default function VCommunityPage() {
                       <p className="text-gray-700 mb-4 italic leading-relaxed">"{testimonial.quote}"</p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
+                          <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold">
                             {testimonial.author[0]}
                           </div>
                           <div>
@@ -688,7 +689,7 @@ export default function VCommunityPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 relative overflow-hidden">
+      <section className="py-16 sm:py-20 md:py-24 bg-primary-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         </div>
@@ -721,7 +722,7 @@ export default function VCommunityPage() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-12 py-5 bg-white text-purple-600 rounded-xl font-bold text-lg hover:shadow-2xl transition-all"
+              className="px-12 py-5 bg-white text-primary-600 rounded-xl font-bold text-lg hover:shadow-2xl transition-all"
             >
               Join VCommunity Free
               <ArrowRight className="inline-block ml-2 w-5 h-5" />

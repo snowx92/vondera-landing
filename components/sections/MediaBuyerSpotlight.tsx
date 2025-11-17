@@ -134,7 +134,7 @@ export default function MediaBuyerSpotlight() {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-vmedia-50 via-white to-primary-50 relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-br from-vmedia-50 via-white to-primary-50 relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -144,7 +144,7 @@ export default function MediaBuyerSpotlight() {
       </div>
 
       <Container>
-        <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center relative z-10">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -152,18 +152,18 @@ export default function MediaBuyerSpotlight() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Badge variant="vmedia" className="mb-4">
+            <Badge variant="vmedia" className="mb-3 sm:mb-4">
               VMedia Marketplace
             </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               {t('title')}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8">
               {t('subtitle')}
             </p>
 
             {/* Benefits Grid */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
@@ -171,21 +171,21 @@ export default function MediaBuyerSpotlight() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start space-x-3"
+                  className="flex items-start gap-2 sm:gap-3"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 bg-vmedia-100 rounded-lg flex items-center justify-center">
-                    <benefit.icon size={20} className="text-vmedia-600" />
+                  <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-vmedia-100 rounded-lg flex items-center justify-center">
+                    <benefit.icon size={16} className="text-vmedia-600 sm:w-5 sm:h-5" />
                   </div>
-                  <p className="text-gray-700 flex-1">{benefit.text}</p>
+                  <p className="text-sm sm:text-base text-gray-700 flex-1">{benefit.text}</p>
                 </motion.div>
               ))}
             </div>
 
             <a href="https://mediabuyers.vondera.app/" target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" size="lg" className="group">
+              <Button variant="primary" size="lg" className="group w-full sm:w-auto">
                 {t('cta')}
                 <svg
-                  className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -202,9 +202,10 @@ export default function MediaBuyerSpotlight() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-8 lg:mt-0"
           >
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 h-[600px] flex flex-col">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-1.5">
+            <div className="bg-white rounded-lg sm:rounded-xl shadow-sm border border-gray-200 p-3 sm:p-4 h-[500px] sm:h-[550px] md:h-[600px] flex flex-col">
+              <h3 className="text-xs sm:text-sm font-semibold text-gray-900 mb-2 sm:mb-3 flex items-center gap-1 sm:gap-1.5">
                 🏆 Top Media Buyers
               </h3>
               <div className="flex-1 overflow-hidden">
@@ -212,18 +213,18 @@ export default function MediaBuyerSpotlight() {
                   {topMediaBuyers.slice(0, 5).reverse().map((buyer, index) => {
                     const actualIndex = 4 - index; // Reverse the index for correct ranking
                     return (
-                  <div key={buyer.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors w-full">
+                  <div key={buyer.id} className="flex items-center gap-2 sm:gap-3 p-1.5 sm:p-2 rounded-lg hover:bg-gray-50 transition-colors w-full">
                     <div className="flex-shrink-0 relative">
                       {/* Profile Image */}
-                      <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200 relative">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-gray-200 relative">
                         <div className="w-full h-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
-                          <span className="text-white text-sm font-bold">
+                          <span className="text-white text-xs sm:text-sm font-bold">
                             {buyer.name.charAt(0)}
                           </span>
                         </div>
                       </div>
                       {/* Rank Badge */}
-                      <div className={`absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white border-2 border-white
+                      <div className={`absolute -top-0.5 sm:-top-1 -right-0.5 sm:-right-1 w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold text-white border border-white sm:border-2
                         ${actualIndex === 0 ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 
                           actualIndex === 1 ? 'bg-gradient-to-r from-gray-400 to-gray-600' :
                           actualIndex === 2 ? 'bg-gradient-to-r from-amber-600 to-orange-700' :
@@ -234,43 +235,43 @@ export default function MediaBuyerSpotlight() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
                         <div className="flex-1">
-                          <p className="text-sm font-medium text-gray-900 truncate">
+                          <p className="text-xs sm:text-sm font-medium text-gray-900 truncate">
                             {buyer.name}
                           </p>
-                          <div className="flex items-center gap-2 mt-0.5">
-                            <div className="flex items-center gap-1 text-xs text-gray-400">
-                              <Phone className="w-3 h-3" />
-                              <span className="blur-sm">{buyer.phone}</span>
+                          <div className="flex items-center gap-1 sm:gap-2 mt-0.5">
+                            <div className="flex items-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs text-gray-400">
+                              <Phone className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                              <span className="blur-sm hidden sm:inline">{buyer.phone}</span>
                             </div>
-                            <span className="text-gray-300">•</span>
-                            <div className="flex items-center gap-1 text-xs text-gray-400">
-                              <Mail className="w-3 h-3" />
-                              <span className="blur-sm">{buyer.email}</span>
+                            <span className="text-gray-300 hidden sm:inline">•</span>
+                            <div className="flex items-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs text-gray-400">
+                              <Mail className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                              <span className="blur-sm hidden md:inline">{buyer.email}</span>
                             </div>
                           </div>
-                          <div className="flex items-center gap-2 mt-1">
-                            <p className="text-xs text-gray-500">
+                          <div className="flex items-center gap-2 mt-0.5 sm:mt-1">
+                            <p className="text-[10px] sm:text-xs text-gray-500">
                               {buyer.totalOrders} orders • {buyer.earnings} EGP
                             </p>
                           </div>
                           {/* Revenue Type Badge */}
-                          <div className="flex items-center gap-2 mt-1.5">
-                            <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${getRevenueColor(buyer.revenueType)}`}>
+                          <div className="flex items-center gap-1 sm:gap-2 mt-1 sm:mt-1.5">
+                            <span className={`px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium ${getRevenueColor(buyer.revenueType)}`}>
                               {buyer.revenueType}: {buyer.revenueValue}
                             </span>
                             {/* Social Platform Icons */}
-                            <div className="flex gap-1">
+                            <div className="flex gap-0.5 sm:gap-1">
                               {buyer.platforms.map((platform) => (
-                                <div key={platform} className="w-4 h-4 flex items-center justify-center">
+                                <div key={platform} className="w-3 h-3 sm:w-4 sm:h-4 flex items-center justify-center">
                                   {getPlatformIcon(platform)}
                                 </div>
                               ))}
                             </div>
                           </div>
                         </div>
-                        <div className="flex items-center gap-1 ml-2">
-                          <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                          <span className="text-xs font-medium text-gray-700">
+                        <div className="flex items-center gap-0.5 sm:gap-1 ml-1 sm:ml-2">
+                          <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-yellow-500 fill-current" />
+                          <span className="text-[10px] sm:text-xs font-medium text-gray-700">
                             {buyer.orderScore}
                           </span>
                         </div>

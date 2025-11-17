@@ -143,7 +143,7 @@ export default function VFunnelPage() {
       <Header variant="solid" />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 min-h-screen flex items-center overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 min-h-[85vh] sm:min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-20 right-20 w-72 h-72 bg-purple-200 rounded-full blur-3xl opacity-30"></div>
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-30"></div>
@@ -270,7 +270,7 @@ export default function VFunnelPage() {
       </section>
 
       {/* Live Conversions */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -349,7 +349,7 @@ export default function VFunnelPage() {
       </section>
 
       {/* Features */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-white">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -405,7 +405,7 @@ export default function VFunnelPage() {
       </section>
 
       {/* Templates */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0" style={{
@@ -493,7 +493,7 @@ export default function VFunnelPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 relative overflow-hidden">
         {/* Animated background pattern */}
         <motion.div 
           className="absolute inset-0 opacity-10"

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import { Menu, X, ChevronDown, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
@@ -17,6 +17,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSolutionOpen, setIsSolutionOpen] = useState(false);
+  const [isProductsExpanded, setIsProductsExpanded] = useState(false);
   const locale = useLocale();
   const t = useTranslations('nav');
   const isRTL = locale === 'ar';
@@ -32,7 +33,12 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
     {
       name: 'VDomain',
       description: 'Custom domain management for your store',
-      href: `/${locale}#vdomain`,
+      href: `/${locale}/vdomain`,
+    },
+    {
+      name: 'VInbox',
+      description: 'Unified inbox for all your customer messages',
+      href: `/${locale}/vinbox`,
     },
     {
       name: 'VFunnels',
@@ -70,6 +76,17 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   const toggleLanguage = () => {
     const newLocale = locale === 'en' ? 'ar' : 'en';
@@ -194,6 +211,15 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
               Pricing
             </Link>
             <Link 
+              href={`/${locale}/developers`} 
+              className={cn(
+                "transition-colors duration-300 hover:text-primary-500",
+                shouldBeWhite ? "text-gray-700" : "text-white"
+              )}
+            >
+              Developers
+            </Link>
+            <Link 
               href={`/${locale}/about`} 
               className={cn(
                 "transition-colors duration-300 hover:text-primary-500",
@@ -232,7 +258,7 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
               </Button>
             </a>
             <a 
-              href="https://dashboard.vondera.app/dashboard"
+              href="https://dashboard.vondera.app/auth/signup"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -254,111 +280,208 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-200 bg-white max-h-[80vh] overflow-y-auto">
-            <nav className="flex flex-col space-y-3">
+          <div 
+            className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 animate-in fade-in duration-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+
+        {/* Mobile Menu Sidebar */}
+        <div 
+          className={cn(
+            "lg:hidden fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-black/95 backdrop-blur-xl z-50 transform transition-transform duration-500 ease-out shadow-2xl",
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          )}
+          style={{
+            background: 'linear-gradient(135deg, rgba(0,0,0,0.98) 0%, rgba(20,20,20,0.95) 100%)',
+          }}
+        >
+          {/* Menu Header */}
+          <div className="flex items-center justify-between p-6 border-b border-white/10">
+            <div className="flex items-center gap-2">
+              <Image 
+                src="/logo.webp" 
+                alt="Vondera" 
+                width={32} 
+                height={32}
+                className="w-8 h-8"
+              />
+              <span className="text-xl font-bold text-white">Vondera</span>
+            </div>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            >
+              <X size={20} className="text-white" />
+            </button>
+          </div>
+
+          {/* Menu Content */}
+          <nav className="flex flex-col h-[calc(100%-80px)] overflow-y-auto">
+            <div className="flex-1 p-6 space-y-2">
+              {/* Home */}
               <Link
-                href={`/${locale}#why-vondera`}
-                className="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg"
+                href={`/${locale}`}
+                className="flex items-center justify-between px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all group"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Why Vondera
+                <span className="font-medium">Home</span>
+                <ChevronRight size={18} className="opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
+              </Link>
+
+              {/* Why Vondera */}
+              <Link
+                href={`/${locale}#why-vondera`}
+                className="flex items-center justify-between px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all group"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Why Vondera</span>
+                <ChevronRight size={18} className="opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
               </Link>
               
-              {/* Solution with Products */}
-              <div className="px-4 py-2">
-                <div className="font-semibold text-gray-900 mb-3">Solution</div>
-                <div className="space-y-2 ml-2">
-                  {products.map((product, index) => (
-                    <Link
-                      key={index}
-                      href={product.href}
-                      className={cn(
-                        "flex items-start gap-3 p-2 rounded-lg transition-colors",
-                        product.comingSoon 
-                          ? "opacity-60" 
-                          : "hover:bg-primary-50"
-                      )}
-                      onClick={(e) => {
-                        if (product.comingSoon) {
-                          e.preventDefault();
-                        } else {
-                          setIsMobileMenuOpen(false);
-                        }
-                      }}
-                    >
-                      <div className="flex-1">
-                        <div className="font-medium text-gray-900 text-sm">
-                          {product.name}
-                          {product.comingSoon && (
-                            <span className="ml-1 text-xs text-gray-500">
-                              Coming Soon
-                            </span>
-                          )}
+              {/* Products - Collapsible */}
+              <div className="space-y-1">
+                <button
+                  onClick={() => setIsProductsExpanded(!isProductsExpanded)}
+                  className="w-full flex items-center justify-between px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all group"
+                >
+                  <span className="font-medium">Products</span>
+                  <ChevronDown 
+                    size={18} 
+                    className={cn(
+                      "transform transition-transform duration-300",
+                      isProductsExpanded && "rotate-180"
+                    )} 
+                  />
+                </button>
+                
+                {/* Products Submenu */}
+                <div 
+                  className={cn(
+                    "overflow-hidden transition-all duration-500 ease-in-out",
+                    isProductsExpanded ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                  )}
+                >
+                  <div className="ml-4 pl-4 border-l-2 border-white/10 space-y-1 py-2">
+                    {products.map((product, index) => (
+                      <Link
+                        key={index}
+                        href={product.href}
+                        className={cn(
+                          "flex items-start gap-3 px-3 py-2.5 rounded-lg transition-all group",
+                          product.comingSoon 
+                            ? "opacity-50 cursor-not-allowed" 
+                            : "hover:bg-white/5 text-white/80 hover:text-white"
+                        )}
+                        onClick={(e) => {
+                          if (product.comingSoon) {
+                            e.preventDefault();
+                          } else {
+                            setIsMobileMenuOpen(false);
+                            setIsProductsExpanded(false);
+                          }
+                        }}
+                      >
+                        <div className="flex-1">
+                          <div className="font-medium text-sm flex items-center gap-2">
+                            {product.name}
+                            {product.comingSoon && (
+                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-white/60">
+                                Soon
+                              </span>
+                            )}
+                          </div>
+                          <div className="text-xs text-white/50 mt-0.5">
+                            {product.description}
+                          </div>
                         </div>
-                        <div className="text-xs text-gray-600 mt-0.5">
-                          {product.description}
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
+                        {!product.comingSoon && (
+                          <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 text-white/60 mt-1 transition-opacity" />
+                        )}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
               
+              {/* Media Buyers */}
               <Link
                 href={`/${locale}/vmedia`}
-                className="px-4 py-2 text-vmedia-600 font-semibold hover:bg-vmedia-50 rounded-lg"
+                className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-white hover:from-green-500/30 hover:to-emerald-500/30 rounded-xl transition-all group border border-green-500/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Media Buyers
+                <span className="font-semibold">Media Buyers</span>
+                <ChevronRight size={18} className="opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
               </Link>
+
+              {/* Pricing */}
               <Link
                 href={`/${locale}#pricing`}
-                className="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg"
+                className="flex items-center justify-between px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all group"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Pricing
+                <span className="font-medium">Pricing</span>
+                <ChevronRight size={18} className="opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
               </Link>
+
+              {/* Developers */}
+              <Link
+                href={`/${locale}/developers`}
+                className="flex items-center justify-between px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all group"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="font-medium">Developers</span>
+                <ChevronRight size={18} className="opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
+              </Link>
+
+              {/* About */}
               <Link
                 href={`/${locale}/about`}
-                className="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg"
+                className="flex items-center justify-between px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all group"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                <span className="font-medium">About</span>
+                <ChevronRight size={18} className="opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
               </Link>
-              <div className="px-4 pt-4 border-t border-gray-200 flex flex-col space-y-2">
-                <button
-                  onClick={toggleLanguage}
-                  className="flex items-center justify-center space-x-2 py-2 text-gray-700 hover:text-primary-500"
-                >
-                  <Globe size={18} />
-                  <span>{locale === 'en' ? 'العربية' : 'English'}</span>
+            </div>
+
+            {/* Bottom Actions */}
+            <div className="p-6 border-t border-white/10 space-y-3 bg-black/50">
+              {/* Language Toggle */}
+              <button
+                onClick={toggleLanguage}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all"
+              >
+                <Globe size={18} />
+                <span className="font-medium">{locale === 'en' ? 'العربية' : 'English'}</span>
+              </button>
+
+              {/* Auth Buttons */}
+              <a 
+                href="https://dashboard.vondera.app/dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <button className="w-full px-4 py-3 text-white font-medium bg-white/10 hover:bg-white/20 rounded-xl transition-all border border-white/20">
+                  {t('login')}
                 </button>
-                <a 
-                  href="https://dashboard.vondera.app/dashboard"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <Button variant="ghost" size="sm" className="w-full">
-                    {t('login')}
-                  </Button>
-                </a>
-                <a 
-                  href="https://dashboard.vondera.app/dashboard"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <Button variant="primary" size="sm" className="w-full">
-                    {t('signup')}
-                  </Button>
-                </a>
-              </div>
-            </nav>
-          </div>
-        )}
+              </a>
+              <a 
+                href="https://dashboard.vondera.app/auth/signup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <button className="w-full px-4 py-3 text-white font-bold bg-primary-600 hover:bg-primary-700 rounded-xl transition-all shadow-lg shadow-primary-500/30">
+                  {t('signup')}
+                </button>
+              </a>
+            </div>
+          </nav>
+        </div>
       </Container>
     </header>
   );

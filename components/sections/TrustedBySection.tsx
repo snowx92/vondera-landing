@@ -34,14 +34,14 @@ export default function TrustedBySection() {
   ];
 
   return (
-    <section className="relative py-16 bg-white border-y border-gray-100">
+    <section className="relative py-10 sm:py-12 md:py-16 bg-white border-y border-gray-100">
       <Container>
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 px-4">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-semibold text-violet-600 uppercase tracking-wide mb-2"
+            className="text-xs sm:text-sm font-semibold text-violet-600 uppercase tracking-wide mb-1.5 sm:mb-2"
           >
             Trusted by Industry Leaders
           </motion.p>
@@ -50,7 +50,7 @@ export default function TrustedBySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-2xl md:text-3xl font-bold text-gray-900"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900"
           >
             Join 10,000+ Successful Merchants
           </motion.h2>
@@ -65,15 +65,15 @@ export default function TrustedBySection() {
             {/* Marquee Container */}
             <div className="relative overflow-hidden">
               {/* Gradient Overlays */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+              <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
 
               {partners.length > 0 ? (
                 <>
                   {/* First Row - Left to Right */}
-                  <div className="flex mb-8">
+                  <div className="flex mb-6 sm:mb-8">
                     <motion.div
-                      className="flex gap-12 pr-12"
+                      className="flex gap-6 sm:gap-8 md:gap-12 pr-6 sm:pr-8 md:pr-12"
                       animate={{
                         x: ['0%', '-100%'],
                       }}
@@ -88,7 +88,7 @@ export default function TrustedBySection() {
                           key={`${partner.id}-${index}`}
                           className="flex-shrink-0 group"
                         >
-                          <div className="w-40 h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200 flex items-center justify-center px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
+                          <div className="w-32 h-16 sm:w-36 sm:h-18 md:w-40 md:h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg sm:rounded-xl border border-gray-200 flex items-center justify-center px-4 sm:px-5 md:px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
                             {partner.image ? (
                               <Image
                                 src={partner.image}
@@ -98,7 +98,7 @@ export default function TrustedBySection() {
                                 className="object-contain max-w-full max-h-full grayscale group-hover:grayscale-0 transition-all duration-300"
                               />
                             ) : (
-                              <span className="text-lg font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
+                              <span className="text-sm sm:text-base md:text-lg font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
                                 {partner.name}
                               </span>
                             )}
@@ -111,7 +111,7 @@ export default function TrustedBySection() {
                   {/* Second Row - Right to Left */}
                   <div className="flex">
                     <motion.div
-                      className="flex gap-12 pr-12"
+                      className="flex gap-6 sm:gap-8 md:gap-12 pr-6 sm:pr-8 md:pr-12"
                       animate={{
                         x: ['-100%', '0%'],
                       }}
@@ -126,7 +126,7 @@ export default function TrustedBySection() {
                           key={`${partner.id}-reverse-${index}`}
                           className="flex-shrink-0 group"
                         >
-                          <div className="w-40 h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200 flex items-center justify-center px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
+                          <div className="w-32 h-16 sm:w-36 sm:h-18 md:w-40 md:h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg sm:rounded-xl border border-gray-200 flex items-center justify-center px-4 sm:px-5 md:px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
                             {partner.image ? (
                               <Image
                                 src={partner.image}
@@ -136,7 +136,7 @@ export default function TrustedBySection() {
                                 className="object-contain max-w-full max-h-full grayscale group-hover:grayscale-0 transition-all duration-300"
                               />
                             ) : (
-                              <span className="text-lg font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
+                              <span className="text-sm sm:text-base md:text-lg font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
                                 {partner.name}
                               </span>
                             )}
@@ -149,9 +149,9 @@ export default function TrustedBySection() {
               ) : (
                 <>
                   {/* Fallback with sample merchants */}
-                  <div className="flex mb-8">
+                  <div className="flex mb-6 sm:mb-8">
                     <motion.div
-                      className="flex gap-12 pr-12"
+                      className="flex gap-6 sm:gap-8 md:gap-12 pr-6 sm:pr-8 md:pr-12"
                       animate={{
                         x: ['0%', '-100%'],
                       }}
@@ -166,8 +166,8 @@ export default function TrustedBySection() {
                           key={index}
                           className="flex-shrink-0 group"
                         >
-                          <div className="w-40 h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200 flex items-center justify-center px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
-                            <span className="text-xl font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
+                          <div className="w-32 h-16 sm:w-36 sm:h-18 md:w-40 md:h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg sm:rounded-xl border border-gray-200 flex items-center justify-center px-4 sm:px-5 md:px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
+                            <span className="text-base sm:text-lg md:text-xl font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
                               {merchant}
                             </span>
                           </div>
@@ -178,7 +178,7 @@ export default function TrustedBySection() {
 
                   <div className="flex">
                     <motion.div
-                      className="flex gap-12 pr-12"
+                      className="flex gap-6 sm:gap-8 md:gap-12 pr-6 sm:pr-8 md:pr-12"
                       animate={{
                         x: ['-100%', '0%'],
                       }}
@@ -193,8 +193,8 @@ export default function TrustedBySection() {
                           key={index}
                           className="flex-shrink-0 group"
                         >
-                          <div className="w-40 h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200 flex items-center justify-center px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
-                            <span className="text-xl font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
+                          <div className="w-32 h-16 sm:w-36 sm:h-18 md:w-40 md:h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg sm:rounded-xl border border-gray-200 flex items-center justify-center px-4 sm:px-5 md:px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
+                            <span className="text-base sm:text-lg md:text-xl font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
                               {merchant}
                             </span>
                           </div>

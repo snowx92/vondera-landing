@@ -71,226 +71,191 @@ export default function VPayPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
-        <div className="absolute inset-0">
-          <Image 
-            src="/Gradient-Background.png" 
-            alt="Background" 
-            fill 
-            className="object-cover"
-            priority
-          />
-          {/* Dark overlay for better white text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-purple-900/50 to-blue-900/60"></div>
-        </div>
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden bg-gradient-to-br from-primary-50 via-purple-50 to-blue-50">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-10 left-5 sm:top-20 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-primary-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-5 sm:bottom-20 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+        
         <Container>
-          <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center relative z-10 px-4">
             {/* Left Content */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-center lg:text-left"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, type: "spring" }}
+                transition={{ delay: 0.2 }}
               >
-                <Badge className="mb-6 bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-lg inline-flex items-center">
-                  <CreditCard className="w-4 h-4 mr-2" />
-                  Payment Solutions
+                <Badge className="mb-4 sm:mb-6 bg-primary-100 text-primary-700 border-primary-200 text-sm sm:text-base">
+                  <CreditCard className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+                  Payment Gateway
                 </Badge>
               </motion.div>
             
               <motion.h1 
-                className="text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-bold mb-6 leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
+                transition={{ delay: 0.3 }}
               >
-                <motion.span 
-                  className="block text-white drop-shadow-lg"
-                  animate={{ 
-                    textShadow: [
-                      "0 0 20px rgba(255,255,255,0.3)",
-                      "0 0 40px rgba(255,255,255,0.5)",
-                      "0 0 20px rgba(255,255,255,0.3)"
-                    ]
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  Accept All
-                </motion.span>
-                <motion.span 
-                  className="block bg-gradient-to-r from-yellow-300 via-orange-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg"
-                  animate={{ 
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  style={{ backgroundSize: "200% 200%" }}
-                >
-                  Payment Methods
-                </motion.span>
+                <span className="block text-gray-900 mb-1 sm:mb-2">Accept Payments</span>
+                <span className="block text-primary-600">The Easy Way</span>
               </motion.h1>
               
               <motion.p 
-                className="text-xl md:text-2xl text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium drop-shadow-lg"
+                className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
+                transition={{ delay: 0.4 }}
               >
-                VPay allows your customers to pay easily using <span className="text-yellow-300 font-semibold">debit cards</span>, <span className="text-yellow-300 font-semibold">credit cards</span>, or even <span className="text-yellow-300 font-semibold">digital wallets</span>.
+                Enable your customers to pay with credit cards, debit cards, and digital wallets. 
+                All in one seamless checkout experience.
               </motion.p>
 
-              <motion.p
-                className="text-lg text-white/80 mb-8 drop-shadow"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-8"
+              >
+                <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base">
+                    Get Started Free
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+                </a>
+                <a href="#features" className="w-full sm:w-auto">
+                  <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 text-gray-900 font-semibold rounded-xl transition-all border-2 border-gray-200 hover:border-primary-300 text-sm sm:text-base">
+                    Learn More
+                  </button>
+                </a>
+              </motion.div>
+
+              {/* Payment Stats */}
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.6 }}
+                className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm"
               >
-                Provide the best payment experience for your business.
-              </motion.p>
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-gray-600">Instant setup</span>
+                </div>
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full"></div>
+                  <span className="text-gray-600">Secure payments</span>
+                </div>
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-500 rounded-full"></div>
+                  <span className="text-gray-600">24/7 support</span>
+                </div>
+              </motion.div>
             </motion.div>
 
-            {/* Right Content - Credit Card Mockup */}
+            {/* Right Content - Modern Payment Interface */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4, type: "spring" }}
-              className="relative"
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="relative mt-8 lg:mt-0"
             >
-              {/* Credit Card Design */}
-              <motion.div
-                className="relative w-full max-w-md mx-auto"
-                animate={{ 
-                  rotateY: [0, 5, 0, -5, 0],
-                  rotateX: [0, 2, 0, -2, 0]
-                }}
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                style={{ perspective: 1000, transformStyle: "preserve-3d" }}
-              >
-                {/* Card Glow Effect */}
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-br from-purple-500 via-blue-500 to-yellow-400 rounded-3xl blur-3xl opacity-40"
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    opacity: [0.4, 0.6, 0.4]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                ></motion.div>
-                
-                {/* Card - Purple Gradient like image */}
-                <div className="relative aspect-[1.586/1] bg-gradient-to-br from-purple-600 via-purple-500 to-blue-500 rounded-2xl shadow-2xl p-6 md:p-8 overflow-hidden">
-                  
-                  {/* Decorative circles/pattern */}
-                  <div className="absolute -right-8 -top-8 w-40 h-40 bg-yellow-400 rounded-full opacity-30 blur-2xl"></div>
-                  <div className="absolute -left-8 -bottom-8 w-40 h-40 bg-orange-400 rounded-full opacity-20 blur-2xl"></div>
-                  
-                  {/* Card Content */}
-                  <div className="relative z-10 h-full flex flex-col justify-between">
-                    {/* Top Section - VPay Logo */}
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <motion.div 
-                          className="text-white font-bold text-2xl md:text-3xl mb-1"
-                          animate={{ opacity: [1, 0.8, 1] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                        >
-                          VPay
-                        </motion.div>
-                        <div className="text-white/80 text-xs md:text-sm">by Vondera</div>
-                      </div>
-                      {/* Chip Design */}
-                      <motion.div 
-                        className="w-12 h-9 md:w-14 md:h-11 bg-gradient-to-br from-yellow-300 via-yellow-400 to-orange-400 rounded-lg relative overflow-hidden shadow-lg"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                      >
-                        <div className="absolute inset-0 grid grid-cols-3 gap-0.5 p-1.5">
-                          {[...Array(9)].map((_, i) => (
-                            <div key={i} className="bg-yellow-600/40 rounded-sm"></div>
-                          ))}
-                        </div>
-                        {/* Shine effect */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent"></div>
-                      </motion.div>
-                    </div>
-
-                    {/* Middle Section - Card Number */}
-                    <div>
-                      <motion.div 
-                        className="text-white font-mono text-xl md:text-2xl lg:text-3xl tracking-widest drop-shadow-lg"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
-                      >
-                        •••• •••• •••• 1234
-                      </motion.div>
-                    </div>
-
-                    {/* Bottom Section */}
-                    <div className="flex justify-between items-end">
-                      <div>
-                        <div className="text-white/70 text-xs mb-1 uppercase tracking-wide">Merchant</div>
-                        <motion.div 
-                          className="text-white font-bold text-sm md:text-base uppercase tracking-wide"
-                          animate={{ opacity: [0.9, 1, 0.9] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                        >
-                          YOUR BUSINESS
-                        </motion.div>
-                      </div>
-                      {/* Card logos (VISA, MC) */}
-                      <div className="flex gap-2">
-                        <div className="bg-white rounded px-2 py-1">
-                          <span className="text-blue-600 font-bold text-xs">VISA</span>
-                        </div>
-                        <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded px-2 py-1">
-                          <span className="text-white font-bold text-xs">MC</span>
-                        </div>
-                      </div>
-                    </div>
+              {/* Main Payment Card */}
+              <div className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-6 md:p-8 border border-gray-200">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-5 sm:mb-6 md:mb-8">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Checkout</h3>
+                    <p className="text-gray-500 text-xs sm:text-sm">Secure payment</p>
+                  </div>
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+                    <span className="text-xs sm:text-sm font-medium text-green-600">Verified</span>
                   </div>
                 </div>
 
-                {/* Floating Payment Icons with white bg */}
-                <motion.div
-                  className="absolute -right-4 top-1/4 bg-white p-4 rounded-2xl shadow-2xl border-2 border-purple-200"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.8 }}
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                >
-                  <CreditCard className="w-7 h-7 text-purple-600" />
-                </motion.div>
-                
-                <motion.div
-                  className="absolute -left-4 top-1/2 bg-white p-4 rounded-2xl shadow-2xl border-2 border-blue-200"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1 }}
-                  whileHover={{ scale: 1.2, rotate: -10 }}
-                >
-                  <Wallet className="w-7 h-7 text-blue-600" />
-                </motion.div>
-                
-                <motion.div
-                  className="absolute -right-8 bottom-1/4 bg-white p-4 rounded-2xl shadow-2xl border-2 border-green-200"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.2 }}
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                >
-                  <Shield className="w-7 h-7 text-green-600" />
-                </motion.div>
+                {/* Payment Amount */}
+                <div className="bg-gradient-to-br from-primary-50 to-purple-50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 mb-4 sm:mb-5 md:mb-6">
+                  <div className="text-xs sm:text-sm text-gray-600 mb-0.5 sm:mb-1">Total Amount</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">2,499 EGP</div>
+                </div>
+
+                {/* Payment Methods */}
+                <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-5 md:mb-6">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center gap-2.5 sm:gap-3 md:gap-4 p-3 sm:p-3.5 md:p-4 bg-primary-50 border-2 border-primary-500 rounded-lg sm:rounded-xl cursor-pointer"
+                  >
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-primary-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CreditCard className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-gray-900 text-sm sm:text-base">Credit Card</div>
+                      <div className="text-xs sm:text-sm text-gray-500">Visa, Mastercard, Amex</div>
+                    </div>
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full"></div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center gap-2.5 sm:gap-3 md:gap-4 p-3 sm:p-3.5 md:p-4 bg-gray-50 border-2 border-gray-200 rounded-lg sm:rounded-xl cursor-pointer hover:border-gray-300 transition-colors"
+                  >
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Smartphone className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-purple-600" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-semibold text-gray-900 text-sm sm:text-base">Mobile Wallet</div>
+                      <div className="text-xs sm:text-sm text-gray-500">Vodafone, InstaPay</div>
+                    </div>
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-gray-300 rounded-full flex-shrink-0"></div>
+                  </motion.div>
+                </div>
+
+                {/* Pay Button */}
+                <button className="w-full py-3 sm:py-3.5 md:py-4 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-lg sm:rounded-xl transition-all shadow-lg hover:shadow-xl text-sm sm:text-base">
+                  Pay Securely
+                </button>
+
+                {/* Security Badge */}
+                <div className="flex items-center justify-center gap-1.5 sm:gap-2 mt-4 sm:mt-5 md:mt-6 text-[10px] sm:text-xs text-gray-500">
+                  <Shield className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span>256-bit SSL encryption</span>
+                </div>
+              </div>
+
+              {/* Floating Payment Method Icons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="absolute -bottom-4 sm:-bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-3 bg-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl border border-gray-200"
+              >
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Image src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" width={32} height={20} className="object-contain sm:w-10 sm:h-6" />
+                  <Image src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" width={32} height={20} className="object-contain sm:w-10 sm:h-6" />
+                  <Image src="/payment method/vodafone-cash.png" alt="Vodafone" width={32} height={20} className="object-contain sm:w-10 sm:h-6" />
+                  <Image src="/payment method/instapay.png" alt="InstaPay" width={32} height={20} className="object-contain sm:w-10 sm:h-6" />
+                </div>
               </motion.div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-16 h-16 sm:w-24 sm:h-24 bg-yellow-200/50 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 w-20 h-20 sm:w-32 sm:h-32 bg-blue-200/50 rounded-full blur-2xl"></div>
             </motion.div>
           </div>
         </Container>
       </section>
 
       {/* Payment Options Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -393,7 +358,7 @@ export default function VPayPage() {
       </section>
 
       {/* Get Your Payouts Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -438,7 +403,7 @@ export default function VPayPage() {
       </section>
       
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -481,25 +446,25 @@ export default function VPayPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center text-white"
+            className="text-center text-white px-4"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               Ready to transform your payment experience?
             </h2>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 opacity-90 max-w-2xl mx-auto">
               Join thousands of businesses using VPay for their payment needs
             </p>
             <a href="https://dashboard.vondera.app/dashboard" target="_blank" rel="noopener noreferrer">
-              <button className="px-10 py-4 bg-white text-primary-600 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all">
+              <button className="w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-white text-primary-600 rounded-lg font-semibold text-base sm:text-lg hover:shadow-2xl transition-all">
                 Start Free Trial
-                <ArrowRight className="inline-block ml-2 w-5 h-5" />
+                <ArrowRight className="inline-block ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </a>
           </motion.div>

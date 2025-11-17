@@ -77,11 +77,9 @@ export default function HeroSectionModern() {
 
   return (
     <section 
-      className="relative w-full overflow-hidden bg-gray-900" 
+      className="relative w-full overflow-hidden bg-gray-900 h-[85vh] sm:h-[95vh] md:h-[100vh] lg:h-[110vh]" 
       style={{ 
-        height: '110vh',
-        minHeight: '110vh',
-        maxHeight: '110vh'
+        minHeight: '600px'
       }}
     >
       {/* Background Video - Using multiple sources for better compatibility */}
@@ -98,7 +96,9 @@ export default function HeroSectionModern() {
           opacity: videoError ? 0 : 1, 
           transition: 'opacity 0.3s',
           objectFit: 'cover',
-          objectPosition: 'center'
+          objectPosition: 'center center',
+          width: '100%',
+          height: '100%'
         }}
         onError={(e) => {
           console.error('Video error:', e);
@@ -122,7 +122,7 @@ export default function HeroSectionModern() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
       {/* Content - Full height container */}
-      <div className="relative h-full w-full flex flex-col justify-end px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
+      <div className="relative h-full w-full flex flex-col justify-end px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-24 sm:pb-28 md:pb-32 lg:pb-36 xl:pb-40">
         {/* Main Content - Bottom Left and Right */}
         <div className="w-full">
           {/* Animated Heading */}
@@ -236,8 +236,8 @@ export default function HeroSectionModern() {
           </div>
         </div>
       
-      {/* Rounded bottom edge - positioned at the bottom 10vh */}
-      <div className="absolute bottom-0 left-0 right-0 h-[10vh] bg-white rounded-t-[2.5rem] sm:rounded-t-[3rem] md:rounded-t-[4rem] lg:rounded-t-[5rem] shadow-[0_-8px_48px_0_rgba(0,0,0,0.24),0_-4px_8px_0_rgba(0,0,0,0.16)] z-10" />
+      {/* Rounded bottom edge */}
+      <div className="absolute bottom-0 left-0 right-0 h-[8vh] sm:h-[9vh] md:h-[10vh] bg-white rounded-t-[2rem] sm:rounded-t-[2.5rem] md:rounded-t-[3rem] lg:rounded-t-[4rem] shadow-[0_-8px_48px_0_rgba(0,0,0,0.24),0_-4px_8px_0_rgba(0,0,0,0.16)] z-10" />
     </section>
   );
 }

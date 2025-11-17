@@ -152,7 +152,7 @@ export default function VMediaPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden min-h-[85vh] sm:min-h-[90vh] md:min-h-screen flex items-center">
         <div className="absolute inset-0">
           <Image 
             src="/Gradient-Background.png" 
@@ -227,7 +227,7 @@ export default function VMediaPage() {
       </section>
 
       {/* Leaderboard Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-vmedia-50 via-white to-primary-50 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-vmedia-50 via-white to-primary-50 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -422,7 +422,7 @@ export default function VMediaPage() {
       </section>
       
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -465,7 +465,7 @@ export default function VMediaPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary-500 to-secondary-500">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

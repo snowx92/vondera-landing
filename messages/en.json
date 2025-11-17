@@ -107,6 +107,11 @@
       "subtitle": "Payment Gateway",
       "description": "Accept payments with one-click integration"
     },
+    "vdomain": {
+      "title": "VDomain",
+      "subtitle": "Custom Domain",
+      "description": "Use your own domain or get a free subdomain"
+    },
     "vfunnel": {
       "title": "VFunnel",
       "subtitle": "Funnel Builder",
@@ -132,6 +137,236 @@
     "startingFrom": "Starting from",
     "guarantee": "3-day money-back guarantee",
     "cta": "Start Free Trial"
+  },
+  "investment": {
+    "hero": {
+      "badge": "Investment Opportunity"
+    },
+    "acceleratedBy": {
+      "badge": "Accelerated By",
+      "title": "Backed by Leading Programs"
+    },
+    "metrics": {
+      "merchants": "Active Merchants",
+      "growth": "Monthly Growth",
+      "gmv": "Annual GMV",
+      "uptime": "Platform Uptime"
+    },
+    "opportunities": {
+      "title": "Why Invest in Vondera?",
+      "subtitle": "A unique opportunity to invest in the leading e-commerce platform in MENA",
+      "growth": {
+        "title": "Rapid Growth",
+        "description": "10,000+ active merchants and growing 40% MoM"
+      },
+      "market": {
+        "title": "MENA Market Leader",
+        "description": "First-mover advantage in the fastest-growing e-commerce region"
+      },
+      "revenue": {
+        "title": "Proven Revenue Model",
+        "description": "Multiple revenue streams with strong unit economics"
+      },
+      "vision": {
+        "title": "Clear Vision",
+        "description": "Path to becoming the next MENA unicorn"
+      }
+    },
+    "pitchDeck": {
+      "badge": "Pitch Deck",
+      "title": "Our Vision & Strategy",
+      "subtitle": "Explore our comprehensive pitch deck to learn more about our business model, market opportunity, and growth strategy",
+      "download": "Download Full Pitch Deck",
+      "downloadShort": "Download Deck"
+    },
+    "contact": {
+      "badge": "Get in Touch",
+      "title": "Ready to Invest?",
+      "subtitle": "Let's discuss how you can be part of Vondera's growth story",
+      "info": {
+        "title": "Contact Our CEO",
+        "email": "Email CEO",
+        "company": "Company",
+        "status": "Status",
+        "raising": "Raising Now",
+        "note": "Note:",
+        "noteText": "All investment inquiries are reviewed personally by our CEO. We typically respond within 24 hours."
+      },
+      "form": {
+        "name": "Full Name",
+        "namePlaceholder": "John Doe",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "company": "Company/Fund Name",
+        "companyPlaceholder": "Your Company",
+        "amount": "Investment Interest",
+        "amountPlaceholder": "Select investment range",
+        "amountOver1M": "1M+",
+        "message": "Tell us about your investment interest",
+        "messagePlaceholder": "Tell us about your investment background, why you're interested in Vondera, and any questions you have...",
+        "submit": "Submit Investment Inquiry",
+        "submitShort": "Submit Inquiry",
+        "sending": "Sending...",
+        "successTitle": "Thank you for your interest!",
+        "successMessage": "We've received your investment inquiry and will get back to you soon."
+      }
+    },
+    "cta": {
+      "title": "Join Us on This Journey",
+      "subtitle": "Be part of building the future of e-commerce in MENA",
+      "email": "Email CEO",
+      "download": "Download Deck"
+    }
+  },
+  "partners": {
+    "hero": {
+      "badge": "Partner Program",
+      "title": "Grow Together with Vondera",
+      "subtitle": "Join our partnership program and unlock new opportunities in the MENA e-commerce ecosystem",
+      "cta": "Become a Partner",
+      "contact": "Contact Us"
+    },
+    "benefits": {
+      "badge": "Why Partner with Us",
+      "title": "Partnership Benefits",
+      "subtitle": "Unlock exclusive advantages when you partner with Vondera",
+      "growth": {
+        "title": "Accelerated Growth",
+        "description": "Tap into our network of 10,000+ active merchants and scale your business"
+      },
+      "network": {
+        "title": "Strategic Network",
+        "description": "Connect with industry leaders and expand your business opportunities"
+      },
+      "support": {
+        "title": "Dedicated Support",
+        "description": "Get priority access to our team and exclusive partnership resources"
+      },
+      "innovation": {
+        "title": "Innovation Access",
+        "description": "Early access to new features and co-development opportunities"
+      }
+    },
+    "types": {
+      "badge": "Partnership Models",
+      "title": "Choose Your Partnership Type",
+      "subtitle": "We offer flexible partnership models to match your business goals",
+      "technology": {
+        "title": "Technology Partners",
+        "description": "Integrate your solutions with our platform"
+      },
+      "solution": {
+        "title": "Solution Partners",
+        "description": "Deliver Vondera-powered solutions to clients"
+      },
+      "strategic": {
+        "title": "Strategic Alliances",
+        "description": "Long-term collaborations for mutual growth"
+      }
+    },
+    "contact": {
+      "badge": "Get in Touch",
+      "title": "Start Your Partnership Journey",
+      "subtitle": "Fill out the form below and our partnership team will get back to you within 24 hours",
+      "info": {
+        "title": "Contact Information",
+        "email": "Email",
+        "company": "Company",
+        "region": "Region",
+        "note": "Note:",
+        "noteText": "Partnership inquiries are typically reviewed within 1-2 business days. For urgent matters, please email us directly."
+      },
+      "form": {
+        "name": "Full Name",
+        "namePlaceholder": "John Doe",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "company": "Company Name",
+        "companyPlaceholder": "Your Company",
+        "message": "Tell us about your partnership interest",
+        "messagePlaceholder": "Describe your business, partnership goals, and how you'd like to collaborate with Vondera...",
+        "submit": "Submit Partnership Inquiry",
+        "sending": "Sending...",
+        "successTitle": "Thank you for your interest!",
+        "successMessage": "We've received your partnership inquiry and will get back to you soon."
+      }
+    },
+    "cta": {
+      "title": "Ready to Partner with Us?",
+      "subtitle": "Join the leading e-commerce platform in MENA and grow your business with Vondera",
+      "apply": "Apply Now",
+      "email": "Email Us"
+    }
+  },
+  "developers": {
+    "hero": {
+      "badge": "API Documentation",
+      "title": "Build with Vondera",
+      "subtitle": "Powerful REST APIs and SDKs for seamless e-commerce integration",
+      "getStarted": "Get Started",
+      "apiReference": "API Reference"
+    },
+    "features": {
+      "fast": {
+        "title": "Fast & Lightweight",
+        "description": "Optimized SDKs with minimal footprint"
+      },
+      "typeSafe": {
+        "title": "Type-Safe",
+        "description": "Full TypeScript & Dart type definitions"
+      },
+      "crossPlatform": {
+        "title": "Cross-Platform",
+        "description": "Web, mobile, and server support"
+      },
+      "documented": {
+        "title": "Well Documented",
+        "description": "Extensive docs with examples"
+      }
+    },
+    "quickStart": {
+      "title": "Quick Start",
+      "subtitle": "Get up and running in minutes",
+      "step1": {
+        "title": "Get API Key",
+        "description": "Create an account and get your API key from the dashboard",
+        "action": "Go to Dashboard"
+      },
+      "step2": {
+        "title": "Install SDK",
+        "description": "Choose your platform and install the SDK"
+      },
+      "step3": {
+        "title": "Start Building",
+        "description": "Make your first API call and start building",
+        "action": "Try API Explorer"
+      }
+    },
+    "apiExplorer": {
+      "badge": "API Explorer",
+      "title": "Try Our APIs",
+      "subtitle": "Interactive examples with real code",
+      "endpoints": "Endpoints",
+      "response": "Response"
+    },
+    "sdks": {
+      "title": "Official SDKs",
+      "subtitle": "Choose your platform and start building",
+      "javascript": {
+        "description": "Lightweight TypeScript SDK for Node.js and browsers"
+      },
+      "flutter": {
+        "description": "Type-safe Flutter package for iOS and Android"
+      },
+      "viewOnNpm": "View on NPM",
+      "viewOnPubDev": "View on pub.dev"
+    },
+    "cta": {
+      "title": "Ready to Start Building?",
+      "subtitle": "Join thousands of developers building with Vondera",
+      "getStarted": "Get Started Free",
+      "viewDocs": "View Full Documentation"
+    }
   },
   "faq": {
     "title": "Frequently Asked Questions",

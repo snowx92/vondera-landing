@@ -1,4 +1,46 @@
 {
+  "seo": {
+    "home": {
+      "title": "Vondera - Best E-commerce Platform in Egypt & MENA | Arabic Shopify Alternative",
+      "description": "Build your online store with Vondera, the #1 e-commerce platform in Egypt and MENA. 10,000+ merchants trust us. Starting at 300 EGP/month. Free trial available!",
+      "keywords": "e-commerce platform Egypt, online store builder, Shopify alternative Arabic, MENA e-commerce, create online store Egypt, best e-commerce platform Middle East, Arabic online store builder, VMedia marketplace, payment gateway Egypt, inventory management",
+      "og": {
+        "title": "Vondera - #1 E-commerce Platform for Egyptian & MENA Merchants",
+        "description": "Join 10,000+ successful online stores. Build, manage, and scale your e-commerce business with Vondera. Starting at only 300 EGP/month.",
+        "imageAlt": "Vondera E-commerce Platform - Build Your Online Store"
+      },
+      "twitter": {
+        "title": "Vondera - Best E-commerce Platform in Egypt & MENA",
+        "description": "The Arabic alternative to Shopify. Built for MENA merchants. 10,000+ active stores, 99.9% uptime, 24/7 support."
+      }
+    },
+    "faqs": {
+      "question1": {
+        "q": "What is Vondera?",
+        "a": "Vondera is an all-in-one e-commerce platform designed specifically for the MENA region. We provide everything you need to build, manage, and scale your online store, including website builder, inventory management, payment processing (VPay), shipping integration, and our unique VMedia marketplace that connects you with professional media buyers."
+      },
+      "question2": {
+        "q": "How is Vondera different from Shopify?",
+        "a": "Vondera is tailored specifically for the MENA market with features Shopify doesn't offer: local payment methods (Vodafone Cash, Orange Money, InstaPay), full Arabic language support with RTL, significantly lower pricing starting at 300 EGP/month, VMedia marketplace connecting you with local media buyers, and 24/7 Arabic-speaking customer support."
+      },
+      "question3": {
+        "q": "What is VMedia and how does it help my business?",
+        "a": "VMedia is our exclusive media buying marketplace that connects over 10,000 merchants with 500+ professional media buyers. Instead of struggling to find reliable advertisers, you can browse verified media buyers, compare their performance metrics, review portfolios, and hire the perfect expert for your advertising campaigns."
+      },
+      "question4": {
+        "q": "Do you have mobile apps for managing my store?",
+        "a": "Yes! We offer full-featured mobile apps for both iOS (16+) and Android with 50,000+ downloads and 4.5★ rating. Manage your entire store on the go: process orders, track inventory, respond to customer messages, view analytics, and collaborate with your team from anywhere, anytime."
+      },
+      "question5": {
+        "q": "What payment methods does Vondera support?",
+        "a": "Through VPay, our integrated payment gateway, we support all major payment methods for the MENA region: credit/debit cards (VISA, Mastercard, AMEX), digital wallets (Vodafone Cash, Orange Money, WE Pay, InstaPay), bank transfers, and cash on delivery (COD) with automated collection tracking."
+      },
+      "question6": {
+        "q": "How much does Vondera cost?",
+        "a": "Vondera pricing starts at only 300 EGP/month, making it one of the most affordable e-commerce platforms in the MENA region. We offer flexible plans that scale with your business. All plans include 24/7 support, 99.9% uptime guarantee, and access to our full ecosystem of tools including VPay, VMedia, VFunnel, and more. Start with a free trial!"
+      }
+    }
+  },
   "common": {
     "getStarted": "Get Started",
     "startFreeTrial": "Start Free Trial",

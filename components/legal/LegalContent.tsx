@@ -72,7 +72,7 @@ export default function LegalContent({ title, lastUpdated, sections }: LegalCont
               <p className="text-gray-600">
                 Have questions about our {title.toLowerCase()}?{' '}
                 <a
-                  href="mailto:legal@vondera.com"
+                  href="mailto:legal@vondera.app"
                   className="text-violet-600 font-semibold hover:underline"
                 >
                   Contact our legal team

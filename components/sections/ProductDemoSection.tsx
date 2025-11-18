@@ -341,7 +341,7 @@ const SocialIcons = {
                         />
                       </svg>
                       <span className="truncate">
-                        app.vondera.com/{tabs[activeTab].title.toLowerCase()}
+                        app.vondera.app/{tabs[activeTab].title.toLowerCase()}
                       </span>
                     </div>
                   </div>

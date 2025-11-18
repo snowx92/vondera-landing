@@ -4,8 +4,10 @@ import { Container } from '@/components/ui/Container';
 import ChromaGrid from '@/components/ChromaGrid';
 import BlurText from '@/components/BlurText';
 import LightRays from '@/components/LightRays';
+import { useTranslations } from 'next-intl';
 
 export default function AboutPage() {
+  const t = useTranslations('aboutPage');
   const teamMembers = [
     {
       image: "/ceo.webp",
@@ -109,14 +111,14 @@ export default function AboutPage() {
           <Container className="relative z-10">
             <div className="max-w-7xl mx-auto text-center">
               <BlurText
-                text="We are a group of entrepreneurs building an E-commerce OS. We will help all brands make a lot of sales through our solution. We once had our own brand, and we know the gaps. We are the next unicorn startup in Egypt. We started in 2025 and we have a lot to build."
+                text={t('vision.text1')}
                 delay={100}
                 animateBy="words"
                 direction="top"
                 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-relaxed mb-12"
               />
               <BlurText
-                text="From Same People to Same People"
+                text={t('vision.text2')}
                 delay={1500}
                 animateBy="words"
                 direction="top"
@@ -131,10 +133,10 @@ export default function AboutPage() {
           <Container className="max-w-7xl px-6 md:px-12">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Meet Our Team
+                {t('team.title')}
               </h2>
               <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
-                The passionate people behind Vondera, working hard to make e-commerce accessible to everyone.
+                {t('team.subtitle')}
               </p>
             </div>
             <div style={{ minHeight: '800px', position: 'relative' }}>

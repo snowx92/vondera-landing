@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Briefcase, MapPin, Clock, Users, ArrowRight, Building2, Calendar, Filter } from 'lucide-react';
@@ -13,6 +13,7 @@ import { getJobs } from '@/lib/apis/jobs';
 import { Job } from '@/lib/apis/types';
 
 export default function CareersPage() {
+  const t = useTranslations('careersPage');
   const locale = useLocale();
   const isRTL = locale === 'ar';
   
@@ -75,7 +76,7 @@ export default function CareersPage() {
       setJobs(data);
       setLoading(false);
     } catch (err) {
-      setError('Failed to load job positions. Please try again later.');
+      setError(t('error'));
       setLoading(false);
       console.error('Error fetching jobs:', err);
     }
@@ -130,15 +131,15 @@ export default function CareersPage() {
           >
             <Badge className="mb-6 sm:mb-8 bg-primary-600 text-white border-none backdrop-blur-sm inline-flex items-center px-5 sm:px-7 py-2.5 sm:py-3 text-sm sm:text-base shadow-2xl">
               <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              We're Hiring!
+              {t('title')}
             </Badge>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 leading-tight text-white drop-shadow-2xl">
-              Join Our Mission
+              {t('title')}
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white leading-relaxed max-w-4xl mx-auto drop-shadow-lg font-light">
-              Help us build the future of e-commerce in MENA
+              {t('subtitle')}
             </p>
           </motion.div>
         </Container>
@@ -157,7 +158,7 @@ export default function CareersPage() {
             >
               <div className="flex items-center gap-2 mb-6">
                 <Filter className="w-5 h-5 text-gray-600" />
-                <h3 className="text-lg font-semibold text-gray-900">Filter by Department</h3>
+                <h3 className="text-lg font-semibold text-gray-900">{t('filterBy')}</h3>
               </div>
               <div className="flex flex-wrap gap-3">
                 {departments.map((dept) => (
@@ -170,7 +171,7 @@ export default function CareersPage() {
                         : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-primary-500 hover:text-primary-600'
                     }`}
                   >
-                    {dept === 'all' ? 'All Positions' : dept}
+                    {dept === 'all' ? t('allPositions') : dept}
                   </button>
                 ))}
               </div>
@@ -190,7 +191,7 @@ export default function CareersPage() {
                 onClick={fetchJobs}
                 className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
               >
-                Try Again
+                {t('tryAgain')}
               </button>
             </div>
           ) : filteredJobs.length === 0 ? (
@@ -200,12 +201,12 @@ export default function CareersPage() {
               className="text-center py-16 px-4"
             >
               <Briefcase className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Open Positions</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('noJobsTitle')}</h3>
               <p className="text-gray-600 mb-6">
-                We don't have any open positions at the moment, but we're always looking for talented people.
+                {t('noJobsText')}
               </p>
               <p className="text-sm text-gray-500">
-                Send your resume to <a href="mailto:careers@vondera.app" className="text-primary-600 font-semibold hover:underline">careers@vondera.app</a>
+                {t('sendResume')} <a href="mailto:careers@vondera.app" className="text-primary-600 font-semibold hover:underline">careers@vondera.app</a>
               </p>
             </motion.div>
           ) : (
@@ -259,11 +260,11 @@ export default function CareersPage() {
                         {/* Right Content - CTA */}
                         <div className="flex flex-col items-start lg:items-end gap-4">
                           <Badge className="bg-primary-100 text-primary-700 border-primary-200 font-semibold">
-                            Now Hiring
+                            {t('nowHiring')}
                           </Badge>
                           
                           <button className="flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 transition-all group-hover:gap-3 group-hover:shadow-lg">
-                            View Details
+                            {t('viewDetails')}
                             <ArrowRight className="w-5 h-5" />
                           </button>
                         </div>

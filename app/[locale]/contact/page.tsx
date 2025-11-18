@@ -7,8 +7,10 @@ import { Container } from '@/components/ui/Container';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function ContactPage() {
+  const t = useTranslations('contactPage');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,13 +21,13 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    alert('Thank you for contacting us! We will get back to you within 24-48 hours.');
+    alert(t('form.success'));
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'Info@vondera.app', href: 'mailto:Info@vondera.app' },
-    { icon: Phone, label: 'Phone', value: '+20 10 70068383', href: 'tel:+201070068383' },
-    { icon: MapPin, label: 'Address', value: 'Dokki, Giza, Egypt', href: null },
+    { icon: Mail, label: t('info.email'), value: 'Info@vondera.app', href: 'mailto:Info@vondera.app' },
+    { icon: Phone, label: t('info.phone'), value: '+20 10 70068383', href: 'tel:+201070068383' },
+    { icon: MapPin, label: t('info.address'), value: 'Dokki, Giza, Egypt', href: null },
   ];
 
   return (
@@ -36,9 +38,9 @@ export default function ContactPage() {
           <Container>
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Get in Touch</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t('title')}</h1>
                 <p className="text-xl text-gray-600">
-                  Have questions? We'd love to hear from you. Send us a message and we'll respond within 24-48 hours.
+                  {t('subtitle')}
                 </p>
               </div>
 
@@ -68,7 +70,7 @@ export default function ContactPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                          Full Name *
+                          {t('form.name')} *
                         </label>
                         <input
                           type="text"
@@ -77,12 +79,12 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="John Doe"
+                          placeholder={t('form.name')}
                         />
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                          Email Address *
+                          {t('form.email')} *
                         </label>
                         <input
                           type="email"
@@ -91,13 +93,13 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                          placeholder="john@example.com"
+                          placeholder={t('form.email')}
                         />
                       </div>
                     </div>
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                        Subject *
+                        {t('form.subject')} *
                       </label>
                       <input
                         type="text"
@@ -106,12 +108,12 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        placeholder="How can we help?"
+                        placeholder={t('form.subject')}
                       />
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Message *
+                        {t('form.message')} *
                       </label>
                       <textarea
                         id="message"
@@ -120,12 +122,12 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                        placeholder="Tell us more about your inquiry..."
+                        placeholder={t('form.message')}
                       />
                     </div>
                     <Button type="submit" variant="primary" size="lg" className="w-full md:w-auto">
                       <Send size={20} className="mr-2" />
-                      Send Message
+                      {t('form.submit')}
                     </Button>
                   </form>
                 </CardContent>

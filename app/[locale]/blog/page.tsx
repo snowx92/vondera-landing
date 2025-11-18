@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,6 +14,7 @@ import { getBlogs } from '@/lib/apis/blogs';
 import { Blog } from '@/lib/apis/types';
 
 export default function BlogPage() {
+  const t = useTranslations('blogPage');
   const locale = useLocale();
   const isRTL = locale === 'ar';
   
@@ -36,7 +37,7 @@ export default function BlogPage() {
       setTotalPages(response.totalPages);
       setLoading(false);
     } catch (err) {
-      setError('Failed to load blogs. Please try again later.');
+      setError(t('loading'));
       setLoading(false);
       console.error('Error fetching blogs:', err);
     }
@@ -80,16 +81,15 @@ export default function BlogPage() {
           >
             <Badge className="mb-4 sm:mb-6 bg-primary-600 text-white border-none inline-flex items-center px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base shadow-lg">
               <Tag className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-              Blog & Resources
+              {t('title')}
             </Badge>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-              <span className="text-gray-900">E-commerce </span>
-              <span className="text-primary-600">Insights</span>
+              {t('title')}
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Expert tips, strategies, and updates to help you build and grow a successful online business
+              {t('subtitle')}
             </p>
           </motion.div>
         </Container>
@@ -152,7 +152,7 @@ export default function BlogPage() {
                           {blog.featured && (
                             <div className="absolute top-4 right-4">
                               <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white border-none shadow-lg font-bold">
-                                ⭐ Featured
+                                ⭐ {t('featured')}
                               </Badge>
                             </div>
                           )}
@@ -202,7 +202,7 @@ export default function BlogPage() {
                                 <span>{formatDate(blog.publishAt)}</span>
                               </div>
                               <div className="flex items-center gap-2 text-primary-600 text-sm font-bold group-hover:gap-3 transition-all">
-                                Read Article
+                                {t('readMore')}
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                               </div>
                             </div>
@@ -227,7 +227,7 @@ export default function BlogPage() {
                     disabled={currentPage === 1}
                     className="px-5 py-2.5 rounded-xl bg-white border-2 border-gray-200 text-gray-700 font-semibold hover:border-primary-600 hover:bg-primary-50 hover:text-primary-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm hover:shadow-md"
                   >
-                    Previous
+                    {t('previous')}
                   </button>
                   
                   <div className="flex gap-2">
@@ -264,7 +264,7 @@ export default function BlogPage() {
                     disabled={currentPage === totalPages}
                     className="px-5 py-2.5 rounded-xl bg-white border-2 border-gray-200 text-gray-700 font-semibold hover:border-primary-600 hover:bg-primary-50 hover:text-primary-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm hover:shadow-md"
                   >
-                    Next
+                    {t('next')}
                   </button>
                 </motion.div>
               )}

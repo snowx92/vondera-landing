@@ -178,6 +178,176 @@
     "downloads": "50,000+ Downloads",
     "platforms": "Available on iOS 16+ and Android"
   },
+  "productDemo": {
+    "title": "Everything You Need,",
+    "titleHighlight": "All in One Platform",
+    "subtitle": "Explore our powerful features designed to streamline your e-commerce operations",
+    "liveDemo": "Live Demo",
+    "newOrder": "New Order",
+    "dashboard": "Dashboard",
+    "comingSoon": "Interactive demo coming soon",
+    "tabs": {
+      "websiteBuilder": {
+        "title": "Website Builder",
+        "description": "Create stunning online stores",
+        "subtitle": "Build your dream website without coding",
+        "features": {
+          "dragDrop": "Drag & drop builder",
+          "mobileResponsive": "Mobile responsive",
+          "seoOptimized": "SEO optimized",
+          "customTemplates": "Custom templates"
+        }
+      },
+      "funnelBuilder": {
+        "title": "Funnel Builder",
+        "description": "Convert visitors into customers",
+        "subtitle": "Build high-converting sales funnels",
+        "features": {
+          "preBuilt": "Pre-built templates",
+          "abTesting": "A/B testing",
+          "analytics": "Analytics tracking",
+          "upsell": "Upsell & downsell"
+        }
+      },
+      "socialInbox": {
+        "title": "Social Inbox",
+        "description": "Manage all conversations",
+        "subtitle": "Unified inbox for all social media",
+        "features": {
+          "multiPlatform": "Multi-platform support",
+          "aiPowered": "AI-powered responses",
+          "teamCollaboration": "Team collaboration",
+          "autoResponses": "Auto-responses"
+        }
+      },
+      "orders": {
+        "title": "Orders",
+        "description": "Complete order management system",
+        "subtitle": "Process, track, and fulfill orders effortlessly",
+        "features": {
+          "realTimeTracking": "Real-time order tracking",
+          "bulkProcessing": "Bulk order processing",
+          "automatedFulfillment": "Automated fulfillment",
+          "customStatuses": "Custom statuses & workflows"
+        }
+      },
+      "teamManagement": {
+        "title": "Team Management",
+        "description": "Collaborate with your team",
+        "subtitle": "Manage roles, permissions & productivity",
+        "features": {
+          "roleBasedAccess": "Role-based access",
+          "activityTracking": "Activity tracking",
+          "performanceMetrics": "Performance metrics",
+          "teamChat": "Team chat"
+        }
+      },
+      "inventory": {
+        "title": "Inventory",
+        "description": "Smart stock management",
+        "subtitle": "Never run out of stock again",
+        "features": {
+          "multiWarehouse": "Multi-warehouse support",
+          "lowStockAlerts": "Low stock alerts",
+          "batchTracking": "Batch tracking",
+          "autoReordering": "Auto-reordering"
+        }
+      },
+      "community": {
+        "title": "Community",
+        "description": "Build a loyal community",
+        "subtitle": "Engage and grow your audience",
+        "features": {
+          "memberForums": "Member forums",
+          "exclusiveContent": "Exclusive content",
+          "badgesRewards": "Badges & rewards",
+          "eventsWebinars": "Events & webinars"
+        }
+      },
+      "domains": {
+        "title": "Domains",
+        "description": "Manage your domains",
+        "subtitle": "Connect custom domains easily",
+        "features": {
+          "customDomain": "Custom domain setup",
+          "sslCertificates": "SSL certificates",
+          "dnsManagement": "DNS management",
+          "subdomainSupport": "Subdomain support"
+        }
+      },
+      "shipping": {
+        "title": "Shipping",
+        "description": "Smart shipping solutions",
+        "subtitle": "Automate your shipping process",
+        "features": {
+          "multiCarrier": "Multi-carrier integration",
+          "realTimeTracking": "Real-time tracking",
+          "automatedLabels": "Automated labels",
+          "rateComparison": "Rate comparison"
+        }
+      },
+      "payments": {
+        "title": "Payments",
+        "description": "Secure payment processing",
+        "subtitle": "Accept payments from anywhere",
+        "features": {
+          "multiplePaymentMethods": "Multiple payment methods",
+          "secureTransactions": "Secure transactions",
+          "instantPayouts": "Instant payouts",
+          "fraudProtection": "Fraud protection"
+        }
+      },
+      "mediaBuyers": {
+        "title": "Media Buyers",
+        "description": "Scale your ad campaigns",
+        "subtitle": "Tools built for media buyers",
+        "features": {
+          "campaignTracking": "Campaign tracking",
+          "roiAnalytics": "ROI analytics",
+          "multiPixelSupport": "Multi-pixel support",
+          "abTesting": "A/B testing"
+        }
+      }
+    },
+    "orderNotifications": {
+      "order1": {
+        "customer": "Ahmed Hassan",
+        "amount": "245 EGP",
+        "product": "Nike Air Max",
+        "time": "Just now"
+      },
+      "order2": {
+        "customer": "Sara Mohammed",
+        "amount": "189 EGP",
+        "product": "Wireless Headphones",
+        "time": "2 min ago"
+      },
+      "order3": {
+        "customer": "Khaled Ali",
+        "amount": "567 EGP",
+        "product": "Smart Watch Pro",
+        "time": "5 min ago"
+      },
+      "order4": {
+        "customer": "Layla Ibrahim",
+        "amount": "320 EGP",
+        "product": "Designer Handbag",
+        "time": "8 min ago"
+      },
+      "order5": {
+        "customer": "Omar Youssef",
+        "amount": "445 EGP",
+        "product": "Gaming Mouse",
+        "time": "12 min ago"
+      },
+      "order6": {
+        "customer": "Fatima Abdullah",
+        "amount": "890 EGP",
+        "product": "Premium Perfume",
+        "time": "15 min ago"
+      }
+    }
+  },
   "features": {
     "title": "Everything You Need to Succeed Online",
     "subtitle": "Powerful features built for modern e-commerce",

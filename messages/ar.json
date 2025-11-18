@@ -128,6 +128,176 @@
     "downloads": "50,000+ تحميل",
     "platforms": "متاح على iOS 16+ و Android"
   },
+  "productDemo": {
+    "title": "كل ما تحتاجه،",
+    "titleHighlight": "في منصة واحدة",
+    "subtitle": "استكشف ميزاتنا القوية المصممة لتبسيط عمليات التجارة الإلكترونية",
+    "liveDemo": "عرض مباشر",
+    "newOrder": "طلب جديد",
+    "dashboard": "لوحة التحكم",
+    "comingSoon": "العرض التفاعلي قريباً",
+    "tabs": {
+      "websiteBuilder": {
+        "title": "بناء المواقع",
+        "description": "أنشئ متاجر إلكترونية مذهلة",
+        "subtitle": "ابنِ موقعك الإلكتروني بدون برمجة",
+        "features": {
+          "dragDrop": "أداة سحب وإفلات",
+          "mobileResponsive": "متجاوب مع الهاتف",
+          "seoOptimized": "محسّن لمحركات البحث",
+          "customTemplates": "قوالب مخصصة"
+        }
+      },
+      "funnelBuilder": {
+        "title": "بناء مسارات التحويل",
+        "description": "حوّل الزوار إلى عملاء",
+        "subtitle": "ابنِ مسارات مبيعات عالية التحويل",
+        "features": {
+          "preBuilt": "قوالب جاهزة",
+          "abTesting": "اختبار A/B",
+          "analytics": "تتبع التحليلات",
+          "upsell": "بيع إضافي ومنخفض"
+        }
+      },
+      "socialInbox": {
+        "title": "صندوق الرسائل الاجتماعية",
+        "description": "أدر جميع المحادثات",
+        "subtitle": "صندوق وارد موحد لجميع وسائل التواصل",
+        "features": {
+          "multiPlatform": "دعم منصات متعددة",
+          "aiPowered": "ردود مدعومة بالذكاء الاصطناعي",
+          "teamCollaboration": "تعاون الفريق",
+          "autoResponses": "ردود تلقائية"
+        }
+      },
+      "orders": {
+        "title": "الطلبات",
+        "description": "نظام إدارة طلبات متكامل",
+        "subtitle": "عالج وتتبع ونفذ الطلبات بسهولة",
+        "features": {
+          "realTimeTracking": "تتبع الطلبات في الوقت الفعلي",
+          "bulkProcessing": "معالجة الطلبات المجمعة",
+          "automatedFulfillment": "تنفيذ تلقائي",
+          "customStatuses": "حالات وسير عمل مخصصة"
+        }
+      },
+      "teamManagement": {
+        "title": "إدارة الفريق",
+        "description": "تعاون مع فريقك",
+        "subtitle": "أدر الأدوار والصلاحيات والإنتاجية",
+        "features": {
+          "roleBasedAccess": "الوصول على أساس الدور",
+          "activityTracking": "تتبع النشاط",
+          "performanceMetrics": "مقاييس الأداء",
+          "teamChat": "دردشة الفريق"
+        }
+      },
+      "inventory": {
+        "title": "المخزون",
+        "description": "إدارة مخزون ذكية",
+        "subtitle": "لا تنفد المخزون مرة أخرى",
+        "features": {
+          "multiWarehouse": "دعم مستودعات متعددة",
+          "lowStockAlerts": "تنبيهات المخزون المنخفض",
+          "batchTracking": "تتبع الدفعات",
+          "autoReordering": "إعادة الطلب التلقائي"
+        }
+      },
+      "community": {
+        "title": "المجتمع",
+        "description": "ابنِ مجتمعاً مخلصاً",
+        "subtitle": "تفاعل ونمِّ جمهورك",
+        "features": {
+          "memberForums": "منتديات الأعضاء",
+          "exclusiveContent": "محتوى حصري",
+          "badgesRewards": "شارات ومكافآت",
+          "eventsWebinars": "فعاليات وندوات"
+        }
+      },
+      "domains": {
+        "title": "النطاقات",
+        "description": "أدر نطاقاتك",
+        "subtitle": "اربط النطاقات المخصصة بسهولة",
+        "features": {
+          "customDomain": "إعداد نطاق مخصص",
+          "sslCertificates": "شهادات SSL",
+          "dnsManagement": "إدارة DNS",
+          "subdomainSupport": "دعم النطاقات الفرعية"
+        }
+      },
+      "shipping": {
+        "title": "الشحن",
+        "description": "حلول شحن ذكية",
+        "subtitle": "أتمتة عملية الشحن",
+        "features": {
+          "multiCarrier": "تكامل ناقلين متعددين",
+          "realTimeTracking": "تتبع في الوقت الفعلي",
+          "automatedLabels": "ملصقات تلقائية",
+          "rateComparison": "مقارنة الأسعار"
+        }
+      },
+      "payments": {
+        "title": "المدفوعات",
+        "description": "معالجة دفع آمنة",
+        "subtitle": "اقبل المدفوعات من أي مكان",
+        "features": {
+          "multiplePaymentMethods": "طرق دفع متعددة",
+          "secureTransactions": "معاملات آمنة",
+          "instantPayouts": "دفعات فورية",
+          "fraudProtection": "حماية من الاحتيال"
+        }
+      },
+      "mediaBuyers": {
+        "title": "ميديا بايرز",
+        "description": "وسّع حملاتك الإعلانية",
+        "subtitle": "أدوات مصممة لميديا بايرز",
+        "features": {
+          "campaignTracking": "تتبع الحملات",
+          "roiAnalytics": "تحليلات العائد على الاستثمار",
+          "multiPixelSupport": "دعم بكسلات متعددة",
+          "abTesting": "اختبار A/B"
+        }
+      }
+    },
+    "orderNotifications": {
+      "order1": {
+        "customer": "أحمد حسن",
+        "amount": "245 جنيه",
+        "product": "نايكي اير ماكس",
+        "time": "الآن"
+      },
+      "order2": {
+        "customer": "سارة محمد",
+        "amount": "189 جنيه",
+        "product": "سماعات لاسلكية",
+        "time": "منذ دقيقتين"
+      },
+      "order3": {
+        "customer": "خالد علي",
+        "amount": "567 جنيه",
+        "product": "ساعة ذكية برو",
+        "time": "منذ 5 دقائق"
+      },
+      "order4": {
+        "customer": "ليلى إبراهيم",
+        "amount": "320 جنيه",
+        "product": "حقيبة يد مصممة",
+        "time": "منذ 8 دقائق"
+      },
+      "order5": {
+        "customer": "عمر يوسف",
+        "amount": "445 جنيه",
+        "product": "ماوس ألعاب",
+        "time": "منذ 12 دقيقة"
+      },
+      "order6": {
+        "customer": "فاطمة عبدالله",
+        "amount": "890 جنيه",
+        "product": "عطر فاخر",
+        "time": "منذ 15 دقيقة"
+      }
+    }
+  },
   "features": {
     "title": "كل ما تحتاجه للنجاح على الإنترنت",
     "subtitle": "مميزات قوية مصممة للتجارة الإلكترونية الحديثة",

@@ -27,54 +27,6 @@ import Image from "next/image";
 import { forwardRef, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
-// Order notification data
-const ProductDemoSection = () => {
-  // Order notification data
-  const orderNotifications = [
-  {
-    id: 1,
-    customer: "Ahmed Hassan",
-    amount: "245 EGP",
-    product: "Nike Air Max",
-    time: "Just now",
-  },
-  {
-    id: 2,
-    customer: "Sara Mohammed",
-    amount: "189 EGP",
-    product: "Wireless Headphones",
-    time: "2 min ago",
-  },
-  {
-    id: 3,
-    customer: "Khaled Ali",
-    amount: "567 EGP",
-    product: "Smart Watch Pro",
-    time: "5 min ago",
-  },
-  {
-    id: 4,
-    customer: "Layla Ibrahim",
-    amount: "320 EGP",
-    product: "Designer Handbag",
-    time: "8 min ago",
-  },
-  {
-    id: 5,
-    customer: "Omar Youssef",
-    amount: "445 EGP",
-    product: "Gaming Mouse",
-    time: "12 min ago",
-  },
-  {
-    id: 6,
-    customer: "Fatima Abdullah",
-    amount: "890 EGP",
-    product: "Premium Perfume",
-    time: "15 min ago",
-  },
-];
-
 // Circle component for animated beam
 const Circle = forwardRef<
   HTMLDivElement,
@@ -201,8 +153,9 @@ const SocialIcons = {
   ),
 };
 
-  const t = useTranslations();
+export default function ProductDemoSection() {
   const [activeTab, setActiveTab] = useState(0);
+  const t = useTranslations('productDemo');
 
   // Refs for animated beams in Social Inbox
   const containerRef = useRef<HTMLDivElement>(null);
@@ -214,18 +167,64 @@ const SocialIcons = {
   const twitterRef = useRef<HTMLDivElement>(null);
   const tiktokRef = useRef<HTMLDivElement>(null);
 
+  // Order notification data using translations
+  const orderNotifications = [
+    {
+      id: 1,
+      customer: t('orderNotifications.order1.customer'),
+      amount: t('orderNotifications.order1.amount'),
+      product: t('orderNotifications.order1.product'),
+      time: t('orderNotifications.order1.time'),
+    },
+    {
+      id: 2,
+      customer: t('orderNotifications.order2.customer'),
+      amount: t('orderNotifications.order2.amount'),
+      product: t('orderNotifications.order2.product'),
+      time: t('orderNotifications.order2.time'),
+    },
+    {
+      id: 3,
+      customer: t('orderNotifications.order3.customer'),
+      amount: t('orderNotifications.order3.amount'),
+      product: t('orderNotifications.order3.product'),
+      time: t('orderNotifications.order3.time'),
+    },
+    {
+      id: 4,
+      customer: t('orderNotifications.order4.customer'),
+      amount: t('orderNotifications.order4.amount'),
+      product: t('orderNotifications.order4.product'),
+      time: t('orderNotifications.order4.time'),
+    },
+    {
+      id: 5,
+      customer: t('orderNotifications.order5.customer'),
+      amount: t('orderNotifications.order5.amount'),
+      product: t('orderNotifications.order5.product'),
+      time: t('orderNotifications.order5.time'),
+    },
+    {
+      id: 6,
+      customer: t('orderNotifications.order6.customer'),
+      amount: t('orderNotifications.order6.amount'),
+      product: t('orderNotifications.order6.product'),
+      time: t('orderNotifications.order6.time'),
+    },
+  ];
+
   const tabs = [
     {
       id: 0,
       icon: Layout,
-      title: t('features.websiteBuilder.title'),
-      description: t('features.websiteBuilder.description'),
-      subtitle: t('features.websiteBuilder.subtitle', { defaultValue: '' }),
+      title: t('tabs.websiteBuilder.title'),
+      description: t('tabs.websiteBuilder.description'),
+      subtitle: t('tabs.websiteBuilder.subtitle'),
       features: [
-        { text: t('features.websiteBuilder.features.dragDrop', { defaultValue: 'Drag & drop builder' }), icon: Zap },
-        { text: t('features.websiteBuilder.features.mobileResponsive', { defaultValue: 'Mobile responsive' }), icon: CheckCircle2 },
-        { text: t('features.websiteBuilder.features.seoOptimized', { defaultValue: 'SEO optimized' }), icon: TrendingUp },
-        { text: t('features.websiteBuilder.features.customTemplates', { defaultValue: 'Custom templates' }), icon: Layout },
+        { text: t('tabs.websiteBuilder.features.dragDrop'), icon: Zap },
+        { text: t('tabs.websiteBuilder.features.mobileResponsive'), icon: CheckCircle2 },
+        { text: t('tabs.websiteBuilder.features.seoOptimized'), icon: TrendingUp },
+        { text: t('tabs.websiteBuilder.features.customTemplates'), icon: Layout },
       ],
       color: "from-violet-500 to-purple-600",
       demoGif: "/demo/themebuilder.gif",
@@ -233,14 +232,14 @@ const SocialIcons = {
     {
       id: 1,
       icon: GitBranch,
-      title: t('features.funnelBuilder.title', { defaultValue: 'Funnel Builder' }),
-      description: t('features.funnelBuilder.description', { defaultValue: 'Convert visitors into customers' }),
-      subtitle: t('features.funnelBuilder.subtitle', { defaultValue: 'Build high-converting sales funnels' }),
+      title: t('tabs.funnelBuilder.title'),
+      description: t('tabs.funnelBuilder.description'),
+      subtitle: t('tabs.funnelBuilder.subtitle'),
       features: [
-        { text: t('features.funnelBuilder.features.preBuiltTemplates', { defaultValue: 'Pre-built templates' }), icon: Layout },
-        { text: t('features.funnelBuilder.features.abTesting', { defaultValue: 'A/B testing' }), icon: BarChart3 },
-        { text: t('features.funnelBuilder.features.analyticsTracking', { defaultValue: 'Analytics tracking' }), icon: TrendingUp },
-        { text: t('features.funnelBuilder.features.upsellDownsell', { defaultValue: 'Upsell & downsell' }), icon: Zap },
+        { text: t('tabs.funnelBuilder.features.preBuilt'), icon: Layout },
+        { text: t('tabs.funnelBuilder.features.abTesting'), icon: BarChart3 },
+        { text: t('tabs.funnelBuilder.features.analytics'), icon: TrendingUp },
+        { text: t('tabs.funnelBuilder.features.upsell'), icon: Zap },
       ],
       color: "from-blue-500 to-cyan-600",
       demoGif: "/demo/funnelbuilder.gif",
@@ -248,20 +247,140 @@ const SocialIcons = {
     {
       id: 2,
       icon: MessageSquare,
-      title: t('features.socialInbox.title', { defaultValue: 'Social Inbox' }),
-      description: t('features.socialInbox.description', { defaultValue: 'Manage all conversations' }),
-      subtitle: t('features.socialInbox.subtitle', { defaultValue: 'Unified inbox for all social media' }),
+      title: t('tabs.socialInbox.title'),
+      description: t('tabs.socialInbox.description'),
+      subtitle: t('tabs.socialInbox.subtitle'),
       features: [
-        { text: t('features.socialInbox.features.multiPlatformSupport', { defaultValue: 'Multi-platform support' }), icon: MessageSquare },
-        { text: t('features.socialInbox.features.aiPoweredResponses', { defaultValue: 'AI-powered responses' }), icon: Zap },
-        { text: t('features.socialInbox.features.teamCollaboration', { defaultValue: 'Team collaboration' }), icon: Users },
-        { text: t('features.socialInbox.features.autoResponses', { defaultValue: 'Auto-responses' }), icon: CheckCircle2 },
+        { text: t('tabs.socialInbox.features.multiPlatform'), icon: MessageSquare },
+        { text: t('tabs.socialInbox.features.aiPowered'), icon: Zap },
+        { text: t('tabs.socialInbox.features.teamCollaboration'), icon: Users },
+        { text: t('tabs.socialInbox.features.autoResponses'), icon: CheckCircle2 },
       ],
       color: "from-orange-500 to-amber-600",
       demoGif: "/demo/vinbox.gif",
     },
-    // ...repeat for other tabs, using t('...') for all strings
+    {
+      id: 3,
+      icon: ShoppingCart,
+      title: t('tabs.orders.title'),
+      description: t('tabs.orders.description'),
+      subtitle: t('tabs.orders.subtitle'),
+      features: [
+        { text: t('tabs.orders.features.realTimeTracking'), icon: Clock },
+        { text: t('tabs.orders.features.bulkProcessing'), icon: CheckCircle2 },
+        { text: t('tabs.orders.features.automatedFulfillment'), icon: Zap },
+        { text: t('tabs.orders.features.customStatuses'), icon: TrendingUp },
+      ],
+      color: "from-green-500 to-emerald-600",
+      demoGif: "/demo/orders.gif",
+    },
+    {
+      id: 4,
+      icon: Users,
+      title: t('tabs.teamManagement.title'),
+      description: t('tabs.teamManagement.description'),
+      subtitle: t('tabs.teamManagement.subtitle'),
+      features: [
+        { text: t('tabs.teamManagement.features.roleBasedAccess'), icon: Users },
+        { text: t('tabs.teamManagement.features.activityTracking'), icon: BarChart3 },
+        { text: t('tabs.teamManagement.features.performanceMetrics'), icon: TrendingUp },
+        { text: t('tabs.teamManagement.features.teamChat'), icon: MessageSquare },
+      ],
+      color: "from-pink-500 to-rose-600",
+      demoGif: "/demo/team.gif",
+    },
+    {
+      id: 5,
+      icon: Package,
+      title: t('tabs.inventory.title'),
+      description: t('tabs.inventory.description'),
+      subtitle: t('tabs.inventory.subtitle'),
+      features: [
+        { text: t('tabs.inventory.features.multiWarehouse'), icon: Package },
+        { text: t('tabs.inventory.features.lowStockAlerts'), icon: Clock },
+        { text: t('tabs.inventory.features.batchTracking'), icon: CheckCircle2 },
+        { text: t('tabs.inventory.features.autoReordering'), icon: Zap },
+      ],
+      color: "from-indigo-500 to-purple-600",
+      demoGif: "/demo/inventory.gif",
+    },
+    {
+      id: 6,
+      icon: Users,
+      title: t('tabs.community.title'),
+      description: t('tabs.community.description'),
+      subtitle: t('tabs.community.subtitle'),
+      features: [
+        { text: t('tabs.community.features.memberForums'), icon: MessageSquare },
+        { text: t('tabs.community.features.exclusiveContent'), icon: Zap },
+        { text: t('tabs.community.features.badgesRewards'), icon: CheckCircle2 },
+        { text: t('tabs.community.features.eventsWebinars'), icon: TrendingUp },
+      ],
+      color: "from-teal-500 to-cyan-600",
+      demoGif: "/demo/commuinty.gif",
+    },
+    {
+      id: 7,
+      icon: Globe,
+      title: t('tabs.domains.title'),
+      description: t('tabs.domains.description'),
+      subtitle: t('tabs.domains.subtitle'),
+      features: [
+        { text: t('tabs.domains.features.customDomain'), icon: Globe },
+        { text: t('tabs.domains.features.sslCertificates'), icon: CheckCircle2 },
+        { text: t('tabs.domains.features.dnsManagement'), icon: Zap },
+        { text: t('tabs.domains.features.subdomainSupport'), icon: TrendingUp },
+      ],
+      color: "from-cyan-500 to-blue-600",
+      demoGif: "/demo/domain.gif",
+    },
+    {
+      id: 8,
+      icon: Truck,
+      title: t('tabs.shipping.title'),
+      description: t('tabs.shipping.description'),
+      subtitle: t('tabs.shipping.subtitle'),
+      features: [
+        { text: t('tabs.shipping.features.multiCarrier'), icon: Truck },
+        { text: t('tabs.shipping.features.realTimeTracking'), icon: Clock },
+        { text: t('tabs.shipping.features.automatedLabels'), icon: Zap },
+        { text: t('tabs.shipping.features.rateComparison'), icon: TrendingUp },
+      ],
+      color: "from-amber-500 to-orange-600",
+      demoGif: "/demo/shipping.gif",
+    },
+    {
+      id: 9,
+      icon: CreditCard,
+      title: t('tabs.payments.title'),
+      description: t('tabs.payments.description'),
+      subtitle: t('tabs.payments.subtitle'),
+      features: [
+        { text: t('tabs.payments.features.multiplePaymentMethods'), icon: CreditCard },
+        { text: t('tabs.payments.features.secureTransactions'), icon: CheckCircle2 },
+        { text: t('tabs.payments.features.instantPayouts'), icon: Zap },
+        { text: t('tabs.payments.features.fraudProtection'), icon: TrendingUp },
+      ],
+      color: "from-emerald-500 to-green-600",
+      demoGif: "/demo/payments.gif",
+    },
+    {
+      id: 10,
+      icon: Target,
+      title: t('tabs.mediaBuyers.title'),
+      description: t('tabs.mediaBuyers.description'),
+      subtitle: t('tabs.mediaBuyers.subtitle'),
+      features: [
+        { text: t('tabs.mediaBuyers.features.campaignTracking'), icon: BarChart3 },
+        { text: t('tabs.mediaBuyers.features.roiAnalytics'), icon: TrendingUp },
+        { text: t('tabs.mediaBuyers.features.multiPixelSupport'), icon: Target },
+        { text: t('tabs.mediaBuyers.features.abTesting'), icon: Zap },
+      ],
+      color: "from-purple-500 to-pink-600",
+      demoGif: "/demo/mediabuyers.gif",
+    },
   ];
+
   return (
     <section className="min-h-screen flex items-center bg-white relative overflow-hidden py-12 sm:py-16 md:py-20">
       <Container className="w-full">
@@ -273,14 +392,14 @@ const SocialIcons = {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-              {t('features.title')}
+              {t('title')}
               <br />
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                {t('features.subtitle')}
+                {t('titleHighlight')}
               </span>
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-              {t('features.description', { defaultValue: 'Explore our powerful features designed to streamline your e-commerce operations' })}
+              {t('subtitle')}
             </p>
           </motion.div>
         </div>
@@ -292,31 +411,68 @@ const SocialIcons = {
               <motion.button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={cn(
-                  "px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl transition-all duration-300",
+                className={`flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl font-medium transition-all duration-300 ${
                   activeTab === tab.id
-                    ? `bg-gradient-to-r ${tab.color} text-white shadow-lg scale-105`
+                    ? "bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-lg shadow-violet-500/30"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                )}
+                }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-2">
-                  <tab.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                  <span className="text-xs sm:text-sm font-semibold">{tab.title}</span>
-                </div>
+                <tab.icon size={16} className="sm:w-[18px] sm:h-[18px]" />
+                <span className="text-xs sm:text-sm">{tab.title}</span>
               </motion.button>
             ))}
           </div>
 
+          {/* Content */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative order-1 lg:order-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center"
             >
+              {/* Left - Centered Text */}
+              <div className="flex items-center justify-center order-2 lg:order-1">
+                <div className="text-center max-w-lg space-y-2 sm:space-y-3">
+                  <div
+                    className={`inline-flex w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${tabs[activeTab].color} items-center justify-center mb-2 sm:mb-3 shadow-lg`}
+                  >
+                    {(() => {
+                      const Icon = tabs[activeTab].icon;
+                      return (
+                        <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                      );
+                    })()}
+                  </div>
+                  <BlurText
+                    text={tabs[activeTab].title}
+                    className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 sm:mb-2"
+                    delay={100}
+                  />
+                  <BlurText
+                    text={tabs[activeTab].description}
+                    className="text-base sm:text-lg text-gray-600 mb-1 sm:mb-1.5"
+                    delay={150}
+                  />
+                  <BlurText
+                    text={tabs[activeTab].subtitle}
+                    className="text-sm text-gray-500"
+                    delay={200}
+                  />
+                </div>
+              </div>
+
+              {/* Right - Demo Preview */}
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="relative order-1 lg:order-2"
+              >
                 {/* Main Demo Card */}
                 <div className="relative rounded-xl sm:rounded-2xl shadow-2xl bg-white border border-gray-200">
                   {/* Browser Chrome */}
@@ -362,7 +518,7 @@ const SocialIcons = {
                         <div className="flex items-center gap-1 sm:gap-2">
                           <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 animate-pulse"></div>
                           <span className="text-[10px] sm:text-xs font-semibold text-gray-700">
-                            Live Demo
+                            {t('liveDemo')}
                           </span>
                         </div>
                       </div>
@@ -408,7 +564,7 @@ const SocialIcons = {
                                         <div className="flex items-center gap-0.5 md:gap-1">
                                           <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-green-500"></div>
                                           <span className="text-[10px] md:text-xs text-green-600 font-medium">
-                                            New Order
+                                            {t('newOrder')}
                                           </span>
                                         </div>
                                       </div>
@@ -458,7 +614,7 @@ const SocialIcons = {
                                           <div className="flex items-center gap-0.5">
                                             <div className="w-1 h-1 rounded-full bg-green-500"></div>
                                             <span className="text-[10px] text-green-600 font-medium">
-                                              New Order
+                                              {t('newOrder')}
                                             </span>
                                           </div>
                                         </div>
@@ -472,11 +628,14 @@ const SocialIcons = {
                         </>
                       )}
 
-                      {/* Social Inbox Animation - Only for Social Inbox tab */}
+                      {/* Animated Beam for Social Inbox - Only for Social Inbox tab */}
                       {activeTab === 2 && (
                         <>
-                          {/* Desktop version */}
-                          <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" ref={containerRef}>
+                          {/* Desktop version - side positioned */}
+                          <div
+                            className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-80 max-h-[400px] overflow-visible"
+                            ref={containerRef}
+                          >
                             <div className="flex size-full max-h-[350px] max-w-lg flex-col items-stretch justify-between gap-6 md:gap-8">
                               <div className="flex flex-row items-center justify-between">
                                 <Circle
@@ -669,22 +828,20 @@ const SocialIcons = {
                           );
                         })()}
                         <div className="text-lg sm:text-xl md:text-2xl font-bold mb-1.5 sm:mb-2 drop-shadow-md">
-                          {tabs[activeTab].title} Dashboard
+                          {tabs[activeTab].title} {t('dashboard')}
                         </div>
                         <div className="text-xs sm:text-sm md:text-base opacity-90 bg-white/10 backdrop-blur-sm rounded-md sm:rounded-lg px-3 sm:px-4 py-1.5 sm:py-2 inline-block">
-                          Interactive demo coming soon
+                          {t('comingSoon')}
                         </div>
                       </div>
                     </div>
                   )}
                 </div>
               </motion.div>
-            </AnimatePresence>
-          </div>
-        </Container>
-      </section>
-    );
-  };
-
-  export default ProductDemoSection;
-
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </Container>
+    </section>
+  );
+}

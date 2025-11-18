@@ -7,8 +7,10 @@ import { AvatarCircles } from '@/components/ui/avatar-circles';
 import { useEffect, useState } from 'react';
 import { getReviews } from '@/lib/apis/reviews';
 import { Review } from '@/lib/apis/types';
+import { useTranslations } from 'next-intl';
 
 export default function SocialProofSection() {
+  const t = useTranslations('socialProof');
   const [reviews, setReviews] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,29 +28,23 @@ export default function SocialProofSection() {
     fetchReviews();
   }, []);
 
-  // Fallback testimonials in case API fails
-  const fallbackTestimonials = [
-    {
-      id: '1',
-      name: 'Ahmed Hassan',
-      storeName: 'Fashion Store',
-      storeWebsite: '',
-      logo: 'https://i.pravatar.cc/150?img=1',
-      rating: 5,
-      review: 'Vondera transformed my business! I went from 50 orders per day to over 300. The VMedia marketplace connected me with incredible media buyers.',
-      featured: true,
-    },
-    {
-      id: '2',
-      name: 'Sara Mohamed',
-      storeName: 'Beauty Products',
-      storeWebsite: '',
-      logo: 'https://i.pravatar.cc/150?img=5',
-      rating: 5,
-      review: 'Just hit $100K in monthly revenue using Vondera! The analytics and automation tools are game-changers. Best decision ever!',
-      featured: true,
-    },
-  ];
+  // Fallback testimonials in case API fails - using translations
+  const fallbackTestimonialsData = t.raw('fallbackTestimonials') as Array<{
+    name: string;
+    storeName: string;
+    review: string;
+  }>;
+  
+  const fallbackTestimonials = fallbackTestimonialsData.map((testimonial, index) => ({
+    id: `${index + 1}`,
+    name: testimonial.name,
+    storeName: testimonial.storeName,
+    storeWebsite: '',
+    logo: `https://i.pravatar.cc/150?img=${index + 1}`,
+    rating: 5,
+    review: testimonial.review,
+    featured: true,
+  }));
 
   const displayReviews = reviews.length > 0 ? reviews : fallbackTestimonials;
 
@@ -72,14 +68,14 @@ export default function SocialProofSection() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Loved by Thousands
+              {t('title')}
               <br />
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-                of Merchants
+                {t('titleHighlight')}
               </span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8">
-              See what merchants are saying about their experience with Vondera
+              {t('subtitle')}
             </p>
             
             {/* Avatar Circles */}
@@ -100,7 +96,7 @@ export default function SocialProofSection() {
           {isLoading ? (
             <div className="text-center py-12">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-violet-600"></div>
-              <p className="mt-4 text-gray-600">Loading reviews...</p>
+              <p className="mt-4 text-gray-600">{t('loading')}</p>
             </div>
           ) : (
             <div className="overflow-hidden">
@@ -238,16 +234,16 @@ export default function SocialProofSection() {
           className="text-center mt-12 sm:mt-16 px-4"
         >
           <p className="text-gray-600 mb-4 sm:mb-6 text-base sm:text-lg">
-            Join 10,000+ satisfied merchants growing their business with Vondera
+            {t('ctaText')}
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all"
           >
-            Start Your Free Trial
+            {t('ctaButton')}
           </motion.button>
-          <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">No credit card required • 14-day free trial</p>
+          <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">{t('ctaDisclaimer')}</p>
         </motion.div>
       </Container>
     </section>

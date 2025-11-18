@@ -28,16 +28,18 @@ export default function MapSection() {
           className="text-center flex flex-col items-center justify-center max-w-full"
         >
           <div className="flex flex-col items-center gap-3 sm:gap-4 max-w-full">
-            <div className="overflow-visible w-full text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 text-center">
-              <FuzzyText
-                fontSize="clamp(1.5rem, 5vw, 4rem)"
-                fontWeight={700}
-                color="#111827"
-                enableHover={false}
-                baseIntensity={0.15}
-              >
-                {t("title")}
-              </FuzzyText>
+            <div className="overflow-visible w-full text-center">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900">
+                <FuzzyText
+                  fontSize="clamp(2rem, 7vw, 4rem)"
+                  fontWeight={700}
+                  color="#111827"
+                  enableHover={false}
+                  baseIntensity={0.15}
+                >
+                  {t("title")}
+                </FuzzyText>
+              </div>
             </div>
             <div className="flex items-center gap-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 flex-wrap justify-center max-w-full px-4">
               <span>{t("from")}</span>

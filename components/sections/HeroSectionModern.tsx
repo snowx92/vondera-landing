@@ -271,11 +271,12 @@ const rotatingPhrases = locale === 'ar'
                 className="hidden sm:block"
               >
                 <Link
-                  href="#why-vondera"
+                  href={`/${locale}/vmedia`}
                   className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors group"
                 >
-                  <Play className="w-3 h-3 fill-current" />
+                  {!isRTL && <Play className="w-3 h-3 fill-current" />}
                   <span className="text-base sm:text-lg font-medium">{t('whyVondera')}</span>
+                  {isRTL && <Play className="w-3 h-3 fill-current rotate-180" />}
                 </Link>
               </motion.div>
 
@@ -287,10 +288,12 @@ const rotatingPhrases = locale === 'ar'
                 className="sm:hidden"
               >
                 <Link
-                  href="#why-vondera"
+                  href={`/${locale}/vmedia`}
                   className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors underline underline-offset-4"
                 >
+                  {!isRTL && <Play className="w-3 h-3 fill-current" />}
                   <span className="text-base font-medium">{t('whyVondera')}</span>
+                  {isRTL && <Play className="w-3 h-3 fill-current rotate-180" />}
                 </Link>
               </motion.div>
             </div>

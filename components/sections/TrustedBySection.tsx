@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Container } from '@/components/ui/Container';
-import { useEffect, useState } from 'react';
+import { Container } from "@/components/ui/Container";
+import { getPartners } from "@/lib/apis/partners";
+import { Partner } from "@/lib/apis/types";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { getPartners } from '@/lib/apis/partners';
-import { Partner } from '@/lib/apis/types';
-import Image from 'next/image';
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function TrustedBySection() {
   const t = useTranslations();
@@ -19,7 +19,7 @@ export default function TrustedBySection() {
         const data = await getPartners();
         setPartners(data);
       } catch (error) {
-        console.error('Error fetching partners:', error);
+        console.error("Error fetching partners:", error);
       } finally {
         setLoading(false);
       }
@@ -28,12 +28,8 @@ export default function TrustedBySection() {
     fetchPartners();
   }, []);
 
-  // Fallback merchants if API fails or is loading
-  const fallbackMerchants = [
-    'FashionHub', 'TechStore', 'BeautyBox', 'GadgetWorld', 'StyleMart',
-    'EliteShop', 'MegaStore', 'TrendyGoods', 'PrimeDeals', 'UrbanStyle',
-    'ModernLiving', 'SmartBuy', 'LuxuryLife', 'QuickShop', 'BestChoice',
-  ];
+  // Fallback merchants if API fails or is loading - using translations
+  const fallbackMerchants = t.raw("partners.fallbackMerchants") as string[];
 
   return (
     <section className="relative py-10 sm:py-12 md:py-16 bg-white border-y border-gray-100">
@@ -45,7 +41,7 @@ export default function TrustedBySection() {
             viewport={{ once: true }}
             className="text-xs sm:text-sm font-semibold text-violet-600 uppercase tracking-wide mb-1.5 sm:mb-2"
           >
-            {t('partners.hero.badge')}
+            {t("partners.hero.badge")}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -54,7 +50,7 @@ export default function TrustedBySection() {
             transition={{ delay: 0.1 }}
             className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900"
           >
-            {t('partners.hero.title')}
+            {t("partners.hero.title")}
           </motion.h2>
         </div>
 
@@ -77,12 +73,12 @@ export default function TrustedBySection() {
                     <motion.div
                       className="flex gap-6 sm:gap-8 md:gap-12 pr-6 sm:pr-8 md:pr-12"
                       animate={{
-                        x: ['0%', '-100%'],
+                        x: ["0%", "-100%"],
                       }}
                       transition={{
                         duration: 40,
                         repeat: Infinity,
-                        ease: 'linear',
+                        ease: "linear",
                       }}
                     >
                       {[...partners, ...partners].map((partner, index) => (
@@ -115,15 +111,18 @@ export default function TrustedBySection() {
                     <motion.div
                       className="flex gap-6 sm:gap-8 md:gap-12 pr-6 sm:pr-8 md:pr-12"
                       animate={{
-                        x: ['-100%', '0%'],
+                        x: ["-100%", "0%"],
                       }}
                       transition={{
                         duration: 40,
                         repeat: Infinity,
-                        ease: 'linear',
+                        ease: "linear",
                       }}
                     >
-                      {[...partners.slice().reverse(), ...partners.slice().reverse()].map((partner, index) => (
+                      {[
+                        ...partners.slice().reverse(),
+                        ...partners.slice().reverse(),
+                      ].map((partner, index) => (
                         <div
                           key={`${partner.id}-reverse-${index}`}
                           className="flex-shrink-0 group"
@@ -155,26 +154,25 @@ export default function TrustedBySection() {
                     <motion.div
                       className="flex gap-6 sm:gap-8 md:gap-12 pr-6 sm:pr-8 md:pr-12"
                       animate={{
-                        x: ['0%', '-100%'],
+                        x: ["0%", "-100%"],
                       }}
                       transition={{
                         duration: 40,
                         repeat: Infinity,
-                        ease: 'linear',
+                        ease: "linear",
                       }}
                     >
-                      {[...fallbackMerchants, ...fallbackMerchants].map((merchant, index) => (
-                        <div
-                          key={index}
-                          className="flex-shrink-0 group"
-                        >
-                          <div className="w-32 h-16 sm:w-36 sm:h-18 md:w-40 md:h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg sm:rounded-xl border border-gray-200 flex items-center justify-center px-4 sm:px-5 md:px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
-                            <span className="text-base sm:text-lg md:text-xl font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
-                              {merchant}
-                            </span>
+                      {[...fallbackMerchants, ...fallbackMerchants].map(
+                        (merchant, index) => (
+                          <div key={index} className="flex-shrink-0 group">
+                            <div className="w-32 h-16 sm:w-36 sm:h-18 md:w-40 md:h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg sm:rounded-xl border border-gray-200 flex items-center justify-center px-4 sm:px-5 md:px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
+                              <span className="text-base sm:text-lg md:text-xl font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
+                                {merchant}
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        )
+                      )}
                     </motion.div>
                   </div>
 
@@ -182,19 +180,19 @@ export default function TrustedBySection() {
                     <motion.div
                       className="flex gap-6 sm:gap-8 md:gap-12 pr-6 sm:pr-8 md:pr-12"
                       animate={{
-                        x: ['-100%', '0%'],
+                        x: ["-100%", "0%"],
                       }}
                       transition={{
                         duration: 40,
                         repeat: Infinity,
-                        ease: 'linear',
+                        ease: "linear",
                       }}
                     >
-                      {[...fallbackMerchants.reverse(), ...fallbackMerchants.reverse()].map((merchant, index) => (
-                        <div
-                          key={index}
-                          className="flex-shrink-0 group"
-                        >
+                      {[
+                        ...fallbackMerchants.reverse(),
+                        ...fallbackMerchants.reverse(),
+                      ].map((merchant, index) => (
+                        <div key={index} className="flex-shrink-0 group">
                           <div className="w-32 h-16 sm:w-36 sm:h-18 md:w-40 md:h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg sm:rounded-xl border border-gray-200 flex items-center justify-center px-4 sm:px-5 md:px-6 group-hover:border-violet-300 group-hover:shadow-lg transition-all duration-300">
                             <span className="text-base sm:text-lg md:text-xl font-bold text-gray-400 group-hover:text-violet-600 transition-colors">
                               {merchant}
@@ -209,7 +207,6 @@ export default function TrustedBySection() {
             </div>
           </>
         )}
-
       </Container>
     </section>
   );
